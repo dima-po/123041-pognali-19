@@ -1,0 +1,40 @@
+extends layouts/default
+include helpers/mixins
+
+block variables
+  - const title = "HTML Academy: Погнали"
+
+block content
+  //- Шапка сайта
+  include blocks/header.pug
+
+  main.site-content
+
+    //- Сервис
+    include blocks/index/1_service
+
+    //- Направления
+    include blocks/index/2_destinations
+
+    //- Попутчики
+    include blocks/index/3_companions
+
+    //- Тарифы
+    include blocks/index/4_tarrifs
+
+    //- Регистрация / Авторизация
+    include blocks/index/5_registration
+
+    //- Карта
+    include blocks/index/6_map
+
+  //- Футер сайта
+  include blocks/footer.pug
+
+  //- Всплывающее окно
+  include blocks/index/popup.pug
+
+
+block scripts
+  script(src="js/main.js")
+  //- script(src="../js/vendor.js")
