@@ -1,1 +1,323 @@
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Путешественники - HTML Academy: Погнали</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrapper">
+      <a class="logo" href="index.html">Погнали?</a>
+      <nav class="nav">
+        <button class="nav__toggle" type="button">Мобильная навигация</button>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#">О сервисе</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Направления</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Попутчики</a>
+          </li>
+        </ul>
+        <a class="btn btn--auth-header" href="#">Авторизация</a>
+        <div class="nav__contacts contacts">
+          <a class="contacts__phone" href="tel:88005558628">8 800 555-86-28</a>
+          <a class="contacts__email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+        </div>
+        <div class="nav__socials socials">
+          <a class="socials__item socials__item--facebook" href="https://facebook.com">Facebook</a>
+          <a class="socials__item socials__item--vk" href="https://vk.com">VK</a>
+          <a class="socials__item socials__item--instagram" href="https://instagram.com">Instagram</a>
+        </div>
+      </nav>
+      <div class="header__contacts header-contacts">
+        <a class="header-contacts__phone" href="tel:88005558628">8 800 555-86-28</a>
+        <a class="header-contacts__email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+        <a class="btn btn--auth-header" href="#">Авторизация</a>
+      </div>
+      <div class="header__page-caption page-caption">
+        <h3 class="page-caption__text">Попутчики</h3>
+        <a class="page-caption__back-to-home" href="index.html">На главную</a>
+      </div>
+    </div>
+  </header>
+  <main class="site-content">
+    <section class="companions-country-filter"></section>
+    <section class="companions-content">
+      <aside class="companions-content__filter companions-filter">
+        <h2 class="companions-filter__title">Подбери идеального попутчика</h2>
+        <form class="companions-filter__form" action="https://echo.htmlacademy.ru">
+          <dl class="companions-filter__tab-list filter-tabs">
+            <dt class="filter-tabs__title">Хобби
+              <span>:</span>
+            </dt>
+            <dd class="filter-tabs__item">
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="hobby" id="gym" value="gym" />
+                <label for="gym">Спортзал</label>
+              </div>
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="hobby" id="hookah" value="hookah" />
+                <label for="hookah">Кальян</label>
+              </div>
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="hobby" id="sofa" value="sofa" />
+                <label for="sofa">Диван</label>
+              </div>
+            </dd>
+            <dt class="filter-tabs__title">Музыка
+              <span>:</span>
+            </dt>
+            <dd class="filter-tabs__item">
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="music" id="hard-rock" value="hard-rock" />
+                <label for="hard-rock">Тяжелый рок</label>
+              </div>
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="music" id="russian-rap" value="russian-rap" />
+                <label for="russian-rap">Русский рэп</label>
+              </div>
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="music" id="eurodance" value="eurodance" />
+                <label for="eurodance">Евроденс</label>
+              </div>
+            </dd>
+            <dt class="filter-tabs__title">Еда
+              <span>:</span>
+            </dt>
+            <dd class="filter-tabs__item">
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="food" id="meet" value="meet" />
+                <label for="meet">Мясоед</label>
+              </div>
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="food" id="healthy-food" value="healthy-food" />
+                <label for="healthy-food">Сидит на ПП</label>
+              </div>
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="food" id="vegan" value="vegan" />
+                <label for="vegan">Веган-сыроед</label>
+              </div>
+            </dd>
+            <dt class="filter-tabs__title">Транспорт
+              <span>:</span>
+            </dt>
+            <dd class="filter-tabs__item filter-tabs__item--transport">
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="transport" id="fly" value="fly" />
+                <label for="fly">Самолет</label>
+              </div>
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="transport" id="bus" value="bus" />
+                <label for="bus">Автобус</label>
+              </div>
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="transport" id="bike" value="bike" />
+                <label for="bike">Велосипед</label>
+              </div>
+              <div class="filter-tabs__input-group">
+                <input type="checkbox" name="transport" id="walk" value="walk" />
+                <label for="walk">Пешком</label>
+              </div>
+            </dd>
+            <dt class="filter-tabs__title"></dt>
+            <dd class="filter-tabs__item filter-tabs__item--slider">
+              <!-- TODO: Придумать реализацию слайдера формы-->
+            </dd>
+          </dl>
+          <button class="btn filter-tabs__form-submit" type="submit">Показать</button>
+        </form>
+      </aside>
+      <section class="companions-content__companions page-companions">
+        <h2 class="visually-hidden">Профили путешественников</h2>
+        <article class="page-companions__card">
+          <figure class="page-companions__image">
+            <img src="https://via.placeholder.com/285" width="285" height="285" alt="Фото пользователя" />
+            <figcaption>
+              <h4 class="page-companions__name">Таня Фирсова</h4>
+            </figcaption>
+          </figure>
+          <button class="page-companions__like page-companions__like--active" type="button">Нравится</button>
+          <i class="page-companions__like-count">1.5 m</i>
+          <section class="page-companions__tags">
+            <h5 class="visually-hidden">Теги путешественника</h5>
+            <a href="#">#ЗОЖ</a>
+            <a href="#">#ПП</a>
+            <a href="#">#Фитнес</a>
+            <a href="#">#пляж</a>
+            <a href="#">#авокадо</a>
+            <a href="#">#смузи</a>
+          </section>
+          <section class="page-companions__info">
+            <h5 class="visually-hidden">Иннформация путешественника</h5>
+            <dl class="page-companions__countries">
+              <dt class="page-companions__subtitle">Хочет посетить:</dt>
+              <dd class="page-companions__country page-companions__country--sri-lanka">Шри Ланка</dd>
+              <dd class="page-companions__country page-companions__country--thailand">Тайланд</dd>
+              <dd class="page-companions__country page-companions__country--seychelles">Сейшелы</dd>
+            </dl>
+            <dl class="companions-card__transports">
+              <dt class="page-companions__subtitle">Транспорт:</dt>
+              <dd class="page-companions__transport-fly page-companions__transport--active">Самолет</dd>
+              <dd class="page-companions__transport-bus">Автобус</dd>
+              <dd class="page-companions__transport-bike">Велосипед</dd>
+              <dd class="companions__card-transport-walk">Пешком</dd>
+            </dl>
+            <div class="companions-card__level">
+              <p class="page-companions__level-number">99</p>
+              <p class="page-companions__level-text">level</p>
+            </div>
+          </section>
+          <button class="btn page-companions__btn" type="button">Позвать!</button>
+        </article>
+        <article class="page-companions__card">
+          <figure class="page-companions__image">
+            <img src="https://via.placeholder.com/285" width="285" height="285" alt="Фото пользователя" />
+            <figcaption>
+              <h4 class="page-companions__name">Петя Демин</h4>
+            </figcaption>
+          </figure>
+          <button class="page-companions__like page-companions__like--active" type="button">Нравится</button>
+          <i class="page-companions__like-count">1500</i>
+          <section class="page-companions__tags">
+            <h5 class="visually-hidden">Теги путешественника</h5>
+            <a href="#">#бургер</a>
+            <a href="#">#бар</a>
+            <a href="#">#футбол</a>
+            <a href="#">#концерт</a>
+            <a href="#">#крафт</a>
+          </section>
+          <section class="page-companions__info">
+            <h5 class="visually-hidden">Иннформация путешественника</h5>
+            <dl class="page-companions__countries">
+              <dt class="page-companions__subtitle">Хочет посетить:</dt>
+              <dd class="page-companions__country page-companions__country--belgium">Бельгия</dd>
+              <dd class="page-companions__country page-companions__country--czech">Чехия</dd>
+            </dl>
+            <dl class="companions-card__transports">
+              <dt class="page-companions__subtitle">Транспорт:</dt>
+              <dd class="page-companions__transport-fly page-companions__transport--active">Самолет</dd>
+              <dd class="page-companions__transport-bus page-companions__transport--active">Автобус</dd>
+              <dd class="page-companions__transport-bike">Велосипед</dd>
+              <dd class="page-companions__transport-walk page-companions__transport--active">Пешком</dd>
+            </dl>
+            <div class="companions-card__level">
+              <p class="page-companions__level-number">80</p>
+              <p class="page-companions__level-text">level</p>
+            </div>
+          </section>
+          <button class="btn page-companions__btn" type="button">Позвать!</button>
+        </article>
+        <article class="page-companions__card">
+          <figure class="page-companions__image">
+            <img src="https://via.placeholder.com/285" width="285" height="285" alt="Фото пользователя" />
+            <figcaption>
+              <h4 class="page-companions__name">Марк Смолов</h4>
+            </figcaption>
+          </figure>
+          <button class="page-companions__like page-companions__like--active" type="button">Нравится</button>
+          <i class="page-companions__like-count">170</i>
+          <section class="page-companions__tags">
+            <h5 class="visually-hidden">Теги путешественника</h5>
+            <a href="#">#рэп</a>
+            <a href="#">#тату</a>
+            <a href="#">#хайпбист</a>
+            <a href="#">#сникеры</a>
+            <a href="#">#суприм</a>
+          </section>
+          <section class="page-companions__info">
+            <h5 class="visually-hidden">Иннформация путешественника</h5>
+            <dl class="page-companions__countries">
+              <dt class="page-companions__subtitle">Хочет посетить:</dt>
+              <dd class="page-companions__country page-companions__country--usa">США</dd>
+              <dd class="page-companions__country page-companions__country--australia">Австарлия</dd>
+              <dd class="page-companions__country page-companions__country--dominica">Доминика</dd>
+            </dl>
+            <dl class="companions-card__transports">
+              <dt class="page-companions__subtitle">Транспорт:</dt>
+              <dd class="page-companions__transport-fly page-companions__transport--active">Самолет</dd>
+              <dd class="page-companions__transport-bus">Автобус</dd>
+              <dd class="page-companions__transport-bike page-companions__transport--active">Велосипед</dd>
+              <dd class="companions__card-transport-walk">Пешком</dd>
+            </dl>
+            <div class="companions-card__level">
+              <p class="page-companions__level-number">25</p>
+              <p class="page-companions__level-text">level</p>
+            </div>
+          </section>
+          <button class="btn page-companions__btn" type="button">Позвать!</button>
+        </article>
+        <article class="page-companions__card">
+          <figure class="page-companions__image">
+            <img src="https://via.placeholder.com/285" width="285" height="285" alt="Фото пользователя" />
+            <figcaption>
+              <h4 class="page-companions__name">Лариса Роговая</h4>
+            </figcaption>
+          </figure>
+          <button class="page-companions__like page-companions__like--active" type="button">Нравится</button>
+          <i class="page-companions__like-count">23</i>
+          <section class="page-companions__tags">
+            <h5 class="visually-hidden">Теги путешественника</h5>
+            <a href="#">#образование</a>
+            <a href="#">#карьера</a>
+            <a href="#">#учеба</a>
+            <a href="#">#линкедин</a>
+          </section>
+          <section class="page-companions__info">
+            <h5 class="visually-hidden">Иннформация путешественника</h5>
+            <dl class="page-companions__countries">
+              <dt class="page-companions__subtitle">Хочет посетить:</dt>
+              <dd class="page-companions__country page-companions__country--united-kingdom">Великобритания</dd>
+              <dd class="page-companions__country page-companions__country--germany">Германия</dd>
+            </dl>
+            <dl class="companions-card__transports">
+              <dt class="page-companions__subtitle">Транспорт:</dt>
+              <dd class="page-companions__transport-fly page-companions__transport--active">Самолет</dd>
+              <dd class="page-companions__transport-bus page-companions__transport--active">Автобус</dd>
+              <dd class="page-companions__transport-bike">Велосипед</dd>
+              <dd class="companions__card-transport-walk">Пешком</dd>
+            </dl>
+            <div class="companions-card__level">
+              <p class="page-companions__level-number">50</p>
+              <p class="page-companions__level-text">level</p>
+            </div>
+          </section>
+          <button class="btn page-companions__btn" type="button">Позвать!</button>
+        </article>
+        <button class="companions-content__more-btn" type="button">Показать еще</button>
+        <div class="companions-content__pagination pagination">
+          <a class="pagination__number" href="#">1</a>
+          <a class="pagination__number" href="#">2</a>
+          <a class="pagination__number" href="#">3</a>
+          <a class="pagination__number" href="#">4</a>
+          <div class="pagination__arrows">
+            <a class="pagination__arrow pagination__arrow--left" href="#"></a>
+            <a class="pagination__arrow pagination__arrow--right" href="#"></a>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrapper">
+      <a class="footer__logo site-logo" href="index.html">Погнали?</a>
+      <div class="footer__socials">
+        <a class="footer__socials-item footer__socials-item--facebook" href="https://facebook.com"></a>
+        <a class="footer__socials-item footer__socials-item--vk" href="https://vk.com"></a>
+        <a class="footer__socials-item footer__socials-item--instagram" href="https://instagram.com"></a>
+      </div>
+      <div class="footer__developer">
+        <p>Разработано<a href="https://htmlacademy.ru" target="_blank">
+            <img src="img/htmlacademy.svg" alt="Логотип Html Academy" width="27" height="34" />
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+aside.companions-content__filter.companions-filter
+
+  h2.companions-filter__title Подбери идеального попутчика
+
+  form.companions-filter__form(action='https://echo.htmlacademy.ru')
+
+    dl.companions-filter__tab-list.filter-tabs
+
+      dt.filter-tabs__title Хобби
+        span :
+        //- mixin companions-filter-input(type, name, text, value)
+          @String type
+          @String name
+          @String text
+          @String value
+          +companions-filter-input('', '', '', '')
+      dd.filter-tabs__item
+        +companions-filter-input('checkbox', 'hobby', 'gym', 'Спортзал')
+        +companions-filter-input('checkbox', 'hobby', 'hookah', 'Кальян')
+        +companions-filter-input('checkbox', 'hobby', 'sofa', 'Диван')
+
+      dt.filter-tabs__title Музыка
+        span :
+      dd.filter-tabs__item
+        +companions-filter-input('checkbox', 'music', 'hard-rock', 'Тяжелый рок')
+        +companions-filter-input('checkbox', 'music', 'russian-rap', 'Русский рэп')
+        +companions-filter-input('checkbox', 'music', 'eurodance', 'Евроденс')
+
+      dt.filter-tabs__title Еда
+        span :
+      dd.filter-tabs__item
+        +companions-filter-input('checkbox', 'food', 'meet', 'Мясоед')
+        +companions-filter-input('checkbox', 'food', 'healthy-food', 'Сидит на ПП')
+        +companions-filter-input('checkbox', 'food', 'vegan', 'Веган-сыроед')
+
+      dt.filter-tabs__title Транспорт
+        span :
+      dd.filter-tabs__item.filter-tabs__item--transport
+        +companions-filter-input('checkbox', 'transport', 'fly', 'Самолет')
+        +companions-filter-input('checkbox', 'transport', 'bus', 'Автобус')
+        +companions-filter-input('checkbox', 'transport', 'bike', 'Велосипед')
+        +companions-filter-input('checkbox', 'transport', 'walk', 'Пешком')
+
+      dt.filter-tabs__title
+      dd.filter-tabs__item.filter-tabs__item--slider
+        // TODO: Придумать реализацию слайдера формы
+
+    button.btn.filter-tabs__form-submit(type='submit') Показать

@@ -28,8 +28,8 @@ mixin companions-card-index(imageLink, level, personName, countries, tags, fly=f
         p.companions__card-level-text level
 
       ul.companions__card-flags
-       each country in countries
-          li.companions__card-flag(class=`companions__card-flag--${country}`)
+       each country, index in countries
+          li.companions__card-flag(class=`companions__card-flag--${index}`)= country
 
       h5.companions__card-person= personName
 
@@ -58,4 +58,59 @@ mixin companions-card-index(imageLink, level, personName, countries, tags, fly=f
         else
            li.companions__card-transport-walk Пешком
 
+mixin companions-filter-input(type, name, value, text)
+  .filter-tabs__input-group
+    input(type= type, name= name, id= value value= value)
+    label(for= value)= text
 
+
+mixin companions-card-page(imageLink, personName, likeCount, tags, countries, level, fly=false, bus=false, bike=false, walk=false)
+  article.page-companions__card
+
+    figure.page-companions__image
+      img(src= imageLink, width='285', height='285', alt='Фото пользователя')
+      figcaption
+        h4.page-companions__name= personName
+
+    button.page-companions__like.page-companions__like--active(type='button') Нравится
+    i.page-companions__like-count= likeCount
+
+    section.page-companions__tags
+      h5.visually-hidden Теги путешественника
+      each tag in tags
+        a(href="#")= tag
+
+    section.page-companions__info
+      h5.visually-hidden Иннформация путешественника
+      dl.page-companions__countries
+        dt.page-companions__subtitle Хочет посетить:
+        each country, index in countries
+          dd.page-companions__country(class=`page-companions__country--${index}`)= country
+
+      dl.companions-card__transports
+        dt.page-companions__subtitle Транспорт:
+        if fly
+          dd.page-companions__transport-fly.page-companions__transport--active Самолет
+        else
+          dd.page-companions__transport-fly Самолет
+
+        if bus
+          dd.page-companions__transport-bus.page-companions__transport--active Автобус
+        else
+          dd.page-companions__transport-bus Автобус
+
+        if bike
+          dd.page-companions__transport-bike.page-companions__transport--active Велосипед
+        else
+          dd.page-companions__transport-bike Велосипед
+
+        if walk
+          dd.page-companions__transport-walk.page-companions__transport--active Пешком
+        else
+          dd.companions__card-transport-walk Пешком
+
+      .companions-card__level
+        p.page-companions__level-number= level
+        p.page-companions__level-text level
+
+    button.btn.page-companions__btn(type='button') Позвать!

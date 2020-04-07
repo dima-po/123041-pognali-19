@@ -1,0 +1,88 @@
+section.companions-content__companions.page-companions
+  h2.visually-hidden Профили путешественников
+
+  //- mixin companions-card-page(imageLink, personName, likeCount, tags, countries, level, fly=false, bus=false, bike=false, walk=false)
+
+      @String imageLink
+      @String personName
+      @String likeCount
+      @Array tags
+      @Object countries
+      @Number level
+
+  +companions-card-page(
+    'https://via.placeholder.com/285',
+    'Таня Фирсова',
+    '1.5 m',
+    ['#ЗОЖ', '#ПП','#Фитнес','#пляж','#авокадо','#смузи'],
+    {
+      'sri-lanka': 'Шри Ланка',
+      'thailand': 'Тайланд',
+      'seychelles': 'Сейшелы'
+    },
+    99,
+    fly=true,
+    bus=false,
+    bike=false,
+    walk=false
+  )
+
+  +companions-card-page(
+    'https://via.placeholder.com/285',
+    'Петя Демин',
+    '1500',
+    ['#бургер','#бар','#футбол','#концерт','#крафт'],
+    {
+      'belgium': 'Бельгия',
+      'czech': 'Чехия'
+    },
+    80,
+    fly=true,
+    bus=true,
+    bike=false,
+    walk=true
+  )
+
+  +companions-card-page(
+    'https://via.placeholder.com/285',
+    'Марк Смолов',
+    '170',
+    ['#рэп','#тату','#хайпбист','#сникеры','#суприм'],
+    {
+      'usa': 'США',
+      'australia': 'Австарлия',
+      'dominica': 'Доминика'
+    },
+    25,
+    fly=true,
+    bus=false,
+    bike=true,
+    walk=false
+  )
+
+  +companions-card-page(
+    'https://via.placeholder.com/285',
+    'Лариса Роговая',
+    '23',
+    ['#образование', '#карьера', '#учеба', '#линкедин'],
+    {
+      'united-kingdom': 'Великобритания',
+      'germany': 'Германия'
+    },
+    50,
+    fly=true,
+    bus=true,
+    bike=false,
+    walk=false
+  )
+
+  button.companions-content__more-btn(type='button') Показать еще
+
+  .companions-content__pagination.pagination
+    a.pagination__number(href='#') 1
+    a.pagination__number(href='#') 2
+    a.pagination__number(href='#') 3
+    a.pagination__number(href='#') 4
+    div.pagination__arrows
+      a.pagination__arrow.pagination__arrow--left(href='#')
+      a.pagination__arrow.pagination__arrow--right(href='#')
