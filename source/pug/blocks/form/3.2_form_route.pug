@@ -1,0 +1,53 @@
+section.step.step-route(id="route")
+  header.add-plan__section-header
+    h2.add-plan__section-title Шаг 2. Маршрут
+    p.add-plan__section-description Укажите страны, которые вы хотели посетить. Это может быть одна или сразу несколько.
+    ul.add-plan__section-list
+      li
+        a(href="#dates") Даты
+      li.add-plan__section-list--active
+        a(href="#route") Маршрут
+      li
+        a(href="#entertaiment") Развлечения
+
+  section.step-route__select-group.select-country
+    h5.visually-hidden Выбор стран
+
+    ul.select-country__item
+      li.select-country__list.select-country__list--selected Босния и Герцеговина
+        i.select-country__item-arrow
+      li.select-country__flag.select-country__flag--bosnia Босния и Герцеговина
+      button.select-country__delete-btn(type="button") Кнопка удалить страну
+
+    ul.select-country__item
+      li.select-country__list.select-country__list--selected Чехия
+        i.select-country__item-arrow
+      li.select-country__flag.select-country__flag--czech Чехия
+      button.select-country__delete-btn(type="button") Кнопка удалить страну
+
+    ul.select-country__item
+      li.select-country__list.select-country__list--choose Выберите страну
+        i.select-country__item-arrow
+        button.select-country__close-dropdown(type="button") Закрыть дропдаун меню
+
+        - const countryLetters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ч', 'Ш', 'Э', 'Ю', 'Я'];
+        - const countryList = ['Австралия', 'Австрия', 'Азербайджан', 'Албания', 'Алжир', 'Ангола', 'Андорра', 'Антигуа и Барбуда', 'Аргентина', 'Армения', 'Афганистан'];
+
+        div.select-country__dropdown
+          ul.select-country__dropdown-letters
+            each letter in countryLetters
+              li= letter
+
+          ul.select-country__dropdown-countries
+            each country in countryList
+              li= country
+
+        button.select-country__delete-btn(type="button") Кнопка удалить
+
+    ul.select-country__item
+      li.select-country__list.select-country__list--add Добавить страну
+        i.select-country__item-plus
+
+  a.add-plan__btn.add-plan__btn--next(href="#entertaiment") Следующий шаг
+  a.add-plan__btn.add-plan__btn--prev(href="#dates") На шаг назад
+

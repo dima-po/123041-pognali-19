@@ -1,0 +1,91 @@
+section.step.step-dates(id="dates")
+  header.add-plan__section-header
+    h2.add-plan__section-title Шаг 1. Даты пребывания
+    p.add-plan__section-description Укажите предпочтительное количество попутчиков, которых вы хотели бы позвать в поездку и ее предполагаемую длительность.
+    ul.add-plan__section-list
+      li.add-plan__section-list--active
+        a(href="#dates") Даты
+      li
+        a(href="#route") Маршрут
+      li
+        a(href="#entertaiment") Развлечения
+
+  div.step__input-group
+    label.step__input-label(for="companions-count") Ищу попутчиков:
+    p.step__input-subtitle Чел.
+    div.step__input
+      button.step__input-minus(type="button") Уменьшить
+      input.step__input-field(type="text" name="companions-count" id="companions-count" value="2")
+      button.step__input-plus(type="button") Увеличить
+
+  div.step__input-group
+    label.step__input-label(for="duration-count") Длительность:
+    p.step__input-subtitle Дн.
+    div.step__input
+      button.step__input-minus(type="button") Уменьшить
+      input.step__input-field(type="text" name="duration-count" id="duration-count" value="2")
+      button.step__input-plus(type="button") Увеличить
+
+  div.step__checkbox-group
+    input.step__input-checkbox(type="checkbox" name="children-allow" id="children-allow")
+    label.step__checkbox-label(for="children-allow") Можно с детьми
+
+  section.step-dates__calendar.calendar
+    h5.visually-hidden Календарь
+
+    div.calendar__month
+      button.calendar__month-prev(type="button") Предыдущий месяц
+      b.calendar__month-current Март 2019
+      button.calendar__month-next(type="button") Следующий месяц
+
+    - const weekDays = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+    - var prevMonth = 23;
+    - var currentMonth = 2;
+    - var nextMonth = 2;
+
+    table.calendar__table
+      tr
+        each weekDay in weekDays
+          if weekDay === 'Сб' || weekDay === 'Вс'
+            th.calendar__table-weekend= weekDay
+          else
+            th.calendar__table-weekeday= weekDay
+      tr
+        while prevMonth <= 28
+          td= prevMonth++
+        td 1 мар
+
+      tr
+        while currentMonth <= 8
+          td= currentMonth++
+
+      tr
+        while currentMonth <= 15
+          td= currentMonth++
+
+      tr
+        while currentMonth <= 22
+          td= currentMonth++
+
+      tr
+        while currentMonth <= 29
+          if currentMonth === 26
+            td.calendar__table-reservation= currentMonth++
+              span Заезд
+          if currentMonth === 27
+            td.calendar__table-reservation= currentMonth++
+          if currentMonth === 28
+            td.calendar__table-reservation= currentMonth++
+              span Выезд
+          else
+            td= currentMonth++
+
+      tr
+        while currentMonth <= 31
+          td= currentMonth++
+
+        td 1 апр
+
+        while nextMonth <= 5
+          td= nextMonth++
+  a.add-plan__btn.add-plan__btn--next(href="#route") Следующий шаг
