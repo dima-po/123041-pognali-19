@@ -1,0 +1,21 @@
+section.destanation
+  .wrapper
+    .destanation__content
+      h2.destanation__title Направления
+      p.destanation__description Мы не продаем туры и ничего не рекламируем. Люди сами пишут о странах, куда хотели бы отправиться и чем можно там заняться.
+
+    //- destination-card(title, subtitle, people, modificator, imageLink='link')
+      Если нет ссылки на изображение, будет использоваться ссылка по умолчанию https://via.placeholder.com/186x140
+
+      @String title
+      @String subtitle
+      @Number people
+      @String modificator
+      @String imageLink
+
+    .destanation__cards
+      +destination-card('Таиланд', 'Джунгли зовут!', 18321, 'thailand')
+      +destination-card('Франция', 'Трэ бьен, манифик!', 12518, 'france')
+      +destination-card('Чехия', 'Закоулки старой Европы', 5326, 'czech')
+
+    a.btn.btn--section(href='catalog.html') Показать все
