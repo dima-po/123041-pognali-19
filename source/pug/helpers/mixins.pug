@@ -114,3 +114,17 @@ mixin companions-card-page(imageLink, personName, likeCount, tags, countries, le
         p.page-companions__level-text level
 
     button.btn.page-companions__btn(type='button') Позвать!
+
+
+mixin companions-country-filter-letters(region)
+  dl.companions-country-filter__tab
+    dt.companions-country-filter__tab-title= region
+    dd.companions-country-filter__content
+      - const countryLetters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ч', 'Ш', 'Э', 'Ю', 'Я'];
+      ul.companions-country-filter__letters-list
+        each letter in countryLetters
+          li= letter
+      - const countryList = ['Австралия', 'Австрия', 'Азербайджан', 'Албания', 'Алжир', 'Ангола', 'Андорра', 'Антигуа и Барбуда', 'Аргентина', 'Армения'];
+      ul.companions-country-filter__letters-list
+        each country in countryList
+          li= country
