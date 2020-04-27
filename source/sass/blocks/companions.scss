@@ -1,0 +1,342 @@
+.companions {
+  position: relative;
+  margin-top: -25px;
+  padding-top: 97px;
+  padding-bottom: 30px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+
+  background-image: url("../img/smolov-back-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-size: 45%;
+  background-position: 153px 64px;
+  background-color: $color-dark-blue-alt;
+  z-index: 4;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 65px;
+    left: -20px;
+    @include size(132px);
+    border-radius: 20px;
+    background-color:#141b3b;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 335px;
+    left: -10px;
+    @include size(71px);
+    background-image: url("../img/rogovaya-back-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+}
+
+.companions__content {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-bottom: 60px;
+}
+
+.companions__description {
+  color: #fff;
+}
+
+.companions__tagline {
+  font-weight: 700;
+  color: #fff;
+}
+
+
+.companions__cards {
+
+}
+
+.companions__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.companions__card-image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+}
+
+.companions__card-level {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  @include size(60px);
+  border-radius: 50%;
+  background-color: rgba(#000000, 0.5);
+}
+
+.companions__card-level-progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.35);
+
+  circle {
+    fill: none;
+    stroke: #ff8d30;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    stroke-dashoffset: 60;
+    transform: rotate(-90deg);
+    transform-origin: center;
+  }
+
+  &--80 {
+
+    circle {
+      stroke-dasharray: 245;
+    }
+  }
+
+  &--99 {
+
+    circle {
+      stroke-dasharray: 268;
+    }
+  }
+}
+
+
+.companions__card-level-number {
+  border-bottom: 1px solid rgba(#ffffff, 0.3);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #fff;
+}
+
+.companions__card-level-text {
+  font-size: 14px;
+  line-height: 14px;
+  color: #fff;
+}
+
+
+.companions__card-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -10px;
+  padding-right: 35px;
+  padding-bottom: 16px;
+  padding-left: 35px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #fff;
+}
+
+
+.companions__card-flags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  @include reset-list;
+}
+
+.companions__card-flag {
+  @include hide-text;
+  @include size(35px, 24px);
+  background-color: grey;
+
+  &:not(:last-child) {
+    margin-right: 19px;
+  }
+}
+
+.companions__card-person {
+  position: relative;
+  display: inline-block;
+  margin-top: 26px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 21px;
+  color: $color-dark-blue-slate;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active,
+  &:focus {
+    opacity: 0.3;
+  }
+}
+
+.companions__card-person-status {
+  position: absolute;
+  top: 50%;
+  left: -13px;
+  @include size(5px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  &--offline {
+    background-color: #f97676;
+  }
+
+  &--online {
+    background-color: #81e31e;
+  }
+}
+
+
+.companions__card-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+
+  a {
+    margin-right: 3px;
+    line-height: 20px;
+    color: $color-grey;
+    text-decoration: none;
+
+    &:hover {
+      color: lighten($color-grey, 30%);
+    }
+
+    &:active,
+    &:focus {
+      color: lighten($color-grey, 50%);
+    }
+  }
+}
+
+.companions__card-transports {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include reset-list;
+  margin-top: 10px;
+}
+
+.companions__card-transport {
+  position: relative;
+  @include size(33px);
+  @include hide-text;
+
+  &::before {
+    content: '';
+    display: block;
+    @include size(100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.15;
+  }
+
+  &--plane {
+
+    &::before {
+      background-image: url("../img/plane.svg");
+      background-size: 19px 21px;
+    }
+  }
+
+  &--bus {
+
+    &::before {
+      background-image: url("../img/bus.svg");
+      background-size: 17px 21px;
+    }
+  }
+
+  &--bike {
+
+    &::before {
+      background-image: url("../img/bike.svg");
+      background-size: 24px 21px;
+    }
+  }
+
+  &--run {
+
+    &::before {
+      background-image: url("../img/run.svg");
+      background-size: 20px 21px;
+    }
+  }
+
+  &--available {
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  // &:first-child::after {
+  //   content: attr(data-tooltip);
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   font-size: 20px;
+  //   color: #fff;
+  //   background-color: #101d41;
+  // }
+
+  &:hover .companions__card-transport-tooltip {
+    display: block;
+  }
+}
+
+.companions__card-transport-tooltip {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: -75px;
+  z-index: 10;
+  padding: 20px 23px;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #fff;
+  background-color: #101d41;
+  transform: translateX(-50%);
+  border-radius: 4px;
+
+  &::before {
+    content: '';
+    display: block;
+    @include size(0);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #101d41;
+    transform: translateX(-50%);
+  }
+}
+
+
+.companions__btn {
+  margin-top: 18px;
+}

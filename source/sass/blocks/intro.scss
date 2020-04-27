@@ -1,0 +1,181 @@
+.intro {
+  padding-top: 39px;
+  padding-bottom: 39px;
+  background-image: url("../img/globe-back-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 46%;
+  background-position: top;
+  background-color: #192144;
+  overflow: hidden;
+}
+
+.intro__wrapper {
+  position: relative;
+  z-index: 1;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 135px;
+    right: 50px;
+    z-index: -1;
+    width: 192px;
+    height: 255px;
+    background-image: url("../img/traveller-illustration-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.intro__caption {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.intro__contacts {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 246px;
+  z-index: 5;
+}
+
+.intro__contacts-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include size(40px);
+  border-radius: 50%;
+  @include hide-text;
+
+  svg {
+    @include size(18px);
+  }
+
+  &:nth-child(1) {
+    background-color: $color-darkgold;
+  }
+
+  &:nth-child(2) {
+    background-color: $color-gold;
+  }
+
+  &:nth-child(1):hover {
+    background-color: #f26926;
+  }
+
+  &:nth-child(2):hover {
+    background-color: $color-darkgold;
+  }
+
+  &:nth-child(1):focus,
+  &:nth-child(1):active,
+  &:nth-child(2):focus,
+  &:nth-child(2):active {
+
+    svg {
+      opacity: 0.3;
+    }
+  }
+
+}
+
+.intro__contacts-btn {
+  padding: 10px 40px;
+  border-radius: 40px;
+  font-weight: 700;
+  background-color: $color-lightgold;
+  color: $color-dark-blue;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $color-gold;
+  }
+
+  &:active,
+  &:focus {
+    color: rgba($color-dark-blue, 0.3);
+  }
+}
+
+
+.intro__review {
+  position: relative;
+  margin-top: 25px;
+  padding-left: 25px;
+  font-size: 16px;
+  color: #fff;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -45px;
+    left: -100%;
+    right: -100%;
+    bottom: 0;
+    background-color: #192144;
+    z-index: -1;
+  }
+}
+
+.intro__review-text {}
+
+.intro__review-author {
+  font-weight: 700;
+}
+
+.intro__steps {
+  @include reset-list;
+  margin-top: 50px;
+  counter-reset: steps-list;
+}
+
+.intro__steps-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -15px;
+  padding-top: 19px;
+  padding-right: 23px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 10px;
+  color: $color-dark-blue;
+
+  &:after {
+    counter-increment: steps-list;
+    content: counter(steps-list);
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 40px;
+  }
+
+  &:nth-child(1) {
+    background-color: $color-darkgold ;
+  }
+
+  &:nth-child(2) {
+    background-color: $color-darkgold-alt;
+  }
+
+  &:nth-child(3) {
+    background-color: $color-gold ;
+  }
+
+  &:nth-child(4) {
+    background-color: $color-lightgold;
+  }
+}

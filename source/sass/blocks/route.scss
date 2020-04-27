@@ -1,0 +1,46 @@
+.route {
+  position: relative;
+  margin-top: -28px;
+  padding-top: 60px;
+  padding-bottom: 37px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  background-color: $color-lightgold;
+  z-index: 1;
+}
+
+.route__content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.route__address {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #192144;
+  margin-bottom: 30px;
+}
+
+.route__address-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background-color: #121936;
+  border-radius: 50%;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: $color-lightgold;
+  }
+}
+
+.route__address-text {
+  margin-left: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}

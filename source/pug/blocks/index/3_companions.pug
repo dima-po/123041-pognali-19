@@ -2,10 +2,10 @@ section.companions
   .wrapper
 
     .companions__content
-      h2.companions__title Попутчики
+      h2.section-caption.companions__caption Попутчики
       p.companions__description
         | Все мы индивидуальны и у каждого свой взгляд на идеальный отдых. Одному нужен пляж и коктейль, а другому маршрут для хайкинга.
-      p.companions__tagline А если найдете кого-то близкого по духу — скорее зовите в совместный трип!
+      p.companions__tagline Теперь можно легко найти единомышленников!
 
     //- mixin companions-card(imageLink, level, personName, countries, tags)
 
@@ -15,35 +15,38 @@ section.companions
       @Object countries
       @Array tags
 
-    +companions-card-index(
-      'https://via.placeholder.com/285',
-      99,
-      'Таня Фирсова',
-      {
-        'sri-lanka': 'Шри Ланка',
-        'thailand': 'Тайланд',
-        'seychelles': 'Сейшелы'
-      },
-      ['#ЗОЖ', '#ПП', '#Фитнес', '#пляж', '#авокадо', '#смузи'],
-      fly=true,
-      bus=false,
-      bike=false,
-      walk=false
-    )
+    .companions__cards
+      +companions-card-index(
+        'img/firsova-desktop@1x.jpg',
+        99,
+        'Таня Фирсова',
+        'offline',
+        {
+          'sri-lanka': 'Шри Ланка',
+          'thailand': 'Тайланд',
+          'seychelles': 'Сейшелы'
+        },
+        ['#ЗОЖ', '#ПП', '#Фитнес', '#пляж', '#авокадо', '#смузи'],
+        fly=true,
+        bus=false,
+        bike=false,
+        walk=false
+      )
 
-    +companions-card-index(
-      'https://via.placeholder.com/285',
-      80,
-      'Петя Демин',
-      {
-        'germany': 'Германия',
-        'czech': 'Чехия'
-      },
-      ['#бургер', '#бар', '#футбол', '#концерт', '#крафт'],
-      fly=true,
-      bus=true,
-      bike=false,
-      walk=true
-    )
+      +companions-card-index(
+        'img/demin-desktop@1x.jpg',
+        80,
+        'Петя Демин',
+        'online',
+        {
+          'germany': 'Германия',
+          'czech': 'Чехия'
+        },
+        ['#бургер', '#бар', '#футбол', '#концерт', '#крафт'],
+        fly=true,
+        bus=true,
+        bike=false,
+        walk=true
+      )
 
-    a.btn.btn--section(href='catalog.html') Показать всех
+    a.section-btn.companions__btn(href='catalog.html') Показать всех

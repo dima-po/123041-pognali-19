@@ -1,0 +1,178 @@
+.registration {
+  position: relative;
+  margin-top: -30px;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  text-align: center;
+  background-color: $color-dark-blue-alt;
+  z-index: 2;
+}
+
+.registration__caption {
+  margin-bottom: 20px;
+}
+
+.registration__description {
+  margin-top: 5px;
+  line-height: 22px;
+  color: #fff;
+}
+
+.registration__description a {
+  color: $color-lightgold;
+
+  &:hover {
+    color: $color-darkgold;
+  }
+
+  &:active,
+  &:focus {
+    color: rgba($color-darkgold, 0.3);
+  }
+}
+
+.registration__form {
+  position: relative;
+  margin-top: 30px;
+}
+
+.registration__email {
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 17px;
+  padding-left: 22px;
+  border: 4px solid transparent;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #fff;
+
+  &::placeholder {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    color: rgba($color-grey, 0.3);
+  }
+
+  &:hover {
+    background-color: #edeff6;
+
+    &::placeholder {
+      color: rgba($color-grey, 0.5);
+    }
+  }
+
+  &:active,
+  &:focus {
+    border-color: #fff;
+    background-color: transparent;
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+
+  &--error {
+    border-color: transparent;
+    background-color: #ffefef;
+
+    &::placeholder {
+      color: #ff0000;
+    }
+  }
+}
+
+.registration__form-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include size(60px, 62px);
+  background-color: $color-lightgold;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  @include hide-text;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 14px;
+    border-left: 10px solid #1d2e5b;
+    border-bottom: 7px solid transparent;
+    border-top: 7px solid transparent;
+  }
+
+  &:hover {
+    background-color: $color-gold;
+  }
+
+  &:active,
+  &:focus {
+
+    &::before {
+      border-left-color: rgba(#1d2e5b, 0.3);
+    }
+
+  }
+
+}
+
+.registration__contacts {
+  margin-top: 18px;
+}
+
+.registration__contacts-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $color-lightgold;
+
+  &:hover {
+    color: $color-gold;
+
+    svg {
+      fill: $color-gold;
+    }
+  }
+
+  &:active,
+  &:focus {
+    opacity: 0.3;
+  }
+}
+
+.registration__contacts-link-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background-color: #121936;
+  border-radius: 50%;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: $color-lightgold;
+  }
+}
+
+.registration__contacts-link-text {
+  margin-left: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.registration__tagline {
+  margin: 0;
+  margin-top: 27px;
+  line-height: 22px;
+  color: #fff;
+}

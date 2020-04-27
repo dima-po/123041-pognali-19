@@ -1,62 +1,86 @@
-mixin destination-card(title, subtitle, people, modificator, imageLink='https://via.placeholder.com/270')
+mixin destination-card(country, description, people, modificator, imageLink='https://via.placeholder.com/270')
   if modificator
-    article.destanation__card-item(class=`destanation__card-item--${modificator}`)
-    h4.destanation__card-title= title
-    p.destanation__card-subtitle= subtitle
-    p.destanation__card-people= people
-    figure.destanation__card-image
-      img(src= imageLink, width='186', height='140', alt='Изображение карточки направления')
+    article.destanation__card
+      picture.destanation__card-image
+        img(src= imageLink, width='270', height='110', alt='Изображение карточки направления')
+      .destanation__card-country(class=`destanation__card-country--${modificator}`)
+        h4.destanation__card-country-name= country
+        span.destanation__card-country-description= description
+        span.destanation__card-country-people= people
 
   else
-    article.destanation__card-item
-    h4.destanation__card-title= title
-    p.destanation__card-subtitle= subtitle
-    p.destanation__card-people= people
-    figure.destanation__card-image
-      img(src= image, width='186', height='140', alt='Изображение карточки направления')
+    article.destanation__card
+      figure.destanation__card-image
+        img(src= image, width='270', height='110', alt='Изображение карточки направления')
+      .destanation__card-country
+        h4.destanation__card-country-name= country
+        span.destanation__card-country-description= description
+        span.destanation__card-country-people= people
 
 
 
-mixin companions-card-index(imageLink, level, personName, countries, tags, fly=false, bus=false, bike=false, walk=false)
+mixin companions-card-index(imageLink, level, personName, status, countries, tags, plane=false, bus=false, bike=false, run=false)
   article.companions__card
 
-      figure.companions__card-image
+      picture.companions__card-image
         img(src= imageLink, width='285', height='285', alt='Изображение карточки направления')
 
       .companions__card-level
-        p.companions__card-level-number= level
-        p.companions__card-level-text level
+        //- .companions__card-level-circle
+        svg.companions__card-level-progress(viewBox='0 0 100 100' class=`companions__card-level-progress--${level}`)
+          circle(cx='50', cy='50', r='35.5')
+        span.companions__card-level-number= level
+        span.companions__card-level-text level
 
-      ul.companions__card-flags
-       each country, index in countries
-          li.companions__card-flag(class=`companions__card-flag--${index}`)= country
+      .companions__card-content
 
-      h5.companions__card-person= personName
+        ul.companions__card-flags
+          each country, index in countries
+              li.companions__card-flag(class=`companions__card-flag--${index}`)= country
 
-      section.companions__card-tags
-        each tag in tags
-          a(href="#")= tag
+        a.companions__card-person(href="#")
+          if status === 'online'
+            span.companions__card-person-status.companions__card-person-status--online= Online
+          else
+            span.companions__card-person-status.companions__card-person-status--offline= Offline
 
-      ul.companions__card-transports
-        if fly
-          li.companions__card-transport-fly.companions__card-transport--active Самолет
-        else
-           li.companions__card-transport-fly Самолет
+          span.companions__card-person-name= personName
 
-        if bus
-          li.companions__card-transport-bus.companions__card-transport--active Автобус
-        else
-           li.companions__card-transport-bus Автобус
+        section.companions__card-tags
+          h5.visually-hidden Теги попутчика
+          each tag in tags
+            a(href="#")= tag
 
-        if bike
-          li.companions__card-transport-bike.companions__card-transport--active Велосипед
-        else
-           li.companions__card-transport-bike Велосипед
+        ul.companions__card-transports
+          if plane
+            li.companions__card-transport.companions__card-transport--plane.companions__card-transport--available Авиаперелет
+              span.companions__card-transport-tooltip Авиаперелет
+          else
+            li.companions__card-transport.companions__card-transport--plane Авиаперелет
+              span.companions__card-transport-tooltip Авиаперелет
 
-        if walk
-          li.companions__card-transport-walk.companions__card-transport--active Пешком
-        else
-           li.companions__card-transport-walk Пешком
+          if bus
+            li.companions__card-transport.companions__card-transport--bus.companions__card-transport--available Автотранспорт
+              span.companions__card-transport-tooltip Автотранспорт
+          else
+            li.companions__card-transport.companions__card-transport--bus Автотранспорт
+              span.companions__card-transport-tooltip Автотранспорт
+
+          if bike
+            li.companions__card-transport.companions__card-transport--bike.companions__card-transport--available Велосипед
+              span.companions__card-transport-tooltip Велосипед
+          else
+            li.companions__card-transport.companions__card-transport--bike Велосипед
+              span.companions__card-transport-tooltip Велосипед
+
+          if run
+            li.companions__card-transport.companions__card-transport--run.companions__card-transport--available Пешком
+              span.companions__card-transport-tooltip Пешком
+          else
+            li.companions__card-transport.companions__card-transport--run Пешком
+              span.companions__card-transport-tooltip Пешком
+
+
 
 mixin companions-filter-input(type, name, value, text)
   .filter-tabs__input-group

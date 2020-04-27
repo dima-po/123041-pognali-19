@@ -1,0 +1,32 @@
+.service {
+  position: relative;
+  z-index: 6;
+  padding-top: 29px;
+  padding-bottom: 67px;
+  background-image: url("../img/about-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-color: $color-dark-blue-alt;
+  background-position: center;
+  background-size: contain;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
+
+.service__content {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.service__description {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #fff;
+}
+
+.service__tagline {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #fff;
+}

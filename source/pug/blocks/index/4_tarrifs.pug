@@ -1,19 +1,23 @@
 section.tariffs
-  .wrapper
+  .wrapper.tariffs__wrapper
+    h2.section-caption.tariffs__caption
+      | Добавьте
+      br
+      | свой
+      br
+      | профиль
 
-    h2.tariffs__title Добавьте свой профиль
+    ol.tariffs__table
+      li.tariffs__table-item.tariffs__table-item--first
+          span.tariffs__table-tarrif-name Базовое размещение
+          span.tariffs__table-price Беслпатно
 
-    ol.tariffs-table
-      li.tariffs-table__item.tariffs-table__item--first
-          p.tariffs-table__title Базовое размещение
-          p.tariffs-table__cost Беслпатно
+      li.tariffs__table-item.tariffs__table-item--second
+          span.tariffs__table-tarrif-name Вывод на первых позициях
+          span.tariffs__table-price 99 руб./мес
 
-      li.tariffs-table__item.tariffs-table__item--second
-          p.tariffs-table__title Вывод на первых позициях
-          p.tariffs-table__cost 99 руб./мес
+      li.tariffs__table-item.tariffs__table-item--third
+          span.tariffs__table-tarrif-name Кастомный цвет карточки
+          span.tariffs__table-price 59 руб./мес
 
-      li.tariffs-table__item.tariffs-table__item--third
-          p.tariffs-table__title Кастомный цвет карточки
-          p.tariffs-table__cost 59 руб./мес
-
-    a.tariffs__btn(type='button') Показать тарифы для бизнеса
+    a.tariffs__btn(href="#") Показать тарифы для бизнеса

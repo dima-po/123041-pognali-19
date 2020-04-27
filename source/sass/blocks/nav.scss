@@ -1,0 +1,130 @@
+.nav {
+  // display: none;
+}
+
+.nav__list {
+  @include reset-list;
+
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.nav__item {
+  overflow: hidden;
+}
+
+.nav__link {
+  position: relative;
+  display: block;
+  color: #192144;
+  text-decoration: none;
+  transition: transform 0.3s;
+
+  &::after {
+    content: attr(data-hover);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    right: 0;
+    color: $color-lightgold;
+    transform: translate3d(0,0,0);
+  }
+
+  &:hover, &:focus {
+    // color: $color-yellow;
+    transform: translateY(-100%);
+  }
+
+  &:active {
+    color: rgba($color-lightgold, 0.3);
+  }
+
+}
+
+.nav__contacts {
+  margin-top: 58px;
+}
+
+.nav__contacts-btn {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  border-radius: 40px;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-dark-blue;
+  background-color: $color-lightgold;
+
+  &:hover {
+    background-color: $color-gold;
+  }
+
+  &:active, &:focus {
+    color: rgba($color-dark-blue, 0.3);
+  }
+}
+
+.nav__contacts-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav__contacts-link-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background-color: #121936;
+  border-radius: 50%;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: $color-lightgold;
+  }
+}
+
+.nav__contacts-link-text {
+  margin-left: 16px;
+  color: #192144;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nav__socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 42px;
+}
+
+.nav__socials-link {
+  @include hide-text;
+
+
+  &--facebook {
+    @include size(11px, 21px);
+  }
+
+  &--vk {
+    @include size(23px, 12px);
+  }
+
+  &--instagram {
+    @include size(18px);
+  }
+
+
+  &:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+
