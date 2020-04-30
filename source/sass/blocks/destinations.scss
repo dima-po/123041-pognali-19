@@ -20,7 +20,8 @@
 }
 
 
-.destanation__cards {}
+.destanation__cards {
+}
 
 .destanation__card {
   display: flex;
@@ -28,6 +29,10 @@
   margin-bottom: 10px;
   border-radius: 10px;
   overflow: hidden;
+
+  &:last-child &-country {
+    background: linear-gradient(to bottom,#fff 0%,#f6f6f6 60%,#edeff6 100%);
+  }
 }
 
 .destanation__card-country {
@@ -48,10 +53,6 @@
     @include size(35px, 24px);
     background-size: contain;
     background-repeat: no-repeat;
-  }
-
-  &:last-child {
-    background: linear-gradient(to bottom,#fff 0%,#f6f6f6 60%,#edeff6 100%);
   }
 
   &--thailand::before {

@@ -1,15 +1,32 @@
 .nav {
-  // display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1001;
+  display: none;
+  flex-direction: column;
+  padding: 40px 0;
+  background-color: #ffffff;
+
+  &--opened {
+    display: flex;
+    top: 50px;
+  }
+}
+
+.nav__wrapper {
+  width: $mobile-width;
+  margin: 0 auto;
+  padding: 0 25px;
 }
 
 .nav__list {
-  @include reset-list;
-
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 1.2;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-transform: uppercase;
+  @include reset-list;
 }
 
 .nav__item {
@@ -19,6 +36,9 @@
 .nav__link {
   position: relative;
   display: block;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2;
   color: #192144;
   text-decoration: none;
   transition: transform 0.3s;
@@ -45,13 +65,14 @@
 }
 
 .nav__contacts {
-  margin-top: 58px;
+  margin-top: 52px;
 }
 
-.nav__contacts-btn {
+.nav__contacts-auth-btn {
   display: block;
   width: 100%;
-  padding: 18px;
+  margin-bottom: 52px;
+  padding: 13px;
   border-radius: 40px;
   font-size: 17px;
   font-weight: 700;
@@ -128,3 +149,83 @@
   }
 }
 
+
+
+
+@media only screen and (min-width: $tablet-width) {
+
+  .nav {
+    padding: 90px 0 90px 55px;
+
+    &--opened {
+      top: 89px;
+    }
+  }
+
+  .nav__wrapper {
+    width: $tablet-width;
+    padding: 0 40px;
+  }
+
+  .nav__list {
+    align-items: start;
+  }
+
+
+
+  .nav__link {
+    font-size: 60px;
+    line-height: 71px;
+  }
+
+  .nav__contacts-auth-btn {
+    display: none;
+  }
+}
+
+
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .nav {
+    position: relative;
+    display: flex;
+    margin-left: 40px;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__wrapper {
+    width: auto;
+    padding: initial;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &::before {
+      content: '';
+      display: block;
+      @include size(60px, 2px);
+      margin-right: 45px;
+      background-color: #ffffff;
+    }
+  }
+
+  .nav__contacts,
+  .nav__socials {
+    display: none;
+  }
+
+  .nav__item:not(:last-child) {
+    margin-right: 36px;
+  }
+
+  .nav__link {
+    font-size: 20px;
+    color: #ffffff;
+  }
+}

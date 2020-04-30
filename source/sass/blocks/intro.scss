@@ -1,6 +1,5 @@
 .intro {
-  padding-top: 39px;
-  padding-bottom: 39px;
+  padding: 40px 0;
   background-image: url("../img/globe-back-mobile@1x.jpg");
   background-repeat: no-repeat;
   background-size: 100% 46%;
@@ -132,6 +131,8 @@
 }
 
 .intro__steps {
+  display: flex;
+  flex-direction: column;
   @include reset-list;
   margin-top: 50px;
   counter-reset: steps-list;
@@ -177,5 +178,84 @@
 
   &:nth-child(4) {
     background-color: $color-lightgold;
+  }
+}
+
+
+@media only screen and (min-width: $tablet-width) {
+
+  .intro__caption {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .intro__contacts {
+    display: none;
+  }
+
+  .intro__review {
+
+  }
+
+  .intro__review-text {
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .intro__review-author {
+    font-size: 21px;
+    line-height: 25px;
+  }
+
+  .intro__steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .intro__steps-item {
+    width: 50%;
+  }
+}
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .intro__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .intro__caption {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .intro__contacts {
+    display: none;
+  }
+
+  .intro__review {
+
+  }
+
+  .intro__review-text {
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .intro__review-author {
+    font-size: 21px;
+    line-height: 25px;
+  }
+
+  .intro__steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .intro__steps-item {
+    width: 25%;
   }
 }
