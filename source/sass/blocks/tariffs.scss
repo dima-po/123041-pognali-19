@@ -1,0 +1,94 @@
+.tariffs {
+  position: relative;
+  margin-top: -30px;
+  padding-top: 78px;
+  padding-bottom: 37px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  background-color: $color-light-blue;
+  z-index: 3;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 65px;
+    right: 25px;
+    @include size(99px);
+    background-image: url("../img/rates@1x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+  }
+}
+
+.tariffs__wrapper {
+  padding-left: 50px;
+}
+
+.tariffs__caption {
+  margin-bottom: 44px;
+}
+
+.tariffs__table {
+  width: 200px;
+  @include reset-list;
+  counter-reset: tarrif-list;
+}
+
+.tariffs__table-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(#000000, 0.05);
+  color: $color-grey;
+
+  &::before {
+    counter-increment: tarrif-list;
+    content: counter(tarrif-list);
+    position: absolute;
+    top: 5px;
+    right: -45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include size(34px);
+    border-radius: 50%;
+    color: #fff;
+  }
+
+  &:first-child {
+    border-top: 1px solid rgba(#000000, 0.05);
+  }
+
+  &--first::before {
+    background-color: $color-darkgold-alt;
+  }
+
+  &--second::before {
+    background-color: $color-gold;
+  }
+
+  &--third::before {
+    background-color: $color-lightgold;
+  }
+}
+
+.tariffs__btn {
+  display: block;
+  margin-top: 25px;
+  font-weight: 700;
+  color: $color-dark-blue-alt;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active,
+  &:focus {
+    opacity: 0.3;
+  }
+}

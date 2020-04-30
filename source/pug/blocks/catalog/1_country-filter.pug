@@ -1,1 +1,11 @@
 section.companions-country-filter
+  h2.companions-country-filter__title Фильтрация по странам
+  button.companions-country-filter__open-btn(type="button") Открыть фильтр
+  button.companions-country-filter__close-btn.companions-country-filter__close-btn--top(type="button") Закрыть фильтр
+
+  +companions-country-filter-letters('Европа')
+  +companions-country-filter-letters('Азия')
+  +companions-country-filter-letters('Америка')
+  +companions-country-filter-letters('Острова')
+
+  button.companions-country-filter__close-btn.companions-country-filter__close-btn--bottom(type="button") Свернуть

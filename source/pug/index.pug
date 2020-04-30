@@ -9,6 +9,9 @@ block content
   include blocks/header
 
   main.site-content
+    h1.visually-hidden Сервис по поиску попутчиков "Погнали"
+    //- Слайдер
+    include blocks/index/0_intro
 
     //- Сервис
     include blocks/index/1_service
@@ -25,8 +28,11 @@ block content
     //- Регистрация / Авторизация
     include blocks/index/5_registration
 
+    //- Маршрут
+    include blocks/index/6_route
+
     //- Карта
-    include blocks/index/6_map
+    include blocks/index/7_map
 
   //- Футер сайта
   include blocks/footer.pug

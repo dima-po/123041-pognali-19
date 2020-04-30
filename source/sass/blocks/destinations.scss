@@ -1,0 +1,101 @@
+.destanation {
+  position: relative;
+  z-index: 5;
+  margin-top: -25px;
+  padding-top: 97px;
+  padding-bottom: 28px;
+  background-color: $color-light-blue;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
+
+.destanation__content {
+  margin-bottom: 58px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.destanation__description {
+  color: $color-grey;
+}
+
+
+.destanation__cards {}
+
+.destanation__card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.destanation__card-country {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  margin-top: -17px;
+  padding: 24px;
+  border-radius: 10px;
+  background-color: #fff;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 25px;
+    @include size(35px, 24px);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:last-child {
+    background: linear-gradient(to bottom,#fff 0%,#f6f6f6 60%,#edeff6 100%);
+  }
+
+  &--thailand::before {
+    background-image: url("../img/flag-thailand.svg");
+  }
+
+  &--france::before {
+    background-image: url("../img/flag-france.svg");
+  }
+
+  &--czech::before {
+    background-image: url("../img/flag-czech.svg");
+  }
+}
+
+.destanation__card-country-name {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.destanation__card-country-description {
+  width: 100%;
+  order: 1;
+  color: rgba($color-grey, 0.3);
+}
+
+.destanation__card-country-people {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  color: rgba($color-grey, 0.3);
+
+  &::before {
+    content: '';
+    display: block;
+    @include size(11px);
+    margin-right: 8px;
+    background-image: url("../img/user.svg");
+    opacity: 0.1;
+  }
+}
+
+.destanation__btn {
+  margin-top: 18px;
+}

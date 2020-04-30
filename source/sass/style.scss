@@ -1,0 +1,27 @@
+// Normalize.css
+@import "libs/normalize.scss";
+
+// Helpers Files
+@import "helpers/mixins.scss";
+@import "helpers/variables.scss";
+@import "helpers/animations.scss";
+
+
+// Base files
+@import "base/base.scss";
+@import "base/fonts.scss";
+
+// Block files
+@import "blocks/header.scss";
+@import "blocks/nav.scss";
+@import "blocks/intro.scss";
+@import "blocks/service.scss";
+@import "blocks/destinations.scss";
+@import "blocks/companions.scss";
+@import "blocks/tariffs.scss";
+@import "blocks/registration.scss";
+@import "blocks/route.scss";
+@import "blocks/map.scss";
+@import "blocks/footer.scss";
+@import "blocks/popup.scss";
+
