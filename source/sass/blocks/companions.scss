@@ -1,7 +1,7 @@
 .companions {
   position: relative;
   margin-top: -25px;
-  padding-top: 97px;
+  padding-top: 94px;
   padding-bottom: 30px;
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
@@ -41,20 +41,27 @@
 .companions__content {
   padding-left: 25px;
   padding-right: 25px;
-  margin-bottom: 60px;
+  margin-bottom: 57px;
 }
 
 .companions__description {
+  margin-bottom: 20px;
   color: #fff;
 }
 
 .companions__tagline {
   font-weight: 700;
   color: #fff;
+
+  br {
+    display: none;
+  }
 }
 
 
 .companions__cards {
+  display: flex;
+  flex-direction: column;
 
 }
 
@@ -137,9 +144,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -10px;
+  margin-top: -7px;
   padding-right: 35px;
-  padding-bottom: 16px;
+  padding-bottom: 14px;
   padding-left: 35px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -291,17 +298,6 @@
     }
   }
 
-  // &:first-child::after {
-  //   content: attr(data-tooltip);
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   font-size: 20px;
-  //   color: #fff;
-  //   background-color: #101d41;
-  // }
-
   &:hover .companions__card-transport-tooltip {
     display: block;
   }
@@ -336,7 +332,125 @@
   }
 }
 
-
 .companions__btn {
-  margin-top: 18px;
+  margin-top: 9px;
+}
+
+
+@media only screen and (min-width: $tablet-width) {
+  .companions {
+    margin-top: -60px;
+    padding-top: 198px;
+    padding-bottom: 89px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+
+    background-size: 19%;
+    background-position: 40px 485px;
+
+    &::before {
+      top: 140px;
+      left: 40px;
+      @include size(213px);
+    }
+
+    &::after {
+      top: 140px;
+      right: 75px;
+      left: auto;
+      @include size(285px);
+      background-image: url("../img/rogovaya-back-desktop@1x.png");
+    }
+  }
+
+  .companions__wrapper {
+    padding: 0 75px;
+  }
+
+  .companions__content {
+    width: 70%;
+    margin-bottom: 60px;
+    padding: 0;
+  }
+
+  .companions__caption {
+    margin-bottom: 57px;
+  }
+
+  .companions__description {
+    margin-bottom: 40px;
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .companions__tagline {
+    font-size: 21px;
+    line-height: 25px;
+
+    br {
+      display: block;
+    }
+  }
+
+  .companions__cards {
+    flex-direction: row;
+  }
+
+  .companions__card {
+    width: 50%;
+
+    &:not(:last-child) {
+      margin-right: 48px;
+    }
+  }
+
+  .companions__card-image {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .companions__card-level {
+    top: 22px;
+    left: 20px;
+  }
+
+  .companions__card-content {
+    margin-top: -6px;
+    padding-right: 33px;
+    padding-bottom: 22px;
+    padding-left: 33px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .companions__card-person {
+    margin-top: 30px;
+  }
+
+  .companions__card-person-name {
+    font-size: 24px;
+  }
+
+  .companions__card-person-status {
+    left: -19px;
+    @include size(7px);
+  }
+
+  .companions__card-tags {
+    margin-top: 23px;
+
+    a {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .companions__card-transports {
+    margin-top: 20px;
+  }
+
+  .companions__btn {
+    margin-top: 72px;
+  }
+
 }

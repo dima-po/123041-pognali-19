@@ -3,3 +3,13 @@
   max-height: 350px;
   overflow: hidden;
 }
+
+
+@media only screen and (min-width: $tablet-width) {
+
+  .map {
+    max-height: 540px;
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {}

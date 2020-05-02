@@ -2,8 +2,9 @@ console.log("Привет, ты смотришь проект Погнали");
 
 // Content
 let header = document.querySelector('.header');
-let nav = document.querySelector('.header__nav-btn');
-let headerNavBox = document.querySelector('.header__nav-box');
+let nav = document.querySelector('.nav');
+let navBtn = document.querySelector('.header__nav-btn');
+// let headerNavBox = document.querySelector('.header__nav-box');
 let logoImg = document.querySelector('.logo__img');
 
 // Popup
@@ -12,13 +13,13 @@ let popupOpenBtn = document.querySelector('.tariffs__btn');
 let popupCloseBtn = document.querySelector('.popup__close-btn');
 
 
-nav.addEventListener('click', function(e) {
-  nav.classList.toggle('header__nav-btn--active');
-  headerNavBox.classList.toggle('header__nav-box--opened');
+navBtn.addEventListener('click', function(e) {
+  navBtn.classList.toggle('header__nav-btn--active');
+  nav.classList.toggle('nav--opened');
   header.classList.toggle('header--bg-white');
 
   setInterval(function(){
-    if(nav.classList.contains('header__nav-btn--active')) {
+    if(navBtn.classList.contains('header__nav-btn--active')) {
       logoImg.setAttribute('src', 'img/logo-mobile-blue@1x.png');
     }
 

@@ -1,0 +1,76 @@
+.section-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 24px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #1d2e5b;
+  background-color: $color-lightgold;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    display: block;
+    @include size(10px, 14px);
+    border-left: 10px solid #1d2e5b;
+    border-bottom: 7px solid transparent;
+    border-top: 7px solid transparent;
+  }
+
+  &:hover {
+    background-color: $color-gold;
+  }
+
+  &:active,
+  &:focus {
+    color: rgba(#1d2e5b, 0.3);
+  }
+
+  &:active::after,
+  &:focus::after {
+    border-left-color: rgba(#1d2e5b, 0.3);
+  }
+
+  &--outline {
+    padding: 19px;
+    border: 3px solid #192144;
+    color: $color-dark-blue-slate;
+    background-color: transparent;
+
+    &:hover {
+      color: #fff;
+      background-color: #192144;
+
+      &::after {
+        border-left-color: #fff;
+      }
+    }
+
+    &:active,
+    &:focus {
+      color: rgba(#ffffff, 0.3);
+    }
+
+    &:active::after,
+    &:focus::after {
+      border-left-color: rgba(#ffffff, 0.3);
+    }
+
+  }
+}
+
+
+@media only screen and (min-width: $tablet-width) {
+
+  .section-btn {
+    padding: 28px 34px;
+    border-radius: 20px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+

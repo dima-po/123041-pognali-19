@@ -1,6 +1,5 @@
 .intro {
-  padding-top: 39px;
-  padding-bottom: 39px;
+  padding: 40px 0;
   background-image: url("../img/globe-back-mobile@1x.jpg");
   background-repeat: no-repeat;
   background-size: 100% 46%;
@@ -20,8 +19,7 @@
     top: 135px;
     right: 50px;
     z-index: -1;
-    width: 192px;
-    height: 255px;
+    @include size(192px, 255px);
     background-image: url("../img/traveller-illustration-mobile@1x.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -108,7 +106,7 @@
 
 .intro__review {
   position: relative;
-  margin-top: 25px;
+  margin-top: 27px;
   padding-left: 25px;
   font-size: 16px;
   color: #fff;
@@ -132,8 +130,10 @@
 }
 
 .intro__steps {
+  display: flex;
+  flex-direction: column;
   @include reset-list;
-  margin-top: 50px;
+  margin-top: 47px;
   counter-reset: steps-list;
 }
 
@@ -163,19 +163,176 @@
     padding-bottom: 40px;
   }
 
-  &:nth-child(1) {
-    background-color: $color-darkgold ;
+  &:nth-child(4n+1) {
+    background-color: $color-darkgold;
   }
 
-  &:nth-child(2) {
+  &:nth-child(4n+2) {
     background-color: $color-darkgold-alt;
   }
 
-  &:nth-child(3) {
-    background-color: $color-gold ;
+  &:nth-child(4n+3) {
+    background-color: $color-gold;
   }
 
-  &:nth-child(4) {
+  &:nth-child(4n+4) {
     background-color: $color-lightgold;
+  }
+
+
+}
+
+
+@media only screen and (min-width: $tablet-width) {
+
+  .intro {
+    padding: 70px 0;
+    background-image: url("../img/globe-back-tablet@1x.jpg");
+    background-size: 195%;
+    background-position: center 57%;
+  }
+
+  .intro__wrapper {
+
+
+    &::before {
+      top: 245px;
+      right: 111px;
+      @include size(372px, 451px);
+      background-image: url("../img/traveller-illustration-tablet@1x.png");
+    }
+  }
+
+  .intro__caption {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .intro__contacts {
+    display: none;
+  }
+
+  .intro__review {
+    max-width: 300px;
+    margin-top: 87px;
+    padding-left: 35px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .intro__review-text {
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .intro__review-author {
+    margin-top: 45px;
+    font-size: 21px;
+    line-height: 25px;
+
+    br:not(:first-child) {
+      display: none;
+    }
+  }
+
+  .intro__steps {
+    margin-top: 211px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .intro__steps-item {
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 31px 31px 28px;
+    border-radius: 20px;
+    font-size: 24px;
+
+    &::after {
+      width: 100%;
+      margin-top: 8px;
+      font-size: 30px;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 21px;
+    }
+
+    &:nth-child(2n) {
+      flex-grow: 1;
+      margin-left: -20px;
+    }
+
+    &:nth-child(4n+1) {
+      width: 365px;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:nth-child(4n+2) {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:nth-child(4n+3) {
+      width: 365px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:nth-child(4n+4) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+
+  }
+}
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .intro__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .intro__caption {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .intro__contacts {
+    display: none;
+  }
+
+  .intro__review {
+
+  }
+
+  .intro__review-text {
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .intro__review-author {
+    font-size: 21px;
+    line-height: 25px;
+  }
+
+  .intro__steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .intro__steps-item {
+    width: 25%;
   }
 }
