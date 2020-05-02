@@ -298,17 +298,6 @@
     }
   }
 
-  // &:first-child::after {
-  //   content: attr(data-tooltip);
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   font-size: 20px;
-  //   color: #fff;
-  //   background-color: #101d41;
-  // }
-
   &:hover .companions__card-transport-tooltip {
     display: block;
   }

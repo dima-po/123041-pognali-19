@@ -297,6 +297,7 @@
 @media only screen and (min-width: $desktop-width) {
 
   .intro__wrapper {
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

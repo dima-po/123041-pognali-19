@@ -258,8 +258,11 @@
     }
   }
 
-  .nav__contacts,
   .nav__socials {
+    display: none;
+  }
+
+  .nav__contacts {
     display: none;
   }
 
