@@ -137,6 +137,12 @@
 
   .header {
     padding-top: 42px;
+    background-color: #192144;
+
+
+    &--bg-white {
+      background-color: #fff;
+    }
   }
 
   .header__contacts {

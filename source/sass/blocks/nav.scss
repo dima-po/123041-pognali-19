@@ -94,6 +94,9 @@
 .nav__contacts-link {
   display: flex;
   align-items: center;
+  color: #192144;
+  font-weight: 700;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
@@ -107,17 +110,13 @@
   border-radius: 50%;
 
   svg {
-    width: 18px;
-    height: 18px;
+    @include size(18px);
     fill: $color-lightgold;
   }
 }
 
 .nav__contacts-link-text {
   margin-left: 16px;
-  color: #192144;
-  font-weight: 700;
-  text-transform: uppercase;
 }
 
 .nav__socials {
@@ -171,16 +170,60 @@
     align-items: start;
   }
 
-
-
   .nav__link {
     font-size: 60px;
     line-height: 71px;
   }
 
+  .nav__contacts {
+    margin-top: 135px;
+  }
+
   .nav__contacts-auth-btn {
     display: none;
   }
+
+  .nav__contacts-link {
+    font-size: 28px;
+  }
+
+  .nav__contacts-link-icon {
+    @include size(67px);
+
+    svg {
+      @include size(27px);
+    }
+  }
+  .nav__contacts-link-text {
+    margin-left: 25px;
+  }
+
+  .nav__socials {
+    justify-content: flex-start;
+    padding-left: 30px;
+    margin-top: 130px;
+  }
+
+  .nav__socials-link {
+
+    &--facebook {
+      @include size(14px, 28px);
+    }
+
+    &--vk {
+      @include size(31px, 16px);
+    }
+
+    &--instagram {
+      @include size(24px);
+    }
+
+
+    &:not(:last-child) {
+      margin-right: 34px;
+    }
+  }
+
 }
 
 
