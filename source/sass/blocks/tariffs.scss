@@ -189,4 +189,38 @@
 }
 
 
-@media only screen and (min-width: $desktop-width) {}
+@media only screen and (min-width: $desktop-width) {
+
+  .tariffs {
+    padding-top: 160px;
+    padding-bottom: 165px;
+
+    &::before {
+      top: 345px;
+      right: 365px;
+      bottom: auto;
+      @include size(198px);
+    }
+  }
+
+  .tariffs__wrapper {
+    padding-left: 128px;
+  }
+
+  .tariffs__caption {
+    margin-bottom: 141px;
+    margin-left: -65px;
+  }
+
+
+  .tariffs__table {
+    width: 943px;
+
+    &::after {
+      top: -53px;
+      right: -124px;
+      width: 444px;
+      height: 300px;
+    }
+  }
+}

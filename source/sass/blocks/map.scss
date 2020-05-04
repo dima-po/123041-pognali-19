@@ -12,4 +12,8 @@
   }
 }
 
-@media only screen and (min-width: $desktop-width) {}
+@media only screen and (min-width: $desktop-width) {
+  .map {
+    max-height: 475px;
+  }
+}

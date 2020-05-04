@@ -40,3 +40,10 @@
   text-shadow: none;
   border: 0;
 }
+
+@mixin show-text {
+  font-size: initial;
+  color: initial;
+  text-shadow: initial;
+  border: initial;
+}

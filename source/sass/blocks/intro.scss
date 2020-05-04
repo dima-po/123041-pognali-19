@@ -247,7 +247,6 @@
     flex-wrap: wrap;
     margin: 0;
     padding: 31px 31px 28px;
-    border-radius: 20px;
     font-size: 24px;
 
     &::after {
@@ -267,45 +266,54 @@
 
     &:nth-child(4n+1) {
       width: 365px;
-      border-bottom-left-radius: 0;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+      border-radius: 20px 0 0 0;
     }
 
     &:nth-child(4n+2) {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+      border-radius: 20px 20px 0 0;
     }
 
     &:nth-child(4n+3) {
       width: 365px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+      border-radius: 0 0 0 20px;
     }
 
     &:nth-child(4n+4) {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+      border-radius: 0 0 20px 20px;
     }
-
-
   }
 }
 
 
 @media only screen and (min-width: $desktop-width) {
 
+  .intro {
+    padding-top: 105px;
+    padding-bottom: 123px;
+    background-image: url("../img/globe-back-desktop@1x.jpg");
+    background-position: top;
+    background-size: cover;
+  }
+
   .intro__wrapper {
     position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    &::before {
+      top: -95px;
+      right: 404px;
+      @include size(431px, 640px);
+      background-image: url("../img/traveller-illustration-desktop@1x.png");
+    }
   }
 
   .intro__caption {
+    padding-left: 68px;
     font-size: 60px;
     line-height: 70px;
+    text-align: left;
   }
 
   .intro__contacts {
@@ -313,26 +321,71 @@
   }
 
   .intro__review {
-
+    margin-top: 0;
+    padding-left: 14px;
   }
 
   .intro__review-text {
+    margin: 0;
+    margin-top: 13px;
     font-size: 28px;
     line-height: 33px;
   }
 
   .intro__review-author {
+    margin: 0;
+    margin-top: 45px;
     font-size: 21px;
     line-height: 25px;
   }
 
   .intro__steps {
+    margin-top: 105px;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: initial;
     width: 100%;
   }
 
   .intro__steps-item {
-    width: 25%;
+    flex-grow: 1;
+    padding: 27px 68px 32px 32px;
+    border-radius: 20px;
+
+
+    &::after {
+      width: auto;
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    &:not(:nth-child(4n+1)) {
+      margin-left: -35px;
+    }
+
+    &:nth-child(4n+1) {
+      max-width: 350px;
+      border-radius: 20px;
+    }
+
+    &:nth-child(4n+2) {
+      border-radius: 20px;
+    }
+
+    &:nth-child(4n+3) {
+      max-width: 380px;
+      border-radius: 20px;
+    }
+
+    &:nth-child(4n+4) {
+      max-width: 315px;
+      // padding-right: 30px;
+      border-radius: 20px;
+
+
+      &::after {
+        margin-right: -35px;
+      }
+    }
   }
+
 }

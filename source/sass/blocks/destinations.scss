@@ -112,9 +112,7 @@
   .destanation__wrapper {
     position: relative;
     padding: 0 75px;
-    background-image: url("../img/flags-back@1x.png");
-    background-position: 92% 4%;
-    background-repeat: no-repeat;
+    z-index: 1;
 
     &::before {
       content: '';
@@ -124,6 +122,18 @@
       @include size(141px);
       border-radius: 20px;
       background-color: #e2e5f2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      right: 40px;
+      @include size(289px, 575px);
+      background-image: url("../img/flags-back@1x.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
     }
   }
 
@@ -189,7 +199,82 @@
     margin-top: 48px;
   }
 
+}
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .destanation {
+    padding-top: 211px;
+    padding-bottom: 140px;
+  }
+
+  .destanation__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding-left: 128px;
+    background-image: none;
+
+    &::before {
+      top: -73px;
+      left: 60px;
+    }
+
+    &::after {
+      top: -72px;
+      right: 61px;
+    }
+  }
+
+  .destanation__content {
+    margin-right: 165px;
+  }
+
+  .destanation__cards {
+    position: relative;
+    width: 562px;
+    margin-right: auto;
+    order: -1;
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 75px;
+      background: linear-gradient(to bottom,transparent 0%,#f6f6f6 60%,#edeff6 100%);
+      z-index: 2;
+    }
+  }
+
+
+  .destanation__card-country {
+    padding: 39px 0 15px 34px;
+
+    &::before {
+      top: 40px;
+    }
+  }
+
+  .destanation__card-country-description {
+    margin-top: 1px;
+  }
+
+  .destanation__card-country-people {
+    margin-top: 17px;
+  }
+
+  .destanation__btn {
+    margin-top: -82px;
+    margin-right: 228px;
+  }
+
 
 
 
 }
+

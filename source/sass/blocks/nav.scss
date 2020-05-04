@@ -258,20 +258,23 @@
     }
   }
 
-  .nav__socials {
-    display: none;
+  .nav__item:not(:last-child) {
+    margin-right: 34px;
   }
+
+  .nav__link {
+    font-size: 20px;
+    line-height: 1;
+    color: #ffffff;
+  }
+
 
   .nav__contacts {
     display: none;
   }
 
-  .nav__item:not(:last-child) {
-    margin-right: 36px;
+  .nav__socials {
+    display: none;
   }
 
-  .nav__link {
-    font-size: 20px;
-    color: #ffffff;
-  }
 }

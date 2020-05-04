@@ -145,6 +145,14 @@
     }
   }
 
+  .header__logo {
+    @include size(166px, 42px);
+  }
+
+  .header__nav-btn {
+    margin-left: 22px;
+  }
+
   .header__contacts {
     display: flex;
   }
@@ -155,6 +163,9 @@
 
   .header__contacts-btn {
     font-size: 20px;
+    padding: 9px 29px;
+    border-radius: 25px;
+    line-height: 30px;
   }
 
 }
@@ -164,8 +175,17 @@
 
 @media only screen and (min-width: $desktop-width) {
 
+  .header {
+    padding-top: 48px;
+    background-color: #161c35;
+  }
+
   .header__wrapper {
     justify-content: start;
+  }
+
+  .header__logo {
+    @include size(200px, 52px);
   }
 
   .header__nav-btn {
@@ -173,7 +193,11 @@
   }
 
   .header__contacts {
-    position: relative;
     margin-left: auto;
+  }
+
+  .header__contacts-item {
+    display: flex;
+    @include size(50px);
   }
 }
