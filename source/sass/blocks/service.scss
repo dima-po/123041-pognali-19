@@ -1,15 +1,28 @@
 .service {
   position: relative;
-  z-index: 6;
   padding-top: 30px;
   padding-bottom: 68px;
-  background-image: url("../img/about-mobile@1x.png");
-  background-repeat: no-repeat;
   background-color: $color-dark-blue-alt;
-  background-position: center;
-  background-size: contain;
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
+  z-index: 6;
+}
+
+.service__wrapper {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 17px;
+    @include size(292px, 352px);
+    background-image: url("../img/about-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+  }
 }
 
 .service__content {
@@ -17,11 +30,29 @@
   padding-right: 25px;
 }
 
+.service__caption {
+  position: relative;
+  z-index: 3;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -31px;
+    left: -68px;
+    @include size(132px);
+    border-radius: 20px;
+    background-color: #141b3b;
+    z-index: -2;
+  }
+}
+
 .service__description {
+  position: relative;
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 21px;
   color: #fff;
+  z-index: 3;
 }
 
 .service__tagline {
@@ -29,6 +60,10 @@
   line-height: 22px;
   font-weight: 700;
   color: #fff;
+
+  br {
+    display: none;
+  }
 }
 
 .service__btn {
@@ -45,31 +80,30 @@
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
     background-image: none;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      @include size(688px, 213px);
-      border-radius: 20px;
-      background-color: #141b3b;
-      transform: translateX(-50%);
-      z-index: -1;
-    }
   }
 
   .service__wrapper {
-    position: relative;
     padding-left: 50px;
-    background-image: url("../img/about-tablet@1x.png");
-    background-position: 98% 10px;
-    background-repeat: no-repeat;
-    // z-index: 1;
+    padding-right: 50px;
+
+    &::after {
+      top: 8px;
+      right: 8px;
+      left: auto;
+      @include size(376px, 548px);
+      background-image: url("../img/about-tablet@1x.png");
+      z-index: 4;
+    }
   }
 
   .service__caption {
     margin-bottom: 39px;
+
+    &::before {
+      top: -40px;
+      left: -35px;
+      @include size(688px, 213px);
+    }
   }
 
   .service__content{
@@ -102,5 +136,54 @@
 }
 
 @media only screen and (min-width: $desktop-width) {
+
+  .service {
+    padding: 0;
+  }
+
+  .service__wrapper {
+    padding: 128px 105px 163px;
+    background-image: url("../img/about-desktop@1x.png");
+    background-repeat: no-repeat;
+    background-position: 750px bottom;
+
+    // &::before {
+    //   top: 70px;
+    //   left: 60px;
+    //   @include size(213px);
+    //   transform: translateX(0);
+    // }
+
+    &::after {
+      display: none;
+    }
+
+  }
+
+  .service__caption {
+    margin-bottom: 59px;
+
+    &::before {
+      @include size(213px);
+      top: -57px;
+      left: -68px;
+    }
+  }
+
+  .service__content {
+    width: 55%;
+  }
+
+  .service__tagline {
+    margin-top: 39px;
+
+    br {
+      display: block;
+    }
+  }
+
+  .service__btn {
+    margin-top: 66px;
+  }
 
 }

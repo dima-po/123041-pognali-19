@@ -103,7 +103,7 @@
   @include hide-text;
   cursor: pointer;
 
-  &::before {
+  &::after {
     content: '';
     display: block;
     width: 10px;
@@ -119,8 +119,9 @@
 
   &:active,
   &:focus {
+    color: rgba($color-dark-blue-slate, 0.3);
 
-    &::before {
+    &::after {
       border-left-color: rgba(#1d2e5b, 0.3);
     }
 
@@ -261,4 +262,64 @@
 }
 
 
-@media only screen and (min-width: $desktop-width) {}
+@media only screen and (min-width: $desktop-width) {
+  .registration {
+    padding-top: 164px;
+    padding-bottom: 105px;
+  }
+
+  .registration__wrapper {
+    padding-left: 132px;
+    padding-right: 132px;
+  }
+
+  .registration__form {
+    margin-top: 61px;
+  }
+
+  .registration__form-btn {
+    width: auto;
+    padding-left: 36px;
+    padding-right: 36px;
+    font-size: 24px;
+    font-weight: 700;
+    color: $color-dark-blue-slate;
+
+    &::after {
+      margin-left: 107px;
+    }
+  }
+
+  .registration__tagline {
+    margin-top: 72px;
+    margin-left: -16px;
+  }
+
+  .registration__contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .registration__contacts-link {
+    font-size: 28px;
+
+    &:not(:last-child) {
+      margin-right: 105px;
+    }
+  }
+
+  .registration__contacts-link-icon {
+    @include size(90px);
+
+    svg {
+      @include size(36px);
+    }
+  }
+
+  .registration__contacts-link-text {
+    margin-left: 33px;
+  }
+
+}

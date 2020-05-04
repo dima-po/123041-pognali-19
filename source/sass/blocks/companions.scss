@@ -5,11 +5,6 @@
   padding-bottom: 30px;
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
-
-  background-image: url("../img/smolov-back-desktop@1x.png");
-  background-repeat: no-repeat;
-  background-size: 45%;
-  background-position: 153px 64px;
   background-color: $color-dark-blue-alt;
   z-index: 4;
 
@@ -17,11 +12,11 @@
     content: '';
     position: absolute;
     top: 65px;
-    left: -20px;
-    @include size(132px);
-    border-radius: 20px;
-    background-color:#141b3b;
-    z-index: -1;
+    right: 25px;
+    @include size(143px);
+    background-image: url("../img/smolov-back-desktop@1x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   &::after {
@@ -38,15 +33,35 @@
   }
 }
 
+.companions__caption {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -31px;
+    left: -68px;
+    @include size(132px);
+    border-radius: 20px;
+    background-color: #141b3b;
+    z-index: -1;
+  }
+}
+
 .companions__content {
+  position: relative;
   padding-left: 25px;
   padding-right: 25px;
   margin-bottom: 57px;
+  z-index: 1;
 }
 
 .companions__description {
+  position: relative;
   margin-bottom: 20px;
   color: #fff;
+  z-index: 1;
 }
 
 .companions__tagline {
@@ -166,14 +181,70 @@
 }
 
 .companions__card-flag {
+  position: relative;
   @include hide-text;
   @include size(35px, 24px);
-  background-color: grey;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   &:not(:last-child) {
     margin-right: 19px;
   }
+
+  &--sri-lanka {
+    background-image: url("../img/flag-sri-lanka.svg");
+  }
+
+  &--thailand {
+    background-image: url("../img/flag-thailand.svg");
+  }
+
+  &--seychelles {
+    background-image: url("../img/flag-seychelles.svg");
+  }
+
+  &--belgium {
+    background-image: url("../img/flag-belgium.svg");
+  }
+
+  &--czech {
+    background-image: url("../img/flag-czech.svg");
+  }
+
+  &:hover .companions__card-flag-tooltip {
+    display: block;
+  }
 }
+
+.companions__card-flag-tooltip {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: -75px;
+  z-index: 10;
+  padding: 20px 23px;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #fff;
+  background-color: #101d41;
+  transform: translateX(-50%);
+  border-radius: 4px;
+
+  &::before {
+    content: '';
+    display: block;
+    @include size(0);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #101d41;
+    transform: translateX(-50%);
+  }
+}
+
 
 .companions__card-person {
   position: relative;
@@ -349,9 +420,9 @@
     background-position: 40px 485px;
 
     &::before {
-      top: 140px;
+      top: 485px;
+      right: auto;
       left: 40px;
-      @include size(213px);
     }
 
     &::after {
@@ -375,6 +446,12 @@
 
   .companions__caption {
     margin-bottom: 57px;
+
+    &::before {
+      top: -60px;
+      left: -35px;
+      @include size(213px);
+    }
   }
 
   .companions__description {
@@ -453,4 +530,77 @@
     margin-top: 72px;
   }
 
+}
+
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .companions {
+    padding-top: 185px;
+    padding-bottom: 125px;
+
+    &::before {
+      top: 192px;
+      left: 780px;
+    }
+
+    &::after {
+      top: auto;
+      right: auto;
+      left: 422px;
+      bottom: 80px;
+    }
+  }
+
+  .companions__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-right: 60px;
+    padding-left: 128px;
+  }
+
+  .companions__caption {
+
+    &::before {
+      left: -68px;
+    }
+  }
+
+  .companions__content {
+    width: 35%;
+  }
+
+  .companions__description {
+    position: relative;
+    z-index: 1;
+  }
+
+  .companions__cards {
+    margin-top: 8px;
+  }
+
+
+  .companions__card {
+    width: 285px;
+
+
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+
+  .companions__card-level {
+    left: 23px;
+  }
+
+  .companions__card-flags {
+    top: -13px;
+  }
+
+  .companions__btn {
+    margin-top: -90px;
+    margin-bottom: 10px;
+  }
 }

@@ -123,6 +123,10 @@
     border-top-right-radius: 60px;
   }
 
+  .footer__logo {
+    @include size(166px, 42px);
+  }
+
   .footer__content {
     flex-direction: row;
     justify-content: space-between;
@@ -131,6 +135,7 @@
 
   .footer__socials {
     margin-top: 0;
+    margin-left: -10px;
   }
 
   .footer__socials-link {
@@ -171,4 +176,18 @@
 
 }
 
-@media only screen and (min-width: $desktop-width) {}
+@media only screen and (min-width: $desktop-width) {
+
+
+  .footer__logo {
+    @include size(198px, 52px);
+  }
+
+  .footer__socials {
+    margin-left: -42px;
+  }
+
+  .footer__developer {
+    margin-top: 5px;
+  }
+}

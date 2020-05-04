@@ -74,3 +74,12 @@
 }
 
 
+@media only screen and (min-width: $desktop-width) {
+  .section-btn {
+
+    &::after {
+      margin-left: 56px;
+    }
+  }
+}
+

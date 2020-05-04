@@ -1,8 +1,10 @@
-mixin destination-card(country, description, people, modificator, imageLink='https://via.placeholder.com/270')
+mixin destination-card(country, description, people, modificator, imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/270', imageLinkDesktop='https://via.placeholder.com/270')
   if modificator
     article.destanation__card
       picture.destanation__card-image
-        img(src= imageLink, width='270', height='110', alt='Изображение карточки направления')
+        source(media="(min-width: 768px)", srcset= imageLinkTablet, type="image/jpg")
+        source(media="(min-width: 1440px)", srcset= imageLinkDesktop, type="image/jpg")
+        img(src= imageLinkMobile, width='270', height='110', alt='Изображение карточки направления')
       .destanation__card-country(class=`destanation__card-country--${modificator}`)
         h4.destanation__card-country-name= country
         span.destanation__card-country-description= description
@@ -11,7 +13,9 @@ mixin destination-card(country, description, people, modificator, imageLink='htt
   else
     article.destanation__card
       figure.destanation__card-image
-        img(src= image, width='270', height='110', alt='Изображение карточки направления')
+        source(media="(min-width: 768px)", srcset= imageLinkTablet, type="image/jpg")
+        source(media="(min-width: 1440px)", srcset= imageLinkDesktop, type="image/jpg")
+        img(src= imageLinkMobile, width='270', height='110', alt='Изображение карточки направления')
       .destanation__card-country
         h4.destanation__card-country-name= country
         span.destanation__card-country-description= description
@@ -37,6 +41,7 @@ mixin companions-card-index(imageLink, level, personName, status, countries, tag
         ul.companions__card-flags
           each country, index in countries
               li.companions__card-flag(class=`companions__card-flag--${index}`)= country
+                span.companions__card-flag-tooltip= country
 
         a.companions__card-person(href="#")
           if status === 'online'

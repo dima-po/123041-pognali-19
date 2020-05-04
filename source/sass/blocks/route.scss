@@ -86,4 +86,48 @@
 }
 
 
-@media only screen and (min-width: $desktop-width) {}
+@media only screen and (min-width: $desktop-width) {
+
+  .route  {
+    padding-top: 114px;
+    padding-bottom: 55px;
+  }
+
+  .route__wrapper {
+    padding-left: 283px;
+    padding-right: 132px;
+  }
+
+  .route__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .route__address {
+    margin-bottom: 0;
+  }
+
+
+  .route__address-icon {
+    @include size(90px);
+
+    svg {
+      @include size(43px);
+    }
+  }
+
+  .route__address-text {
+    margin-left: 32px;
+  }
+
+  .route__btn {
+    margin-top: 0;
+    margin-left: auto;
+    padding: 26px 34px;
+
+    &::after {
+      margin-left: 21px;
+    }
+  }
+}

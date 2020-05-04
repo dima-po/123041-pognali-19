@@ -361,7 +361,9 @@
       <div class="footer__content">
         <a class="footer__logo" href="index.html">
           <picture>
-            <img class="logo__img" src="img/logo-mobile-blue@1x.png" width="96" height="15" alt="Логотип Погнали" />
+            <source class="footer__logo-tablet" media="(min-width: 768px)" srcset="img/logo-tablet-blue@1x.png" type="image/png" />
+            <source class="footer__logo-desktop" media="(min-widths: 1440px)" srcset="img/logo-desktop-blue@1x.png" type="image/png" />
+            <img class="footer__logo-img" src="img/logo-mobile-blue@1x.png" width="96" height="15" alt="Логотип Погнали" />
           </picture>
         </a>
         <div class="footer__socials">
