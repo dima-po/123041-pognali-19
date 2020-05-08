@@ -206,6 +206,9 @@
 
 .companions-country-filter__countries-column {
   @include reset-list;
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
   margin-top: 12px;
 }
 
