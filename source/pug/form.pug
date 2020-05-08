@@ -3,10 +3,13 @@ include helpers/mixins
 
 block variables
   - const title = "Форма - HTML Academy: Погнали"
-  - const pageTitle = "Направления"
+  - const pageCaption = "Направления"
 
 block content
   //- Шапка сайта
+  include blocks/header
+
+  //- Заголовок страницы
   include blocks/page-header
 
   main.site-content

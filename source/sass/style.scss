@@ -17,6 +17,7 @@
 
 // Block files
 @import "blocks/header.scss";
+@import "blocks/page-title.scss";
 @import "blocks/nav.scss";
 @import "blocks/intro.scss";
 @import "blocks/service.scss";
@@ -28,6 +29,16 @@
 @import "blocks/map.scss";
 @import "blocks/footer.scss";
 @import "blocks/popup.scss";
+
+
+// Catalog page files
+
+@import "blocks/catalog/catalog-page.scss";
+@import "blocks/catalog/companions-country-filter.scss";
+@import "blocks/catalog/companions-content.scss";
+@import "blocks/catalog/companions-filter.scss";
+@import "blocks/catalog/page-companions.scss";
+@import "blocks/catalog/companions-pagination.scss";
 
 
 

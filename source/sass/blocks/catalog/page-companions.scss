@@ -1,0 +1,481 @@
+.page-companions {
+  margin-top: 28px;
+}
+
+.page-companions__card {
+  position: relative;
+  padding: 15px 20px 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    box-shadow: 0 6px 21px 0 rgba(0,0,0,.08);
+  }
+}
+
+.page-companions__card-info {
+  display: flex;
+}
+
+.page-companions__card-image-wrapper {
+  flex-shrink: 0;
+  @include size(70px);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.page-companions__card-person-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 14px;
+}
+
+.page-companions__card-person-name {
+  width: 80px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  color: $color-dark-blue-slate;
+  text-decoration: none;
+  order: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 23px;
+    right: 22px;
+    @include size(7px);
+    border-radius: 50%;
+    background-color: #f97676;
+  }
+
+  &--online {
+
+    &::before {
+      background-color:#81e31e;
+    }
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.page-companions__card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  width: 180px;
+  margin-top: 13px;
+  margin-left: -80px;
+  order: 3;
+
+  a {
+    margin-right: 5px;
+    font-size: 15px;
+    line-height: 1.2;
+    color: $color-grey;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active,
+    &:focus {
+      opacity: 0.3;
+    }
+  }
+}
+
+.page-companions__card-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: -38px;
+  order: 2;
+}
+
+.page-companions__card-button-call {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  padding: 9px;
+  border-radius: 20px;
+  font-size: 17px;
+  font-weight: 700;
+  background-color: $color-lightgold;
+  color: $color-dark-blue;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $color-gold;
+  }
+
+  &:active {
+    color: rgba($color-dark-blue, 0.3);
+  }
+}
+
+.page-companions__card-button-like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include size(31px);
+  border: 0;
+  border-radius: 50%;
+  background-color: #edeff6;
+  @include hide-text;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    @include size(13px, 11px);
+    background-image: url("../img/heart.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+  }
+
+  &:hover {
+    background-color: #e2e5f2;
+
+    &::before {
+      opacity: 0.5;
+    }
+  }
+
+  &:active,
+  &:focus {
+    background-color: #e2e5f2;
+
+    &::before {
+      opacity: 0.1;
+    }
+  }
+
+  &--active {
+    background-color: #f9eaea;
+
+    &::before {
+      background-image: url("../img/heart-active.svg");
+      opacity: 1;
+    }
+
+    &:hover {
+      background-color: #f9d8d8;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &:active,
+    &:focus {
+
+      &::before {
+        opacity: 0.3;
+      }
+    }
+  }
+
+}
+
+.page-companions__card-button-like-count {
+  margin-left: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: $color-dark-blue;
+}
+
+.page-companions__card-countries {
+  margin: 12px 0;
+}
+
+.page-companions__card-countries-list {
+  @include reset-list;
+}
+
+
+.page-companions__card-category-name {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0 6px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+  color: $color-grey;
+  text-transform: lowercase;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    left: -20px;
+    @include size(270px, 1px);
+    background-color: #edeff6;
+    transform: translateY(-50%);
+    z-index: -2;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: -1;
+  }
+}
+
+.page-companions__card-countries-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+
+.page-companions__card-country {
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  color: $color-dark-blue-slate;
+  text-transform: uppercase;
+
+  &:not(:last-child) {
+    margin-bottom: 9px;
+  }
+
+
+  &::before {
+    content: '';
+    @include size(26px, 18px);
+    margin-right: 13px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &--sri-lanka {
+
+    &::before {
+      background-image: url("../img/flag-sri-lanka.svg");
+    }
+  }
+
+  &--thailand {
+
+    &::before {
+      background-image: url("../img/flag-thailand.svg");
+    }
+  }
+
+  &--seychelles {
+
+    &::before {
+      background-image: url("../img/flag-seychelles.svg");
+    }
+  }
+
+  &--belgium {
+
+    &::before {
+      background-image: url("../img/flag-belgium.svg");
+    }
+  }
+
+  &--czech {
+
+    &::before {
+      background-image: url("../img/flag-czech.svg");
+    }
+  }
+
+  &--usa {
+
+    &::before {
+      background-image: url("../img/flag-usa.svg");
+    }
+  }
+
+  &--australia {
+
+    &::before {
+      background-image: url("../img/flag-australia.svg");
+    }
+  }
+
+  &--dominica {
+
+    &::before {
+      background-image: url("../img/flag-dominica.svg");
+    }
+  }
+
+  &--united-kingdom {
+
+    &::before {
+      background-image: url("../img/flag-united-kingdom.svg");
+    }
+  }
+
+  &--germany {
+
+    &::before {
+      background-image: url("../img/flag-germany.svg");
+    }
+  }
+}
+
+.page-companions__card-transport-level {
+  display: flex;
+  margin-bottom: 56px;
+}
+
+
+.page-companions__card-transports-list {
+  display: flex;
+  align-items: center;
+  @include reset-list;
+  margin-top: 14px;
+  padding-left: 3px;
+}
+
+.page-companions__card-transport {
+  position: relative;
+  @include size(33px, 32px);
+  border-radius: 50%;
+  background-color: #edeff6;
+  @include hide-text;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
+  }
+
+  &--plane {
+
+    &::before {
+      @include size(14px, 16px);
+      background-image: url("../img/plane.svg");
+    }
+  }
+
+  &--bus {
+
+    &::before {
+      @include size(13px, 16px);
+      background-image: url("../img/bus.svg");
+    }
+  }
+
+  &--bike {
+
+    &::before {
+      @include size(19px, 17px);
+      background-image: url("../img/bike.svg");
+    }
+  }
+
+  &--run {
+
+    &::before {
+      @include size(15px, 17px);
+      background-image: url("../img/run.svg");
+    }
+  }
+
+  &--available {
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+.page-companions__card-level {
+  margin-left: auto;
+  margin-right: -3px;
+}
+
+.page-companions__card-level-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  @include size(45px);
+  margin-top: 6px;
+  margin-left: 3px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.page-companions__card-level-progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.35);
+
+  circle {
+    fill: none;
+    stroke: #ff8d30;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    stroke-dashoffset: 60;
+    transform: rotate(-90deg);
+    transform-origin: center;
+  }
+
+  &--80 {
+
+    circle {
+      stroke-dasharray: 245;
+    }
+  }
+
+  &--99 {
+
+    circle {
+      stroke-dasharray: 268;
+    }
+  }
+}
+
+.page-companions__card-level-number {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 18px;
+  color: $color-dark-blue-slate;
+}
+
+.page-companions__card-level-text {
+  display: none;
+}
