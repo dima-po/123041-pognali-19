@@ -1,11 +1,48 @@
 section.companions-country-filter
-  h2.companions-country-filter__title Фильтрация по странам
-  button.companions-country-filter__open-btn(type="button") Открыть фильтр
-  button.companions-country-filter__close-btn.companions-country-filter__close-btn--top(type="button") Закрыть фильтр
+  .companions-country-filter__wrapper
+    h2.companions-country-filter__caption Фильтрация по странам
 
-  +companions-country-filter-letters('Европа')
-  +companions-country-filter-letters('Азия')
-  +companions-country-filter-letters('Америка')
-  +companions-country-filter-letters('Острова')
+    section.companions-country-filter__buttons
+      h5.visually-hidden Кнопки управления
+      button.companions-country-filter__button.companions-country-filter__button--open.companions-country-filter__button--active(type="button") Показать все
+      button.companions-country-filter__button.companions-country-filter__button--close(type="button") Свернуть
 
-  button.companions-country-filter__close-btn.companions-country-filter__close-btn--bottom(type="button") Свернуть
+    section.companions-country-filter__continents
+      h5.visually-hidden Континенты
+      a.companions-country-filter__continents-name.companions-country-filter__continents-name--active(href="#") Европа
+      a.companions-country-filter__continents-name(href="#") Азия
+      a.companions-country-filter__continents-name(href="#") Америка
+      a.companions-country-filter__continents-name(href="#") Острова
+
+    .companions-country-filter__content
+      ul.companions-country-filter__countries
+        +companions-country-filter-letter('A', ["Австралия","Австрия","Азербайджан","Албания","Алжир","Ангола","Андорра","Антигуа и Барбуда","Аргентина","Армения","Афганистан"], active=true)
+        +companions-country-filter-letter('Б', ["Багамские Острова","Бангладеш","Барбадос","Бахрейн","Белоруссия","Белиз","Бельгия","Бенин","Болгария","Боливия","Босния и Герцеговина","Ботсвана","Бразилия","Бруней","Буркина-Фасо","Бурунди","Бутан"])
+        +companions-country-filter-letter('В', ["Вануату","Великобритания","Венгрия","Венесуэла","Восточный Тимор","Вьетнам"])
+        +companions-country-filter-letter('Г', ["Габон","Гаити","Гайана","Гамбия","Гана","Гватемала","Гвинея","Гвинея-Бисау","Германия","Гондурас","Гренада","Греция","Грузия"])
+        +companions-country-filter-letter('Д', ["Дания","Джибути","Доминика","Доминикана"])
+        +companions-country-filter-letter('Е', ["Египет"])
+        +companions-country-filter-letter('З', ["Замбия","Зимбабве"])
+        +companions-country-filter-letter('И', ["Израиль","Индия","Индонезия","Иордания","Ирак","Иран","Ирландия","Исландия","Испания","Италия"])
+        +companions-country-filter-letter('К', ["Кабо-Верде","Казахстан","Камбоджа","Камерун","Канада","Катар","Кения","Кипр","Киргизия","Кирибати","Китай","Колумбия"])
+        +companions-country-filter-letter('Л', ["Лаос","Латвия","Лесото","Либерия","Ливан","Ливия","Литва","Лихтенштейн","Люксембург"])
+        +companions-country-filter-letter('М', ["Маврикий","Мавритания","Мадагаскар","Малави","Малайзия","Мали","Мальдивы","Мальта","Марокко","Мексика"])
+        +companions-country-filter-letter('Н', ["Намибия","Науру","Непал","Нигер","Нигерия","Нидерланды","Никарагуа","Новая Зеландия","Норвегия"])
+        +companions-country-filter-letter('О', ["ОАЭ","Оман"])
+        +companions-country-filter-letter('П', ["Пакистан","Палау","Панама","Папуа — Новая Гвинея","Парагвай","Перу","Польша","Португалия"])
+        +companions-country-filter-letter('Р', ["Руанда","Румыния","Россия"])
+        +companions-country-filter-letter('С', ["Сальвадор","Самоа","Сан-Марино","Саудовская Аравия","Сейшелы","Сенегал","Сербия","Сингапур","Сирия","Словакия","Словения","США"])
+        +companions-country-filter-letter('Т', ["Таджикистан","Таиланд","Танзания","Того","Тонга","Тринидад и Тобаго","Тувалу","Тунис","Туркмения","Турция"])
+        +companions-country-filter-letter('У', ["Уганда","Узбекистан","Украина","Уругвай"])
+        +companions-country-filter-letter('Ф', ["Фиджи","Филиппины","Финляндия","Франция"])
+        +companions-country-filter-letter('Х', ["Хорватия"])
+        +companions-country-filter-letter('Ч', ["Чад","Черногория","Чехия","Чили"])
+        +companions-country-filter-letter('Ш', ["Швейцария","Швеция","Шри-Ланка"])
+        +companions-country-filter-letter('Э', ["Эквадор","Эритрея","Эсватини","Эстония","Эфиопия"])
+        +companions-country-filter-letter('Ю', ["ЮАР","Южный Судан"])
+        +companions-country-filter-letter('Я', ["Ямайка","Япония"])
+
+        ul.companions-country-filter__countries-column
+          +companions-country-filter-small(["Австралия","Австрия","Азербайджан","Албания","Алжир","Ангола","Андорра","Антигуа и Барбуда","Аргентина","Армения","Афганистан"])
+
+      button.companions-country-filter__button.companions-country-filter__button--close.companions-country-filter__button--bottom(type="button") Свернуть

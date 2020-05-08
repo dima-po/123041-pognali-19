@@ -1,0 +1,33 @@
+.page-title {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 13px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: $color-dark-blue;
+  z-index: 5;
+}
+
+.page-title__caption {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  font-size: 36px;
+  line-height: 40px;
+  color: #ffffff;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+    left: 0;
+    @include size(100%, 5px);
+    background-color: $color-darkgold;
+    border-radius: 10px;
+  }
+}
+
+.page-title__back-to-home {
+  display: none;
+}

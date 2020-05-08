@@ -87,75 +87,108 @@ mixin companions-card-index(imageLink, level, personName, status, countries, tag
 
 
 
-mixin companions-filter-input(type, name, value, text)
-  .filter-tabs__input-group
-    input(type= type, name= name, id= value value= value)
-    label(for= value)= text
+mixin companions-filter-input(type, name, value, text, checked=false)
+  .companions-filter__tab-input-group
+    if checked
+      input.companions-filter__tab-input(type= type, name= name, id= value value= value tabindex="-1" checked)
+    else
+      input.companions-filter__tab-input(type= type, name= name, id= value value= value tabindex="-1")
+    label.companions-filter__tab-label(for= value tabindex="0" aria-label= text)= text
 
 
-mixin companions-card-page(imageLink, personName, likeCount, tags, countries, level, fly=false, bus=false, bike=false, walk=false)
+
+mixin companions-filter-input-transport(type, name, value, text, checked=false)
+  .companions-filter__tab-input-group
+    if checked
+      input.companions-filter__tab-input-transport(type= type, name= name, id= value value= value tabindex="-1" checked)
+    else
+      input.companions-filter__tab-input-transport(type= type, name= name, id= value value= value tabindex="-1")
+    label.companions-filter__tab-label-transport(for= value tabindex="0" aria-label= text)= text
+
+
+
+mixin companions-card-page(imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/700', imageLinkDesktop='https://via.placeholder.com/1440', personName, likeCount, tags, countries, level, plane=false, bus=false, bike=false, run=false, liked=false, online=false)
+
   article.page-companions__card
+    .page-companions__card-info
+      .page-companions__card-image-wrapper
+        picture.page-companions__card-image
+          source(media="(min-width: 768px)", srcset= imageLinkTablet, type="image/jpg")
+          source(media="(min-width: 1440px)", srcset= imageLinkDesktop, type="image/jpg")
+          img(src= imageLinkMobile, width='270', height='270', alt='Изображение карточки попутчика')
 
-    figure.page-companions__image
-      img(src= imageLink, width='285', height='285', alt='Фото пользователя')
-      figcaption
-        h4.page-companions__name= personName
+      .page-companions__card-person-info
+        a.page-companions__card-person-name(class=(online ? "page-companions__card-person-name--online" : "page-companions__card-person-name--offline") href="#")= personName
+        .page-companions__card-tags
+          each tag in tags
+            a(href="#")= tag
+        .page-companions__card-buttons
+          a.page-companions__card-button-call(href="#") Позвать!
+          button.page-companions__card-button-like(type="button" class=(liked ? "page-companions__card-button-like--active" : "")) Нравится
+          span.page-companions__card-button-like-count= likeCount
 
-    button.page-companions__like.page-companions__like--active(type='button') Нравится
-    i.page-companions__like-count= likeCount
 
-    section.page-companions__tags
-      h5.visually-hidden Теги путешественника
-      each tag in tags
-        a(href="#")= tag
-
-    section.page-companions__info
-      h5.visually-hidden Иннформация путешественника
-      dl.page-companions__countries
-        dt.page-companions__subtitle Хочет посетить:
+    .page-companions__card-countries
+      h6.page-companions__card-category-name Хочет посетить:
+      ul.page-companions__card-countries-list
         each country, index in countries
-          dd.page-companions__country(class=`page-companions__country--${index}`)= country
+          li.page-companions__card-country(class=`page-companions__card-country--${index}`)= country
 
-      dl.companions-card__transports
-        dt.page-companions__subtitle Транспорт:
-        if fly
-          dd.page-companions__transport-fly.page-companions__transport--active Самолет
-        else
-          dd.page-companions__transport-fly Самолет
+    .page-companions__card-transport-level
+      .page-companions__card-transports
+        h6.page-companions__card-category-name Транспорт:
+        ul.page-companions__card-transports-list
+          li.page-companions__card-transport.page-companions__card-transport--plane(class=(plane ? "page-companions__card-transport--available" : "")) Авиаперелет
+            span.page-companions__card-transport-tooltip Авиаперелет
+          li.page-companions__card-transport.page-companions__card-transport--bus(class=(bus ? "page-companions__card-transport--available" : "")) Автобус
+            span.page-companions__card-transport-tooltip Автобус
+          li.page-companions__card-transport.page-companions__card-transport--bike(class=(bike ? "page-companions__card-transport--available" : "")) Велосипед
+            span.page-companions__card-transport-tooltip Велосипед
+          li.page-companions__card-transport.page-companions__card-transport--run(class=(run ? "page-companions__card-transport--available" : "")) Пешком
+            span.page-companions__card-transport-tooltip Пешком
 
-        if bus
-          dd.page-companions__transport-bus.page-companions__transport--active Автобус
-        else
-          dd.page-companions__transport-bus Автобус
-
-        if bike
-          dd.page-companions__transport-bike.page-companions__transport--active Велосипед
-        else
-          dd.page-companions__transport-bike Велосипед
-
-        if walk
-          dd.page-companions__transport-walk.page-companions__transport--active Пешком
-        else
-          dd.companions__card-transport-walk Пешком
-
-      .companions-card__level
-        p.page-companions__level-number= level
-        p.page-companions__level-text level
-
-    button.btn.page-companions__btn(type='button') Позвать!
+      .page-companions__card-level
+        h6.page-companions__card-category-name Левел:
+        .page-companions__card-level-wrapper
+          svg.page-companions__card-level-progress(viewBox='0 0 100 100' class=`page-companions__card-level-progress--${level}`)
+            circle(cx='50', cy='50', r='35.5')
+          span.page-companions__card-level-number= level
+          span.page-companions__card-level-text level
 
 
-mixin companions-country-filter-letters(region)
-  dl.companions-country-filter__tab
-    dt.companions-country-filter__tab-title= region
-    dd.companions-country-filter__content
-      - const countryLetters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ч', 'Ш', 'Э', 'Ю', 'Я'];
-      ul.companions-country-filter__letters-list
-        each letter in countryLetters
-          li= letter
-      - const countryList = ['Австралия', 'Австрия', 'Азербайджан', 'Албания', 'Алжир', 'Ангола', 'Андорра', 'Антигуа и Барбуда', 'Аргентина', 'Армения'];
-      ul.companions-country-filter__letters-list
-        each country in countryList
-          li= country
+mixin companions-country-filter-letter(letter, countries, active=false)
+  if active
+    li.companions-country-filter__countries-item.companions-country-filter__countries-item--active
+      a.companions-country-filter__countries-letter.companions-country-filter__countries-letter--active(href="#")= letter
+      ul.companions-country-filter__countries-list
+        each country in countries
+          li.companions-country-filter__country-name
+            a.companions-country-filter__country-link(href="#")= country
+  else
+    li.companions-country-filter__countries-item
+      a.companions-country-filter__countries-letter(href="#")= letter
+      ul.companions-country-filter__countries-list
+        each country in countries
+          li.companions-country-filter__country-name
+            a.companions-country-filter__country-link(href="#")= country
+
+mixin companions-country-filter-small(countries)
+  each country in countries
+    li.companions-country-filter__countries-column-name
+      a.companions-country-filter__countries-column-link(href="#")= country
+
+
+
+  //- dl.companions-country-filter__tab
+  //-   dt.companions-country-filter__tab-title= region
+  //-   dd.companions-country-filter__content
+  //-     - const countryLetters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ч', 'Ш', 'Э', 'Ю', 'Я'];
+  //-     ul.companions-country-filter__letters-list
+  //-       each letter in countryLetters
+  //-         li= letter
+  //-     - const countryList = ['Австралия', 'Австрия', 'Азербайджан', 'Албания', 'Алжир', 'Ангола', 'Андорра', 'Антигуа и Барбуда', 'Аргентина', 'Армения'];
+  //-     ul.companions-country-filter__letters-list
+  //-       each country in countryList
+  //-         li= country
 
 

@@ -3,24 +3,34 @@ include helpers/mixins
 
 block variables
   - const title = "Путешественники - HTML Academy: Погнали"
-  - const pageTitle = "Попутчики"
+  - const pageCaption = "Попутчики"
+  - let pageHeader = true
+  - let indexLink = true
 
 block content
   //- Шапка сайта
-  include blocks/page-header
+  include blocks/header
 
-  main.site-content
+  //- Заголовок страницы
+  include blocks/page-title
 
-    //- Фильтр по странам
-    include blocks/catalog/1_country-filter
+  main.site-content.catalog-page
 
-    section.companions-content
+      //- Фильтр по странам
+      include blocks/catalog/1_country-filter
 
-      //- Фильтр попутчиков
-      include blocks/catalog/3_companions-filter
+      section.companions-content
+        h5.visually-hidden Контент страницы попутчиков
+        .wrapper
 
-      //- Карточки с попутчиками
-      include blocks/catalog/2_companions-cards
+          //- Фильтр попутчиков
+          include blocks/catalog/3_companions-filter
+
+          //- Карточки с попутчиками
+          include blocks/catalog/2_companions-cards
+
+          //- Пагинация
+          include blocks/catalog/4_companions-pagination
 
   //- Футер сайта
   include blocks/footer
