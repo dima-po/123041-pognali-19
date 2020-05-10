@@ -4,13 +4,14 @@
   padding-top: 25px;
   background-color: #161c35;
 
-  &--bg-white {
-    background-color: #fff;
-  }
 
   &--page {
     padding-top: 15px;
     padding-bottom: 10px;
+  }
+
+  &--bg-white {
+    background-color: #fff;
   }
 }
 
@@ -144,6 +145,9 @@
     padding-top: 42px;
     background-color: #192144;
 
+    &--page {
+      background-color: $color-dark-blue;
+    }
 
     &--bg-white {
       background-color: #fff;

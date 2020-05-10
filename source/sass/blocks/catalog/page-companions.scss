@@ -45,7 +45,7 @@
   text-decoration: none;
   order: 1;
 
-  &::before {
+  &::after {
     content: '';
     position: absolute;
     top: 23px;
@@ -57,7 +57,7 @@
 
   &--online {
 
-    &::before {
+    &::after {
       background-color:#81e31e;
     }
   }
@@ -198,6 +198,7 @@
   font-weight: 700;
   line-height: 21px;
   color: $color-dark-blue;
+  text-transform: uppercase;
 }
 
 .page-companions__card-countries {
@@ -454,6 +455,20 @@
     transform-origin: center;
   }
 
+  &--25 {
+
+    circle {
+      stroke-dasharray: 115, 200;
+    }
+  }
+
+  &--50 {
+
+    circle {
+      stroke-dasharray: 170, 200;
+    }
+  }
+
   &--80 {
 
     circle {
@@ -464,7 +479,7 @@
   &--99 {
 
     circle {
-      stroke-dasharray: 268;
+      stroke-dasharray: 276;
     }
   }
 }
@@ -478,4 +493,206 @@
 
 .page-companions__card-level-text {
   display: none;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: $tablet-width) {
+
+  .page-companions {
+    margin-top: 40px;
+  }
+
+  .page-companions__card {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 35px 27px 13px 35px;
+
+    &:not(:last-child) {
+      margin-bottom: 41px;
+    }
+  }
+
+  .page-companions__card-category-name {
+    display: none;
+    padding-left: 48px;
+
+    &::before {
+      width: 800px;
+      left: -35px;
+      right: -35px;
+    }
+
+    &::after {
+      right: 463px;
+      left: 37px;
+    }
+  }
+
+  .page-companions__card-info {
+    flex-grow: 1;
+    order: 1;
+  }
+
+  .page-companions__card-image-wrapper {
+    @include size(190px);
+    border-radius: 20px;
+  }
+
+  .page-companions__card-person-info {
+    flex-grow: 1;
+    margin-left: 33px;
+  }
+
+  .page-companions__card-person-name {
+    display: flex;
+    align-items: center;
+    width: auto;
+    order: 1;
+    font-size: 30px;
+
+    &::after {
+      position: static;
+      margin-top: 4px;
+      margin-left: 23px;
+    }
+  }
+
+  .page-companions__card-tags {
+    width: auto;
+    max-width: 250px;
+    margin-top: 24px;
+    margin-left: 0;
+    padding-left: 3px;
+    order: 2;
+
+    a {
+      font-size: 20px;
+    }
+  }
+
+  .page-companions__card-buttons {
+    margin-top: auto;
+    margin-left: 0;
+    order: 3;
+  }
+
+  .page-companions__card-button-call {
+    position: static;
+    font-size: 20px;
+    padding: 12px 30px;
+    border-radius: 40px;
+  }
+
+  .page-companions__card-button-like {
+    @include size(50px);
+
+    &::before {
+      @include size(20px, 17px);
+    }
+  }
+
+  .page-companions__card-button-like-count {
+    font-size: 20px;
+  }
+
+  .page-companions__card-countries {
+    width: 100%;
+    margin-top: 18px;
+    order: 3;
+
+    & .page-companions__card-category-name {
+      display: block;
+    }
+  }
+
+
+  .page-companions__card-countries-list {
+    flex-direction: row;
+    margin-top: 21px;
+  }
+
+  .page-companions__card-country {
+    padding-left: 0;
+    font-size: 20px;
+
+    &::before {
+      @include size(35px, 24px);
+      margin-right: 12px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 27px;
+    }
+  }
+
+  .page-companions__card-transport-level {
+    flex-direction: column;
+    order: 2;
+    margin-left: auto;
+    margin-bottom: 0;
+  }
+
+  .page-companions__card-transports-list {
+    flex-direction: column;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  .page-companions__card-transport {
+    background-color: transparent;
+
+    &--plane {
+
+      &::before {
+        @include size(19px, 21px);
+      }
+    }
+
+    &--bus {
+
+      &::before {
+        @include size(17px, 21px);
+      }
+    }
+
+    &--bike {
+
+      &::before {
+        @include size(24px, 21px);
+      }
+    }
+
+    &--run {
+
+      &::before {
+        @include size(20px, 21px);
+      }
+    }
+  }
+
+
+  .page-companions__card-level-wrapper {
+    @include size(60px);
+  }
+
+  .page-companions__card-level-number {
+    margin-top: 10px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba($color-dark-blue-slate, 0.3);
+  }
+
+  .page-companions__card-level-text {
+    display: block;
+    font-size: 14px;
+    color: rgba($color-dark-blue-slate, 0.4);
+  }
+
 }

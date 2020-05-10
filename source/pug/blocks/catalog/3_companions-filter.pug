@@ -11,55 +11,60 @@ aside.companions-content__filter.companions-filter
 
     dl.companions-filter__tabs
 
-      dt.companions-filter__tab-title
-        button.companions-filter__tab-title-btn(type="button") Хобби
+      .companions-filter__tab-group
+        dt.companions-filter__tab-title Хобби
           span :
-        //- mixin companions-filter-input(type, name, text, value)
-          @String type
-          @String name
-          @String text
-          @String value
-          +companions-filter-input('', '', '', '')
-      dd.companions-filter__tab-item
-        +companions-filter-input('checkbox', 'hobby', 'gym', 'Спортзал')
-        +companions-filter-input('checkbox', 'hobby', 'hookah', 'Кальян')
-        +companions-filter-input('checkbox', 'hobby', 'sofa', 'Диван')
+          button.companions-filter__tab-title-btn(type="button")
+          //- mixin companions-filter-input(type, name, text, value)
+            @String type
+            @String name
+            @String text
+            @String value
+            +companions-filter-input('', '', '', '')
+        dd.companions-filter__tab-item
+          +companions-filter-input('checkbox', 'hobby', 'gym', 'Спортзал', checked=true)
+          +companions-filter-input('checkbox', 'hobby', 'hookah', 'Кальян')
+          +companions-filter-input('checkbox', 'hobby', 'sofa', 'Диван')
 
-      dt.companions-filter__tab-title.companions-filter__tab-title--active
-        button.companions-filter__tab-title-btn(type="button") Музыка
+      .companions-filter__tab-group
+        dt.companions-filter__tab-title.companions-filter__tab-title--active Музыка
           span :
-      dd.companions-filter__tab-item
-        +companions-filter-input('checkbox', 'music', 'hard-rock', 'Тяжелый рок', checked=true)
-        +companions-filter-input('checkbox', 'music', 'russian-rap', 'Русский рэп')
-        +companions-filter-input('checkbox', 'music', 'eurodance', 'Евроденс')
+          button.companions-filter__tab-title-btn(type="button")
+        dd.companions-filter__tab-item
+          +companions-filter-input('checkbox', 'music', 'hard-rock', 'Тяжелый рок', checked=true)
+          +companions-filter-input('checkbox', 'music', 'russian-rap', 'Русский рэп')
+          +companions-filter-input('checkbox', 'music', 'eurodance', 'Евроденс')
 
-      dt.companions-filter__tab-title
-        button.companions-filter__tab-title-btn(type="button") Еда
+      .companions-filter__tab-group
+        dt.companions-filter__tab-title Еда
           span :
-      dd.companions-filter__tab-item
-        +companions-filter-input('checkbox', 'food', 'meet', 'Мясоед')
-        +companions-filter-input('checkbox', 'food', 'healthy-food', 'Сидит на ПП')
-        +companions-filter-input('checkbox', 'food', 'vegan', 'Веган-сыроед')
+          button.companions-filter__tab-title-btn(type="button")
+        dd.companions-filter__tab-item
+          +companions-filter-input('checkbox', 'food', 'meet', 'Мясоед', checked=true)
+          +companions-filter-input('checkbox', 'food', 'healthy-food', 'Сидит на ПП')
+          +companions-filter-input('checkbox', 'food', 'vegan', 'Веган-сыроед')
 
-      dt.companions-filter__tab-title.companions-filter__tab-title--active
-        button.companions-filter__tab-title-btn(type="button") Транспорт
+      .companions-filter__tab-group
+        dt.companions-filter__tab-title.companions-filter__tab-title--active Транспорт
           span :
-      dd.companions-filter__tab-item.companions-filter__tab-item--transport
-        +companions-filter-input-transport('checkbox', 'transport', 'plane', 'Самолет', checked=true)
-        +companions-filter-input-transport('checkbox', 'transport', 'bus', 'Автобус', checked=true)
-        +companions-filter-input-transport('checkbox', 'transport', 'bike', 'Велосипед', checked=false)
-        +companions-filter-input-transport('checkbox', 'transport', 'run', 'Пешком', checked=true)
+          button.companions-filter__tab-title-btn(type="button")
+        dd.companions-filter__tab-item.companions-filter__tab-item--transport
+          +companions-filter-input-transport('checkbox', 'transport', 'plane', 'Самолет', checked=true)
+          +companions-filter-input-transport('checkbox', 'transport', 'bus', 'Автобус', checked=true)
+          +companions-filter-input-transport('checkbox', 'transport', 'bike', 'Велосипед', checked=false)
+          +companions-filter-input-transport('checkbox', 'transport', 'run', 'Пешком', checked=true)
 
-      dt.companions-filter__tab-title.companions-filter__tab-title--active
-        button.companions-filter__tab-title-btn(type="button") Левел
+      .companions-filter__tab-group.companions-filter__tab-group--level
+        dt.companions-filter__tab-title.companions-filter__tab-title--active Левел
           span :
-      dd.companions-filter__tab-item.companions-filter__tab-item--level
-        .companions-filter__tab-level-group
-          input.companions-filter__tab-input-level.companions-filter__tab-input-level--min(type="tel" name="level-min" value="30" aria-label="Минимальный уровень")
-          input.companions-filter__tab-input-level.companions-filter__tab-input-level--max(type="tel" name="level-max" value="100" aria-label="Маскимальный уровень")
+          button.companions-filter__tab-title-btn(type="button")
+        dd.companions-filter__tab-item.companions-filter__tab-item--level
+          .companions-filter__tab-level-group
+            input.companions-filter__tab-input-level.companions-filter__tab-input-level--min(type="tel" name="level-min" value="30" aria-label="Минимальный уровень")
+            input.companions-filter__tab-input-level.companions-filter__tab-input-level--max(type="tel" name="level-max" value="100" aria-label="Маскимальный уровень")
 
-        .companions-filter__tab-level-slider
-          span.companions-filter__tab-level-slider-btn.companions-filter__tab-level-slider-btn--left Левая кнопка
-          span.companions-filter__tab-level-slider-btn.companions-filter__tab-level-slider-btn--right Правая кнопка
+          .companions-filter__tab-level-slider
+            span.companions-filter__tab-level-slider-btn.companions-filter__tab-level-slider-btn--left Левая кнопка
+            span.companions-filter__tab-level-slider-btn.companions-filter__tab-level-slider-btn--right Правая кнопка
 
     button.companions-filter__tabs-submit-btn(type='submit') Показать

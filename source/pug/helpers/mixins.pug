@@ -110,6 +110,7 @@ mixin companions-filter-input-transport(type, name, value, text, checked=false)
 mixin companions-card-page(imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/700', imageLinkDesktop='https://via.placeholder.com/1440', personName, likeCount, tags, countries, level, plane=false, bus=false, bike=false, run=false, liked=false, online=false)
 
   article.page-companions__card
+    h5.visually-hidden Карточка попутчика
     .page-companions__card-info
       .page-companions__card-image-wrapper
         picture.page-companions__card-image
@@ -159,7 +160,7 @@ mixin companions-card-page(imageLinkMobile='https://via.placeholder.com/270', im
 mixin companions-country-filter-letter(letter, countries, active=false)
   if active
     li.companions-country-filter__countries-item.companions-country-filter__countries-item--active
-      a.companions-country-filter__countries-letter.companions-country-filter__countries-letter--active(href="#")= letter
+      a.companions-country-filter__countries-letter(href="#")= letter
       ul.companions-country-filter__countries-list
         each country in countries
           li.companions-country-filter__country-name
