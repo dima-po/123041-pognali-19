@@ -25,65 +25,65 @@ mixin destination-card(country, description, people, modificator, imageLinkMobil
 
 mixin companions-card-index(imageLink, level, personName, status, countries, tags, plane=false, bus=false, bike=false, run=false)
   article.companions__card
+    h5.visually-hidden Карточка попутчика
+    picture.companions__card-image
+      img(src= imageLink, width='285', height='285', alt='Изображение карточки направления')
 
-      picture.companions__card-image
-        img(src= imageLink, width='285', height='285', alt='Изображение карточки направления')
+    .companions__card-level
+      //- .companions__card-level-circle
+      svg.companions__card-level-progress(viewBox='0 0 100 100' class=`companions__card-level-progress--${level}`)
+        circle(cx='50', cy='50', r='35.5')
+      span.companions__card-level-number= level
+      span.companions__card-level-text level
 
-      .companions__card-level
-        //- .companions__card-level-circle
-        svg.companions__card-level-progress(viewBox='0 0 100 100' class=`companions__card-level-progress--${level}`)
-          circle(cx='50', cy='50', r='35.5')
-        span.companions__card-level-number= level
-        span.companions__card-level-text level
+    .companions__card-content
 
-      .companions__card-content
+      ul.companions__card-flags
+        each country, index in countries
+            li.companions__card-flag(class=`companions__card-flag--${index}`)= country
+              span.companions__card-flag-tooltip= country
 
-        ul.companions__card-flags
-          each country, index in countries
-              li.companions__card-flag(class=`companions__card-flag--${index}`)= country
-                span.companions__card-flag-tooltip= country
+      a.companions__card-person(href="#")
+        if status === 'online'
+          span.companions__card-person-status.companions__card-person-status--online= Online
+        else
+          span.companions__card-person-status.companions__card-person-status--offline= Offline
 
-        a.companions__card-person(href="#")
-          if status === 'online'
-            span.companions__card-person-status.companions__card-person-status--online= Online
-          else
-            span.companions__card-person-status.companions__card-person-status--offline= Offline
+        span.companions__card-person-name= personName
 
-          span.companions__card-person-name= personName
+      section.companions__card-tags
+        h5.visually-hidden Теги попутчика
+        each tag in tags
+          a(href="#")= tag
 
-        section.companions__card-tags
-          h5.visually-hidden Теги попутчика
-          each tag in tags
-            a(href="#")= tag
+      ul.companions__card-transports
+        if plane
+          li.companions__card-transport.companions__card-transport--plane.companions__card-transport--available Авиаперелет
+            span.companions__card-transport-tooltip Авиаперелет
+        else
+          li.companions__card-transport.companions__card-transport--plane Авиаперелет
+            span.companions__card-transport-tooltip Авиаперелет
 
-        ul.companions__card-transports
-          if plane
-            li.companions__card-transport.companions__card-transport--plane.companions__card-transport--available Авиаперелет
-              span.companions__card-transport-tooltip Авиаперелет
-          else
-            li.companions__card-transport.companions__card-transport--plane Авиаперелет
-              span.companions__card-transport-tooltip Авиаперелет
+        if bus
+          li.companions__card-transport.companions__card-transport--bus.companions__card-transport--available Автотранспорт
+            span.companions__card-transport-tooltip Автотранспорт
+        else
+          li.companions__card-transport.companions__card-transport--bus Автотранспорт
+            span.companions__card-transport-tooltip Автотранспорт
 
-          if bus
-            li.companions__card-transport.companions__card-transport--bus.companions__card-transport--available Автотранспорт
-              span.companions__card-transport-tooltip Автотранспорт
-          else
-            li.companions__card-transport.companions__card-transport--bus Автотранспорт
-              span.companions__card-transport-tooltip Автотранспорт
+        if bike
+          li.companions__card-transport.companions__card-transport--bike.companions__card-transport--available Велосипед
+            span.companions__card-transport-tooltip Велосипед
+        else
+          li.companions__card-transport.companions__card-transport--bike Велосипед
+            span.companions__card-transport-tooltip Велосипед
 
-          if bike
-            li.companions__card-transport.companions__card-transport--bike.companions__card-transport--available Велосипед
-              span.companions__card-transport-tooltip Велосипед
-          else
-            li.companions__card-transport.companions__card-transport--bike Велосипед
-              span.companions__card-transport-tooltip Велосипед
-
-          if run
-            li.companions__card-transport.companions__card-transport--run.companions__card-transport--available Пешком
-              span.companions__card-transport-tooltip Пешком
-          else
-            li.companions__card-transport.companions__card-transport--run Пешком
-              span.companions__card-transport-tooltip Пешком
+        if run
+          li.companions__card-transport.companions__card-transport--run.companions__card-transport--available Пешком
+            span.companions__card-transport-tooltip Пешком
+        else
+          li.companions__card-transport.companions__card-transport--run Пешком
+            span.companions__card-transport-tooltip Пешком
 
 
 
@@ -110,6 +110,7 @@ mixin companions-filter-input-transport(type, name, value, text, checked=false)
 mixin companions-card-page(imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/700', imageLinkDesktop='https://via.placeholder.com/1440', personName, likeCount, tags, countries, level, plane=false, bus=false, bike=false, run=false, liked=false, online=false)
 
   article.page-companions__card
+    h5.visually-hidden Карточка попутчика
     .page-companions__card-info
       .page-companions__card-image-wrapper
         picture.page-companions__card-image
@@ -159,7 +160,7 @@ mixin companions-card-page(imageLinkMobile='https://via.placeholder.com/270', im
 mixin companions-country-filter-letter(letter, countries, active=false)
   if active
     li.companions-country-filter__countries-item.companions-country-filter__countries-item--active
-      a.companions-country-filter__countries-letter.companions-country-filter__countries-letter--active(href="#")= letter
+      a.companions-country-filter__countries-letter(href="#")= letter
       ul.companions-country-filter__countries-list
         each country in countries
           li.companions-country-filter__country-name
@@ -172,10 +173,10 @@ mixin companions-country-filter-letter(letter, countries, active=false)
           li.companions-country-filter__country-name
             a.companions-country-filter__country-link(href="#")= country
 
+
 mixin companions-country-filter-small(countries)
   each country in countries
-    li.companions-country-filter__countries-column-name
-      a.companions-country-filter__countries-column-link(href="#")= country
+    a.companions-country-filter__countries-column-link(href="#")= country
 
 
 

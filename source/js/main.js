@@ -14,7 +14,7 @@ let filterOpenBtn = document.querySelector('.companions-country-filter__button--
 let filterCloseBtn = document.querySelector('.companions-country-filter__button--close');
 let filterCloseBtnBottom = document.querySelector('.companions-country-filter__button--bottom');
 let filterContinents = document.querySelector('.companions-country-filter__continents');
-let filterContent = document.querySelector('.companions-country-filter__content');
+let filterContent = document.querySelector('.companions-country-filter__content-wrapper');
 
 
 navBtn.addEventListener('click', function(e) {
@@ -39,7 +39,7 @@ navBtn.addEventListener('click', function(e) {
     filterOpenBtn.classList.remove('companions-country-filter__button--active');
     filterMain.classList.add('companions-country-filter--active');
     filterCloseBtn.classList.add('companions-country-filter__button--active');
-    filterContent.classList.add('companions-country-filter__content--active');
+    filterContent.classList.add('companions-country-filter__content-wrapper--active');
     filterContinents.classList.add('companions-country-filter__continents--active');
   });
 
@@ -47,23 +47,24 @@ navBtn.addEventListener('click', function(e) {
     filterOpenBtn.classList.add('companions-country-filter__button--active');
     filterMain.classList.remove('companions-country-filter--active');
     filterCloseBtn.classList.remove('companions-country-filter__button--active');
-    filterContent.classList.remove('companions-country-filter__content--active');
+    filterContent.classList.remove('companions-country-filter__content-wrapper--active');
     filterContinents.classList.remove('companions-country-filter__continents--active');
   });
 
   filterCloseBtnBottom.addEventListener('click', function() {
-
+    filterMain.classList.remove('companions-country-filter--active');
     filterOpenBtn.classList.add('companions-country-filter__button--active');
     filterCloseBtn.classList.remove('companions-country-filter__button--active');
-    filterContent.classList.remove('companions-country-filter__content--active');
+    filterContent.classList.remove('companions-country-filter__content-wrapper--active');
     filterContinents.classList.remove('companions-country-filter__continents--active');
   });
 
 
 
 let tabsTitles = document.querySelectorAll('.companions-filter__tab-title');
+let tabsTitlesBtn = document.querySelectorAll('.companions-filter__tab-title-btn');
 for(let i = 0; i <= tabsTitles.length; i++) {
-  tabsTitles[i].addEventListener('click', function() {
+  tabsTitlesBtn[i].addEventListener('click', function() {
     tabsTitles[i].classList.toggle('companions-filter__tab-title--active');
   });
 }
