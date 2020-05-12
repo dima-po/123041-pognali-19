@@ -89,3 +89,31 @@
   }
 }
 
+
+@media only screen and (min-width: $desktop-width) {
+
+  .page-title {
+    padding-top: 102px;
+    padding-bottom: 68px;
+  }
+
+  .page-title__wrapper {
+    padding: 0 122px 0 127px;
+  }
+
+  .page-title__caption {
+
+    &::after {
+      bottom: -72px;
+    }
+  }
+
+  .page-title__back-to-home {
+    margin-top: 8px;
+
+    &::after {
+      margin-left: 29px;
+    }
+  }
+
+}

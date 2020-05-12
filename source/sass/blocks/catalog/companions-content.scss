@@ -1,3 +1,15 @@
 .companions-content {
   margin-top: 48px;
 }
+
+@media only screen and (min-width: $desktop-width) {
+
+  .companions-content {
+    margin-top: 77px;
+  }
+
+  .companions-content__wrapper {
+    display: flex;
+  }
+
+}

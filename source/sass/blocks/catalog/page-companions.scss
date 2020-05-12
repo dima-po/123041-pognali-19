@@ -696,3 +696,115 @@
   }
 
 }
+
+
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .page-companions {
+    flex-grow: 1;
+    margin-top: 0;
+    order: -1;
+  }
+
+  .page-companions__card {
+    // height: 285px;
+    min-height: 285px;
+    padding: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .page-companions__card-info {
+    flex-grow: 0;
+  }
+
+  .page-companions__card-image-wrapper {
+    @include size(285px, 100%);
+    border-radius: 20px 0 0 20px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .page-companions__card-person-info {
+    margin-left: 60px;
+    justify-content: center;
+    // align-items: center;
+  }
+
+  .page-companions__card-person-name {
+    position: relative;
+    margin-bottom: 0;
+
+    &::after {
+      position: absolute;
+      margin-top: 0;
+      margin-left: 0;
+      left: -26px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .page-companions__card-tags {
+    margin-bottom: 46px;
+  }
+
+  .page-companions__card-buttons {
+    margin-top: 0;
+  }
+
+  .page-companions__card-countries {
+    width: auto;
+    order: 2;
+    margin-top: 50px;
+    margin-bottom: 115px;
+    margin-left: 80px;
+  }
+
+  .page-companions__card-countries .page-companions__card-category-name {
+    display: none;
+  }
+
+  .page-companions__card-countries-list {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .page-companions__card-country {
+
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+
+    &::before {
+      margin-right: 18px;
+    }
+  }
+
+  .page-companions__card-transport-level {
+    position: absolute;
+    right: 47px;
+    bottom: 50px;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    order: 3;
+  }
+
+  .page-companions__card-level {
+    margin-left: 0;
+  }
+
+  .page-companions__card-transports-list {
+    flex-direction: row;
+    margin-top: 8px;
+    margin-right: 43px;
+  }
+
+}
