@@ -11,17 +11,17 @@ block content
   //- Шапка сайта
   include blocks/header
 
-  //- Заголовок страницы
-  include blocks/page-title
-
   main.site-content.catalog-page
+
+      //- Заголовок страницы
+      include blocks/page-title
 
       //- Фильтр по странам
       include blocks/catalog/1_country-filter
 
       section.companions-content
         h5.visually-hidden Контент страницы попутчиков
-        .wrapper
+        .wrapper.companions-content__wrapper
 
           //- Фильтр попутчиков
           include blocks/catalog/3_companions-filter
@@ -30,7 +30,7 @@ block content
           include blocks/catalog/2_companions-cards
 
           //- Пагинация
-          include blocks/catalog/4_companions-pagination
+          //- include blocks/catalog/4_companions-pagination
 
   //- Футер сайта
   include blocks/footer

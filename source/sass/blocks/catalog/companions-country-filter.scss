@@ -4,13 +4,13 @@
   background-color: #e2e5f2;
   border-radius: 0 0 20px 20px;
 
-  &--active {
-    position: absolute;
-    top: -48px;
-    left: 0;
-    right: 0;
-    z-index: 4;
-  }
+  // &--active {
+  //   position: absolute;
+  //   top: -48px;
+  //   left: 0;
+  //   right: 0;
+  //   z-index: 4;
+  // }
 }
 
 .companions-country-filter__wrapper {
@@ -36,6 +36,10 @@
     margin-right: 12px;
     background-image: url("../img/filter.svg");
     background-repeat: no-repeat;
+  }
+
+  span {
+    display: none;
   }
 }
 
@@ -267,7 +271,9 @@
     border-radius: 0 0 60px 60px;
 
     &--active {
-      top: -46px;
+      // top: -46px;
+      margin-top: -74px;
+      padding-top: 133px;
     }
   }
 
@@ -379,3 +385,86 @@
   }
 
 }
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .companions-country-filter {
+    margin-top: -74px;
+    padding-top: 115px;
+    padding-bottom: 40px;
+  }
+
+  .companions-country-filter__wrapper {
+    padding: 0 60px;
+  }
+
+  .companions-country-filter__caption {
+    display: flex;
+    order: -1;
+    margin-right: 35px;
+    margin-left: 20px;
+    font-size: 20px;
+    line-height: 24px;
+
+    &::before {
+      @include size(23px, 15px);
+      margin-right: 21px;
+    }
+
+    span {
+      display: inline;
+    }
+  }
+
+  .companions-country-filter__buttons {
+    margin-right: 62px;
+  }
+
+  .companions-country-filter__content {
+    max-width: 1252px;
+  }
+
+  .companions-country-filter__countries {
+    width: 100%;
+    margin-top: 37px;
+  }
+
+  .companions-country-filter__countries-item {
+    margin-bottom: 57px;
+    padding-left: 36px;
+  }
+
+  .companions-country-filter__countries-letter {
+    display: inline-block;
+    @include size(auto);
+    margin-bottom: 32px;
+  }
+
+  .companions-country-filter__countries-list {
+    display: block;
+    @include reset-list;
+  }
+
+  .companions-country-filter__country-name {
+  }
+
+  .companions-country-filter__country-name-link {
+    font-size: 20px;
+    line-height: 30px;
+    color: $color-grey;
+    text-decoration: none;
+  }
+
+  .companions-country-filter__countries-column {
+    display: none;
+  }
+
+  .companions-country-filter__button--bottom {
+    margin-top: 4px;
+  }
+
+
+
+}
+
