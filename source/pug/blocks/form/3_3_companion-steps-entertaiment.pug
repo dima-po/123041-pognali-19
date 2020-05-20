@@ -1,0 +1,35 @@
+section.companion-add-plan__step.step-entertaiment(id="entertaiment")
+  header.companion-add-plan__header.step-header
+    div.step-header__content
+      h2.step-header__title
+        | Шаг 3.
+        br
+        | Развлечения
+      p.step-header__description Наконец, расскажите о своих планах времяпровождения. Можно писать в свободной форме и ставить тэги.
+
+    ul.step-header__navigation
+      li.step-header__navigation-item.step-header__navigation-item--active
+        a(href="") Даты
+      li.step-header__navigation-item
+        a(href="#route") Маршрут
+      li.step-header__navigation-item
+        a(href="#entertaiment") Развлечения
+
+  ul.step-entertaiment__list
+    li.step-entertaiment__list-item
+      .step-entertaiment__list-country
+        span.step-entertaiment__list-country-name Босния и Герцеговина
+        span.step-entertaiment__list-country-flag.step-entertaiment__list-country-flag--bosnia Босния и Герцеговина
+      .step-entertaiment__list-country-field
+        textarea(name="country-action-plan" placeholder="План действий" aria-label="План действий")
+
+    li.step-entertaiment__list-item
+      .step-entertaiment__list-country
+        span.step-entertaiment__list-country-name Чехия
+        span.step-entertaiment__list-country-flag.step-entertaiment__list-country-flag--czech Чехия
+      .step-entertaiment__list-country-field.step-entertaiment__list-country-field--last
+        textarea(name="country-action-plan" placeholder="План действий" aria-label="План действий") Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.
+
+  .companion-add-plan__buttons
+    button.companion-add-plan__btn.companion-add-plan__btn--submit(type="submit") Отправить
+    a.companion-add-plan__btn.companion-add-plan__btn--prev(href="#route") На шаг назад

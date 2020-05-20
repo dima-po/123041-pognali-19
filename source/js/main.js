@@ -15,6 +15,25 @@ let filterCloseBtn = document.querySelector('.companions-country-filter__button-
 let filterCloseBtnBottom = document.querySelector('.companions-country-filter__button--bottom');
 let filterContinents = document.querySelector('.companions-country-filter__continents');
 let filterContent = document.querySelector('.companions-country-filter__content-wrapper');
+// let companionForm = document.querySelector('.companion-add-plan__form');
+// let companionFormField = document.querySelector('.step-entertaiment__list-country-field');
+// let companionFormTextarea = document.querySelectorAll('.step-entertaiment__list-country-field textarea');
+
+// Companion dropdown
+let selectCountryField = document.querySelector('.step-route__country-name--select');
+let selectCountryFieldIcon = document.querySelector('.step-route__country-name--select .step-route__icon');
+let selectCountryFieldCloseBtn = document.querySelector('.step-route__country-delete-btn--dropdown');
+let countryFieldDropdown = document.querySelector('.step-route__dropdown');
+
+
+
+selectCountryField.addEventListener('click', function() {
+  selectCountryFieldIcon.classList.toggle('step-route__icon--dropdown');
+  selectCountryField.classList.toggle('step-route__country-name--show-dropdown');
+  selectCountryFieldCloseBtn.classList.toggle('step-route__country-delete-btn--hide');
+  countryFieldDropdown.classList.toggle('step-route__dropdown--hide');
+})
+
 
 
 navBtn.addEventListener('click', function(e) {
@@ -70,6 +89,17 @@ for(let i = 0; i <= tabsTitles.length; i++) {
 }
 
 
+
+// companionForm.addEventListener('submit', function(){
+//   for(let i = 0; i <= companionFormTextarea.length; i++) {
+//     if(!companionFormTextarea[i].value) {
+//       companionFormField.classList.add('step-entertaiment__list-country-field--error');
+//     }
+//     else {
+//       companionFormField.classList.remove('step-entertaiment__list-country-field--error');
+//     }
+//   }
+// })
 
 
 

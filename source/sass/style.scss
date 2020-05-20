@@ -8,6 +8,7 @@
 
 
 // Base files
+@import "base/site-content.scss";
 @import "base/base.scss";
 @import "base/fonts.scss";
 @import "base/wrapper.scss";
@@ -19,21 +20,20 @@
 @import "blocks/header.scss";
 @import "blocks/page-title.scss";
 @import "blocks/nav.scss";
-@import "blocks/intro.scss";
-@import "blocks/service.scss";
-@import "blocks/destinations.scss";
-@import "blocks/companions.scss";
-@import "blocks/tariffs.scss";
-@import "blocks/registration.scss";
-@import "blocks/route.scss";
-@import "blocks/map.scss";
 @import "blocks/footer.scss";
 @import "blocks/popup.scss";
 
+// Index page
+@import "blocks/index/intro.scss";
+@import "blocks/index/service.scss";
+@import "blocks/index/destinations.scss";
+@import "blocks/index/companions.scss";
+@import "blocks/index/tariffs.scss";
+@import "blocks/index/registration.scss";
+@import "blocks/index/route.scss";
+@import "blocks/index/map.scss";
 
-// Catalog page files
-
-@import "blocks/catalog/catalog-page.scss";
+// Catalog page
 @import "blocks/catalog/companions-country-filter.scss";
 @import "blocks/catalog/companions-content.scss";
 @import "blocks/catalog/companions-filter.scss";
@@ -41,4 +41,13 @@
 @import "blocks/catalog/companions-pagination.scss";
 
 
+// Form page
+// @import "blocks/form/companion-form.scss";
+@import "blocks/form/companion-profile.scss";
+@import "blocks/form/companion-plans.scss";
+@import "blocks/form/companion-add-plan.scss";
+@import "blocks/form/step-header.scss";
+@import "blocks/form/step-dates.scss";
+@import "blocks/form/step-route.scss";
+@import "blocks/form/step-entertaiment.scss";
 

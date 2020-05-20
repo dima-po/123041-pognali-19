@@ -105,6 +105,13 @@ mixin companions-filter-input-transport(type, name, value, text, checked=false)
       input.companions-filter__tab-input-transport(type= type, name= name, id= value value= value tabindex="-1")
     label.companions-filter__tab-label-transport(for= value tabindex="0" aria-label= text)= text
 
+mixin companion-profile-input-transport(type, name, value, text, checked=false)
+  .companion-profile__input-group
+    if checked
+      input.companion-profile__input-transport(type= type, name= name, id= value value= value tabindex="-1" checked)
+    else
+      input.companion-profile__input-transport(type= type, name= name, id= value value= value tabindex="-1")
+    label.companion-profile__label-transport(for= value tabindex="0" aria-label= text)= text
 
 
 mixin companions-card-page(imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/700', imageLinkDesktop='https://via.placeholder.com/1440', personName, likeCount, tags, countries, level, plane=false, bus=false, bike=false, run=false, liked=false, online=false)

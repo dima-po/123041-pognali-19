@@ -1,0 +1,31 @@
+section.companion-profile
+
+  h5.visually-hidden Профайл попутчика
+
+  .wrapper.companion-profile__wrapper
+    form.companion-profile__form(action="https://echo.htmlacademy.ru", method="post")
+      .companion-profile__level
+        svg.companion-profile__level-progress.companion-profile__level-progress--80(viewBox='0 0 100 100')
+          circle(cx='50', cy='50', r='35.5')
+        span.companion-profile__level-number 80
+        span.companion-profile__level-text level
+
+      picture.companion-profile__image-wrapper
+        source(media="(min-width: 768px)", srcset="/img/demin-tablet@1x.jpg", type="image/jpg")
+        source(media="(min-width: 1440px)", srcset="/img/demin-desktop@1x.jpg", type="image/jpg")
+        img.companion-profile__image(src="/img/demin-mobile@1x.jpg" width="70" height="70" alt="Изображение пользователя")
+
+      div.companion-profile__image-upload
+        input(type="file" name="person-image" id="person-image" value="Сменить фото")
+        label(for="person-image") <span>Сменить</span> фото
+
+      section.companion-profile__tags
+        h3.companion-profile__legend Тэги
+        textarea.companion-profile__tags-textarea(name="person-tags" placeholder="Введите тэги") #бургер #бар #футбол #концерт #крафт
+
+      section.companion-profile__transports
+        h3.companion-profile__legend Транспорт
+        +companion-profile-input-transport('checkbox', 'transport', 'plane', 'Самолет', checked=true)
+        +companion-profile-input-transport('checkbox', 'transport', 'bus', 'Автобус', checked=true)
+        +companion-profile-input-transport('checkbox', 'transport', 'bike', 'Велосипед', checked=false)
+        +companion-profile-input-transport('checkbox', 'transport', 'run', 'Пешком', checked=true)

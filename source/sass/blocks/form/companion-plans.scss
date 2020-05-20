@@ -1,0 +1,154 @@
+.companion-plans {
+  position: relative;
+  margin-top: 32px;
+  padding: 23px 0 70px 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: #dfe3f0;
+  z-index: 1;
+}
+
+.companion-plans__caption {
+  margin: 0;
+  margin-bottom: 26px;
+}
+
+.companion-plans__list {
+  @include reset-list;
+}
+
+.companion-plans__item {
+  padding: 18px 25px 22px 25px;
+  border-radius: 10px;
+  color: $color-dark-blue-slate;
+  background-color: #fff;
+
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.companion-plans__item-country {
+  display: flex;
+}
+
+.companion-plans__number {
+  margin: 0;
+  margin-right: 5px;
+}
+
+.companion-plans__title {
+  margin: 0;
+}
+
+
+.companion-plans__quantity {
+  width: 100%;
+  margin: 0;
+  margin-top: 17px;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.companion-plans__dates {
+  width: 100%;
+  margin: 0;
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.companion-plans__edit-btn {
+  margin-top: 21px;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(#000000, 0.3);
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(#000000, 0.6);
+  }
+
+  &:focus {
+    color: rgba(#000000, 0.1);
+  }
+}
+
+
+@media only screen and (min-width: $tablet-width) {
+
+  .companion-plans {
+    margin-top: 60px;
+    padding: 48px 0 118px 0;
+  }
+
+  .companion-plans__wrapper {
+    padding: 0 75px;
+  }
+
+  .companion-plans__caption {
+    margin-bottom: 45px;
+    font-size: 36px;
+  }
+
+  .companion-plans__item {
+    padding: 34px 0 18px 0;
+  }
+
+  .companion-plans__item-country {
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding: 0 24px 0 35px;
+  }
+
+  .companion-plans__number {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  .companion-plans__title {
+    order: -1;
+    font-size: 24px;
+  }
+
+  .companion-plans__item-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 35px 0 35px;
+    border-top: 1px solid rgba(#000000, 0.1);
+  }
+
+  .companion-plans__quantity {
+    width: auto;
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .companion-plans__dates {
+    width: auto;
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .companion-plans__edit-btn {
+    margin-top: 0;
+    // margin-left: auto;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}

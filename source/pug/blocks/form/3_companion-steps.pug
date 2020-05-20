@@ -1,0 +1,18 @@
+section.companion-add-plan
+  .wrapper.companion-add-plan__wrapper
+    h2.companion-add-plan__caption Добавить план:
+      .companion-add-plan__caption-dots
+        span
+        span
+        span
+
+    form.companion-add-plan__form(action="http://echo.htmlacademy.ru", method="post")
+
+        //- Даты пребывания
+        include 3_1_companion-steps-dates
+
+        //- Маршрут
+        include 3_2_companion-steps-route
+
+        //- Развлечения
+        include 3_3_companion-steps-entertaiment
