@@ -1,0 +1,112 @@
+section.companion-add-plan__step.step-dates(id="dates")
+
+  header.companion-add-plan__header.step-header
+    div.step-header__content
+      h2.step-header__title
+        | Шаг 1.
+        br
+        | Даты пребывания
+      p.step-header__description Укажите предпочтительное количество попутчиков, которых вы хотели бы позвать в поездку и ее предполагаемую длительность.
+
+    ul.step-header__navigation
+      li.step-header__navigation-item.step-header__navigation-item--active
+        a(href="") Даты
+      li.step-header__navigation-item
+        a(href="#route") Маршрут
+      li.step-header__navigation-item
+        a(href="#entertaiment") Развлечения
+
+  div.step-dates__inputs
+    div.step-dates__input-group.step-dates__input-group--search
+      label.step-dates__input-label(for="companions-count") Ищу попутчиков:
+      span.step-dates__input-text Чел.
+      div.step-dates__input
+        button.step-dates__input-minus(type="button") Уменьшить
+        input.step-dates__input-field(type="text" name="companions-count" id="companions-count" value="2")
+        button.step-dates__input-plus(type="button") Увеличить
+
+    div.step-dates__input-group.step-dates__input-group--duration
+      label.step-dates__input-label(for="duration") Длительность:
+      span.step-dates__input-text Дн.
+      div.step-dates__input
+        button.step-dates__input-minus(type="button") Уменьшить
+        input.step-dates__input-field(type="text" name="duration" id="duration" value="2")
+        button.step-dates__input-plus(type="button") Увеличить
+
+    div.step__checkbox-group
+      input.step-dates__checkbox-input(type="checkbox" name="children-allow" id="children-allow" checked="checked")
+      label.step-dates__checkbox-label(for="children-allow") Можно с детьми
+
+  section.step-dates__calendar
+    h5.visually-hidden Календарь
+
+    div.step-dates__calendar-month
+      button.step-dates__calendar-btn.step-dates__calendar-btn--prev(type="button") Предыдущий месяц
+      p.step-dates__calendar-month-current Март 2019
+      button.step-dates__calendar-btn.step-dates__calendar-btn--next(type="button") Следующий месяц
+
+    - const weekDays = ['П','В','С','Ч','П','С','В'];
+    - const weekDaysEnds = ['н','т','р','т','т','б','с'];
+    - var prevMonth = 23;
+    - var currentMonth = 2;
+    - var nextMonth = 2;
+
+    table.step-dates__table
+      tr
+        each weekDay, index in weekDays
+          th.step-dates__calendar-weekeday= weekDay
+            i= weekDaysEnds[index]
+      tr
+        while prevMonth <= 28
+          td.step-dates__calendar-outdated= prevMonth++
+        td.step-dates__calendar-outdated 1
+          span мар
+
+      tr
+        while currentMonth <= 8
+          td.step-dates__calendar-outdated= currentMonth++
+
+      tr
+        while currentMonth <= 15
+          td.step-dates__calendar-outdated= currentMonth++
+
+      tr
+        while currentMonth <= 22
+          td.step-dates__calendar-outdated= currentMonth++
+
+      tr
+        while currentMonth <= 29
+          if currentMonth === 23
+            td.step-dates__calendar-outdated= currentMonth++
+          if currentMonth === 24
+            td.step-dates__calendar-outdated= currentMonth++
+          if currentMonth === 25
+            td.step-dates__calendar-outdated= currentMonth++
+
+          if currentMonth === 26
+            td.step-dates__calendar-reservation.step-dates__calendar-reservation--active= currentMonth++
+              span Заезд
+              input(type="hidden" name="reserved-days" value="26")
+          if currentMonth === 27
+            td.step-dates__calendar-reservation= currentMonth++
+              input(type="hidden" name="reserved-days" value="27")
+          if currentMonth === 28
+            td.step-dates__calendar-reservation= currentMonth++
+              span Выезд
+              input(type="hidden" name="reserved-days" value="28")
+          if currentMonth === 29
+            td.step-dates__calendar-available= currentMonth++
+          else
+            td.step-dates__calendar-available= currentMonth++
+
+      tr
+        while currentMonth <= 31
+          td.step-dates__calendar-available= currentMonth++
+
+        td.step-dates__calendar-available 1
+          span апр
+
+        while nextMonth <= 5
+          td.step-dates__calendar-available= nextMonth++
+  .companion-add-plan__buttons
+    a.companion-add-plan__btn.companion-add-plan__btn--next(href="#route") Следующий шаг

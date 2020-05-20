@@ -1,0 +1,40 @@
+.step-header__title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 20px;
+  color: $color-dark-blue-slate;
+}
+
+.step-header__description {
+  margin: 0;
+  margin-top: 15px;
+
+  br {
+    display: none;
+  }
+}
+
+.step-header__navigation {
+  display: none;
+}
+
+
+@media only screen and (min-width: $tablet-width) {
+
+  .step-header__title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .step-header__description {
+    margin-top: 35px;
+    padding-right: 30px;
+    font-size: 20px;
+    line-height: 24px;
+
+    br {
+      display: block;
+    }
+  }
+
+}

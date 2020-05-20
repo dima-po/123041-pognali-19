@@ -4,27 +4,26 @@ include helpers/mixins
 block variables
   - const title = "Форма - HTML Academy: Погнали"
   - const pageCaption = "Направления"
+  - let pageHeader = true
+  - let indexLink = true
 
 block content
   //- Шапка сайта
   include blocks/header
 
-  //- Заголовок страницы
-  include blocks/page-title
-
   main.site-content
 
+    //- Заголовок страницы
+    include blocks/page-title
+
     //- Профиль
-    include blocks/form/1_profile
+    include blocks/form/1_companion-profile
 
     //- Мои планы
-    include blocks/form/2_person-plans
+    include blocks/form/2_companion-plans
 
-    section.add-plan
-      h2.add-plan__title Добавить план:
-
-      //- Форма добавления плана
-      include blocks/form/3_add-plan-form
+    //- Форма добавления плана
+    include blocks/form/3_companion-steps
 
   //- Футер сайта
   include blocks/footer

@@ -1,0 +1,237 @@
+.step-entertaiment {
+  padding: 24px 25px 11px 24px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.step-entertaiment__list {
+  @include reset-list;
+  margin-top: 23px;
+}
+
+.step-entertaiment__list-item {
+
+  &:not(:last-child) {
+    margin-bottom: 21px;
+  }
+}
+
+.step-entertaiment__list-country {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 12px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -13px;
+    @include size(15px, 2px);
+    background-color: $color-dark-blue-slate;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    @include size(6px);
+    border-radius: 50%;
+    background-color: $color-dark-blue-slate;
+    transform: translateY(-50%);
+  }
+}
+
+.step-entertaiment__list-country-name {
+  position: relative;
+  flex-grow: 1;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  color: $color-dark-blue-slate;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0%, #fff 50%);
+  }
+}
+
+.step-entertaiment__list-country-flag {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  @include size(35px, 24px);
+  @include hide-text;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: translateY(-50%);
+
+  &--bosnia {
+    background-image: url("../img/flag-bosnia.svg");
+  }
+
+  &--czech {
+    background-image: url("../img/flag-czech.svg");
+  }
+}
+
+.step-entertaiment__list-country-field {
+  position: relative;
+  margin-top: 16px;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: -13px;
+    width: 2px;
+    height: 280px;
+    background-color: #1d2e5b;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 220px;
+    padding: 11px 14px;
+    border: 1px solid #cbced9;
+    border-radius: 4px;
+    line-height: 22px;
+    resize: none;
+    outline: 0;
+
+    &::placeholder {
+      color: rgba($color-grey, 0.3);
+    }
+
+    &:hover {
+      border-color: #959bb2;
+    }
+
+    &:focus {
+      border-color: $color-dark-blue;
+
+      &::placeholder {
+        color: $color-grey;
+      }
+    }
+  }
+
+  &--last {
+
+    &::before {
+      background-color: transparent;
+    }
+  }
+
+  &--error {
+
+    textarea {
+      border-color: #f47e7e;
+    }
+
+    &::after {
+      content: 'Это поле должно быть заполнено';
+      position: absolute;
+      right: 0;
+      bottom: 7px;
+      left: 1px;
+      width: calc(100% - 2px);
+      padding: 10px;
+      border-radius: 4px;
+      line-height: 1.2;
+      background-color: #ffefef;
+      color: red;
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet-width) {
+
+  .step-entertaiment {
+    margin-top: 52px;
+    margin-bottom: 21px;
+    padding: 45px 47px 51px 44px;
+    border-radius: 30px;
+  }
+
+  .step-entertaiment__list {
+    margin-top: 78px;
+  }
+
+  .step-entertaiment__list-item {
+    padding-right: 28px;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+
+  .step-entertaiment__list-country {
+    padding-left: 0;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .step-entertaiment__list-country-field {
+    margin-top: 44px;
+
+    &::before {
+      top: -45px;
+      left: auto;
+      right: -28px;
+      height: 250px;
+    }
+  }
+
+  .step-entertaiment__list-country-name {
+    font-size: 30px;
+    font-weight: 700;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .step-entertaiment__list-country-flag {
+    @include size(70px, 47px);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -35px;
+      @include size(15px);
+      border-radius: 50%;
+      background-color: $color-dark-blue-slate;
+      transform: translateY(-50%);
+    }
+  }
+
+  .step-entertaiment__list-country-field {
+
+    textarea {
+      min-height: 142px;
+      padding: 17px 40px 17px 14px;
+      font-size: 20px;
+    }
+  }
+
+}
