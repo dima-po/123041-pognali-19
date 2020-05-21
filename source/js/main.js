@@ -26,15 +26,12 @@ let selectCountryFieldCloseBtn = document.querySelector('.step-route__country-de
 let countryFieldDropdown = document.querySelector('.step-route__dropdown');
 
 
-
 selectCountryField.addEventListener('click', function() {
   selectCountryFieldIcon.classList.toggle('step-route__icon--dropdown');
   selectCountryField.classList.toggle('step-route__country-name--show-dropdown');
   selectCountryFieldCloseBtn.classList.toggle('step-route__country-delete-btn--hide');
   countryFieldDropdown.classList.toggle('step-route__dropdown--hide');
 })
-
-
 
 navBtn.addEventListener('click', function(e) {
   navBtn.classList.toggle('header__nav-btn--active');
@@ -82,12 +79,14 @@ navBtn.addEventListener('click', function(e) {
 
 let tabsTitles = document.querySelectorAll('.companions-filter__tab-title');
 let tabsTitlesBtn = document.querySelectorAll('.companions-filter__tab-title-btn');
-for(let i = 0; i <= tabsTitles.length; i++) {
-  tabsTitlesBtn[i].addEventListener('click', function() {
-    tabsTitles[i].classList.toggle('companions-filter__tab-title--active');
-  });
-}
 
+if (tabsTitles && tabsTitlesBtn) {
+  for(let i = 0; i <= tabsTitles.length; i++) {
+    tabsTitlesBtn[i].addEventListener('click', function() {
+      tabsTitles[i].classList.toggle('companions-filter__tab-title--active');
+    });
+  }
+}
 
 
 // companionForm.addEventListener('submit', function(){
@@ -101,17 +100,17 @@ for(let i = 0; i <= tabsTitles.length; i++) {
 //   }
 // })
 
+if (popupOpenBtn && popupCloseBtn) {
 
+  popupOpenBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    popup.classList.add('popup--opened');
+  });
 
-popupOpenBtn.addEventListener('click', function(e) {
-  e.preventDefault();
-  popup.classList.add('popup--opened');
-});
-
-popupCloseBtn.addEventListener('click', function(e) {
-  popup.classList.remove('popup--opened');
-});
-
+  popupCloseBtn.addEventListener('click', function(e) {
+    popup.classList.remove('popup--opened');
+  });
+}
 
 // Tabs
 

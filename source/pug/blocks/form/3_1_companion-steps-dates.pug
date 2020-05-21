@@ -6,15 +6,15 @@ section.companion-add-plan__step.step-dates(id="dates")
         | Шаг 1.
         br
         | Даты пребывания
-      p.step-header__description Укажите предпочтительное количество попутчиков, которых вы хотели бы позвать в поездку и ее предполагаемую длительность.
+      p.step-header__description Укажите предпочтительное количество попутчиков, которых<br>вы хотели бы позвать в поездку и ее предполагаемую длительность.
 
     ul.step-header__navigation
-      li.step-header__navigation-item.step-header__navigation-item--active
-        a(href="") Даты
       li.step-header__navigation-item
-        a(href="#route") Маршрут
+        a.step-header__navigation-item-link.step-header__navigation-item-link--active(href="") Даты
       li.step-header__navigation-item
-        a(href="#entertaiment") Развлечения
+        a.step-header__navigation-item-link(href="#route") Маршрут
+      li.step-header__navigation-item
+        a.step-header__navigation-item-link(href="#entertaiment") Развлечения
 
   div.step-dates__inputs
     div.step-dates__input-group.step-dates__input-group--search
@@ -33,7 +33,7 @@ section.companion-add-plan__step.step-dates(id="dates")
         input.step-dates__input-field(type="text" name="duration" id="duration" value="2")
         button.step-dates__input-plus(type="button") Увеличить
 
-    div.step__checkbox-group
+    div.step-dates__checkbox-group
       input.step-dates__checkbox-input(type="checkbox" name="children-allow" id="children-allow" checked="checked")
       label.step-dates__checkbox-label(for="children-allow") Можно с детьми
 

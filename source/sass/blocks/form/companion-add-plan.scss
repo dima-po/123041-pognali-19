@@ -223,3 +223,36 @@
   }
 
 }
+
+
+@media only screen and (min-width: $desktop-width) {
+  .companion-add-plan {
+    margin-top: -55px;
+    padding: 59px 0 93px 0;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+  }
+
+  .companion-add-plan__wrapper {
+    padding: 0 60px;
+  }
+
+  .companion-add-plan__caption {
+    padding-left: 70px;
+  }
+
+  .companion-add-plan__caption-dots {
+    display: none;
+  }
+
+  .companion-add-plan__step {
+
+    &:not(:last-child) {
+      margin-bottom: 44px;
+    }
+  }
+
+  .companion-add-plan__buttons {
+    margin-top: 58px;
+  }
+}
