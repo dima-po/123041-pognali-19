@@ -235,3 +235,46 @@
   }
 
 }
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .step-entertaiment {
+    margin-top: 0;
+    padding: 96px 160px 102px 160px;
+    border-radius: 60px;
+  }
+
+  .step-entertaiment__list {
+    margin-top: 57px;
+    padding-top: 85px;
+    border-top: 1px solid #d6d9e6;
+  }
+
+  .step-entertaiment__list-item {
+    max-width: 758px;
+  }
+
+  .step-entertaiment__list-country-field {
+
+
+    &::before {
+      width: 3px;
+      right: -46px;
+    }
+
+    textarea {
+      padding: 24px 10px 17px 25px;
+    }
+  }
+
+  .step-entertaiment__list-country-flag {
+    right: -154px;
+
+    &::after {
+      right: auto;
+      left: -47px;
+    }
+  }
+
+}

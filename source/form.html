@@ -101,7 +101,7 @@
               <span>Сменить</span> фото</label>
           </div>
           <section class="companion-profile__tags">
-            <h3 class="companion-profile__legend">Тэги</h3>
+            <h3 class="companion-profile__legend companion-profile__legend--left">Тэги</h3>
             <textarea class="companion-profile__tags-textarea" name="person-tags" placeholder="Введите тэги">#бургер #бар #футбол #концерт #крафт</textarea>
           </section>
           <section class="companion-profile__transports">
@@ -138,7 +138,7 @@
             <div class="companion-plans__item-info">
               <p class="companion-plans__quantity">3 попутчика</p>
               <p class="companion-plans__dates">26 мар — 29 мар</p>
-              <button class="companion-plans__edit-btn" type="button">Изменить</button>
+              <a class="companion-plans__edit-btn" href="">Изменить</a>
             </div>
           </li>
           <li class="companion-plans__item">
@@ -149,7 +149,7 @@
             <div class="companion-plans__item-info">
               <p class="companion-plans__quantity">1 попутчик</p>
               <p class="companion-plans__dates">1 июл — 15 июл</p>
-              <button class="companion-plans__edit-btn" type="button">Изменить</button>
+              <a class="companion-plans__edit-btn" href="">Изменить</a>
             </div>
           </li>
         </ol>
@@ -169,17 +169,18 @@
               <div class="step-header__content">
                 <h2 class="step-header__title">Шаг 1.
                   <br />Даты пребывания</h2>
-                <p class="step-header__description">Укажите предпочтительное количество попутчиков, которых вы хотели бы позвать в поездку и ее предполагаемую длительность.</p>
+                <p class="step-header__description">Укажите предпочтительное количество попутчиков, которых
+                  <br>вы хотели бы позвать в поездку и ее предполагаемую длительность.</p>
               </div>
               <ul class="step-header__navigation">
-                <li class="step-header__navigation-item step-header__navigation-item--active">
-                  <a href="">Даты</a>
+                <li class="step-header__navigation-item">
+                  <a class="step-header__navigation-item-link step-header__navigation-item-link--active" href="">Даты</a>
                 </li>
                 <li class="step-header__navigation-item">
-                  <a href="#route">Маршрут</a>
+                  <a class="step-header__navigation-item-link" href="#route">Маршрут</a>
                 </li>
                 <li class="step-header__navigation-item">
-                  <a href="#entertaiment">Развлечения</a>
+                  <a class="step-header__navigation-item-link" href="#entertaiment">Развлечения</a>
                 </li>
               </ul>
             </header>
@@ -202,7 +203,7 @@
                   <button class="step-dates__input-plus" type="button">Увеличить</button>
                 </div>
               </div>
-              <div class="step__checkbox-group">
+              <div class="step-dates__checkbox-group">
                 <input class="step-dates__checkbox-input" type="checkbox" name="children-allow" id="children-allow" checked="checked" />
                 <label class="step-dates__checkbox-label" for="children-allow">Можно с детьми</label>
               </div>
@@ -313,13 +314,13 @@
               </div>
               <ul class="step-header__navigation">
                 <li class="step-header__navigation-item step-header__navigation-item--active">
-                  <a href="">Даты</a>
+                  <a class="step-header__navigation-item-link" href="#dates">Даты</a>
                 </li>
                 <li class="step-header__navigation-item">
-                  <a href="#route">Маршрут</a>
+                  <a class="step-header__navigation-item-link step-header__navigation-item-link--active" href="">Маршрут</a>
                 </li>
                 <li class="step-header__navigation-item">
-                  <a href="#entertaiment">Развлечения</a>
+                  <a class="step-header__navigation-item-link" href="#entertaiment">Развлечения</a>
                 </li>
               </ul>
             </header>
@@ -471,17 +472,18 @@
               <div class="step-header__content">
                 <h2 class="step-header__title">Шаг 3.
                   <br />Развлечения</h2>
-                <p class="step-header__description">Наконец, расскажите о своих планах времяпровождения. Можно писать в свободной форме и ставить тэги.</p>
+                <p class="step-header__description">Наконец, расскажите о своих планах времяпровождения.
+                  <br>Можно писать в свободной форме и ставить тэги.</p>
               </div>
               <ul class="step-header__navigation">
                 <li class="step-header__navigation-item step-header__navigation-item--active">
-                  <a href="">Даты</a>
+                  <a class="step-header__navigation-item-link" href="#dates">Даты</a>
                 </li>
                 <li class="step-header__navigation-item">
-                  <a href="#route">Маршрут</a>
+                  <a class="step-header__navigation-item-link" href="#route">Маршрут</a>
                 </li>
                 <li class="step-header__navigation-item">
-                  <a href="#entertaiment">Развлечения</a>
+                  <a class="step-header__navigation-item-link step-header__navigation-item-link--active" href="">Развлечения</a>
                 </li>
               </ul>
             </header>

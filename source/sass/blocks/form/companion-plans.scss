@@ -11,6 +11,7 @@
 .companion-plans__caption {
   margin: 0;
   margin-bottom: 26px;
+  color: $color-dark-blue-slate;
 }
 
 .companion-plans__list {
@@ -73,7 +74,7 @@
   background-color: transparent;
   text-transform: uppercase;
   letter-spacing: 1.4px;
-  cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     color: rgba(#000000, 0.6);
@@ -151,4 +152,61 @@
     font-size: 20px;
     font-weight: 500;
   }
+}
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .companion-plans {
+    margin-top: 63px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+  }
+
+
+  .companion-plans__wrapper {
+    padding: 0 60px 0 125px;
+  }
+
+  .companion-plans__item {
+    display: flex;
+    align-items: center;
+    padding: 32px 41px;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .companion-plans__item-country {
+    margin: 0;
+    padding: 0;
+    // padding: 0;
+  }
+
+  .companion-plans__title {
+    order: 0;
+  }
+
+  .companion-plans__number {
+    margin-right: 33px;
+  }
+
+  .companion-plans__item-info {
+    justify-content: flex-start;
+    width: 588px;
+    margin-left: auto;
+    padding: 0;
+    border-top: 0;
+  }
+
+  .companion-plans__dates {
+    margin-left: auto;
+    margin-right: 92px;
+  }
+
+  .companion-plans__edit-btn {
+    margin-left: auto;
+  }
+
 }

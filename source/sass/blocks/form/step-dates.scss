@@ -128,7 +128,7 @@
   }
 }
 
-.step__checkbox-group {
+.step-dates__checkbox-group {
   margin-top: 23px;
 }
 
@@ -331,7 +331,7 @@
 .step-dates__calendar-reservation {
   position: relative;
   color: #fff;
-  background-color: #101d41;
+  background-color: $color-dark-blue-slate;
 
   &:hover {
 
@@ -429,7 +429,7 @@
     }
   }
 
-  .step__checkbox-group {
+  .step-dates__checkbox-group {
     margin-top: 34px;
     order: 2;
   }
@@ -511,5 +511,101 @@
       }
     }
   }
+
+}
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .step-dates {
+    padding: 96px 160px 106px 160px;
+    border-radius: 60px;
+  }
+
+  .step-dates__inputs {
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 56px;
+    padding-top: 29px;
+    border-top: 1px solid #d6d9e6;
+  }
+
+  .step-dates__input-group {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding-top: 0;
+    border-top: 0;
+
+    &--search {
+      order: 1;
+    }
+
+    &--duration {
+      order: 3;
+      margin-top: 15px;
+    }
+  }
+
+  .step-dates__input-label {
+    min-width: 220px;
+  }
+
+  .step-dates__input-text {
+    order: 1;
+    margin-left: 37px;
+    color: $color-dark-blue-slate;
+  }
+
+  .step-dates__input {
+    width: 181px;
+    margin-top: 0;
+  }
+
+  .step-dates__input-minus {
+    width: 58px;
+  }
+
+  .step-dates__input-plus {
+    width: 58px;
+  }
+
+  .step-dates__checkbox-group {
+    margin-top: 0;
+    margin-left: auto;
+    order: 2;
+  }
+
+  .step-dates__calendar {
+    margin-top: 32px;
+  }
+
+  .step-dates__calendar-month {
+    padding: 23px 0px;
+  }
+
+  .step-dates__table {
+    margin-top: 15px;
+
+    th {
+      padding-bottom: 21px;
+      padding-left: 16px;
+      text-align: left;
+    }
+
+    td {
+      padding-top: 8px;
+      padding-left: 16px;
+      font-size: 18px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+
 
 }

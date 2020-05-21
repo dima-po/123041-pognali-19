@@ -386,6 +386,7 @@
       height: 130px;
       background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, #fff 100%);
       z-index: 5;
+      pointer-events: none;
     }
   }
 
@@ -544,6 +545,60 @@
 
     &--dropdown {
       @include size(17px);
+    }
+  }
+
+}
+
+
+
+@media only screen and (min-width: $desktop-width) {
+
+  .step-route {
+    padding: 100px 160px 104px 160px;
+    border-radius: 60px;
+  }
+
+  .step-route__countries {
+    margin-top: 56px;
+    padding-top: 62px;
+
+    &::after {
+      bottom: -130px;
+    }
+  }
+
+  .step-route__country-name {
+    max-width: 730px;
+
+    &::after {
+      top: -64px;
+      right: -46px;
+      height: 340px;
+    }
+
+    &--select {
+
+      &::before {
+        right: -53px;
+      }
+    }
+  }
+
+  .step-route__country-flag {
+    margin-left: 121px;
+
+    &::after {
+      left: -83px;
+    }
+  }
+
+  .step-route__add-county {
+    max-width: 730px;
+    margin-bottom: 0;
+
+    &::before {
+      right: -52px;
     }
   }
 
