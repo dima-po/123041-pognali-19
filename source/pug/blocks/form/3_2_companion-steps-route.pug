@@ -23,24 +23,27 @@ section.companion-add-plan__step.step-route(id="route")
         i.step-route__icon
         input(type="hidden" name="selected-county" value="Босния и Герцеговина")
       li.step-route__country-flag.step-route__country-flag--bosnia Босния и Герцеговина
-      button.step-route__country-delete-btn(type="button") Удалить страну
+      li.step-route__country-delete
+        button.step-route__country-delete-btn(type="button") Удалить страну
 
     ul.step-route__country.step-route__country--selected
       li.step-route__country-name Чехия
         i.step-route__icon
         input(type="hidden" name="selected-county" value="Чехия")
       li.step-route__country-flag.step-route__country-flag--czech Чехия
-      button.step-route__country-delete-btn(type="button") Удалить страну
+      li.step-route__country-delete
+        button.step-route__country-delete-btn(type="button") Удалить страну
 
     ul.step-route__country.step-route__country--new
       li.step-route__country-name.step-route__country-name--select Выберите страну
         i.step-route__icon
-      button.step-route__country-delete-btn.step-route__country-delete-btn--dropdown(type="button") Удалить поле
+      li.step-route__country-delete
+        button.step-route__country-delete-btn.step-route__country-delete-btn--dropdown(type="button") Удалить поле
 
       - const countryLetters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ч', 'Ш', 'Э', 'Ю', 'Я'];
       - const countryList = ['Австралия', 'Австрия', 'Азербайджан', 'Албания', 'Алжир', 'Ангола', 'Андорра', 'Антигуа и Барбуда', 'Аргентина', 'Армения', 'Афганистан'];
 
-      div.step-route__dropdown.step-route__dropdown--hide
+      li.step-route__dropdown.step-route__dropdown--hide
         ul.step-route__dropdown-letters
           each letter in countryLetters
             if letter === 'А'

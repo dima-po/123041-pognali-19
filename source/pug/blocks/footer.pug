@@ -1,11 +1,12 @@
 footer.footer
   .wrapper
     .footer__content
-      a.footer__logo(href='index.html')
-        picture
-          source.footer__logo-tablet(media="(min-width: 768px)", srcset="img/logo-tablet-blue@1x.png", type="image/png")
-          source.footer__logo-desktop(media="(min-widths: 1440px)", srcset="img/logo-desktop-blue@1x.png", type="image/png")
-          img.footer__logo-img(src="img/logo-mobile-blue@1x.png" width="96" height="15" alt="Логотип Погнали")
+      if indexLink
+        a.header__logo(href="index.html")
+          +responsive-images("img/logo-mobile-blue", "img/logo-tablet-blue", "img/logo-desktop-blue", 100, 19,"Логотип Погнали", "footer__logo-img")
+      else
+        a.header__logo(href="")
+          +responsive-images("img/logo-mobile-blue", "img/logo-tablet-blue", "img/logo-desktop-blue", 100, 19,"Логотип Погнали", "footer__logo-img")
 
       .footer__socials
         a.footer__socials-link.footer__socials-link--facebook(href='https://facebook.com')

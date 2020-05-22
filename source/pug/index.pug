@@ -4,6 +4,7 @@ include helpers/mixins
 block variables
   - const title = "HTML Academy: Погнали"
   - let pageHeader = false
+  - let indexLink = false
 
 block content
   //- Шапка сайта
@@ -44,6 +45,8 @@ block content
 
 block scripts
   script(src="js/main.js")
-  //- script(src="../js/vendor.js")
+  script(src="js/picturefill.min.js" async)
+  script.
+    document.createElement( "picture" );
 
 

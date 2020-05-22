@@ -1,29 +1,29 @@
 console.log("Привет, ты смотришь проект Погнали");
 
 // Variables
-let header = document.querySelector('.header');
-let nav = document.querySelector('.nav');
-let navBtn = document.querySelector('.header__nav-btn');
-let logoImg = document.querySelector('.header__logo-img');
-let logoImgTablet = document.querySelector('.header__logo-tablet');
-let popup = document.querySelector('.popup');
-let popupOpenBtn = document.querySelector('.tariffs__btn');
-let popupCloseBtn = document.querySelector('.popup__close-btn');
-let filterMain = document.querySelector('.companions-country-filter');
-let filterOpenBtn = document.querySelector('.companions-country-filter__button--open');
-let filterCloseBtn = document.querySelector('.companions-country-filter__button--close');
-let filterCloseBtnBottom = document.querySelector('.companions-country-filter__button--bottom');
-let filterContinents = document.querySelector('.companions-country-filter__continents');
-let filterContent = document.querySelector('.companions-country-filter__content-wrapper');
+var header = document.querySelector('.header');
+var nav = document.querySelector('.nav');
+var navBtn = document.querySelector('.header__nav-btn');
+var logoImg = document.querySelector('.header__logo-img');
+var logoImgTablet = document.querySelector('.header__logo-tablet');
+var popup = document.querySelector('.popup');
+var popupOpenBtn = document.querySelector('.tariffs__btn');
+var popupCloseBtn = document.querySelector('.popup__close-btn');
+var filterMain = document.querySelector('.companions-country-filter');
+var filterOpenBtn = document.querySelector('.companions-country-filter__button--open');
+var filterCloseBtn = document.querySelector('.companions-country-filter__button--close');
+var filterCloseBtnBottom = document.querySelector('.companions-country-filter__button--bottom');
+var filterContinents = document.querySelector('.companions-country-filter__continents');
+var filterContent = document.querySelector('.companions-country-filter__content-wrapper');
 // let companionForm = document.querySelector('.companion-add-plan__form');
 // let companionFormField = document.querySelector('.step-entertaiment__list-country-field');
 // let companionFormTextarea = document.querySelectorAll('.step-entertaiment__list-country-field textarea');
 
 // Companion dropdown
-let selectCountryField = document.querySelector('.step-route__country-name--select');
-let selectCountryFieldIcon = document.querySelector('.step-route__country-name--select .step-route__icon');
-let selectCountryFieldCloseBtn = document.querySelector('.step-route__country-delete-btn--dropdown');
-let countryFieldDropdown = document.querySelector('.step-route__dropdown');
+var selectCountryField = document.querySelector('.step-route__country-name--select');
+var selectCountryFieldIcon = document.querySelector('.step-route__country-name--select .step-route__icon');
+var selectCountryFieldCloseBtn = document.querySelector('.step-route__country-delete-btn--dropdown');
+var countryFieldDropdown = document.querySelector('.step-route__dropdown');
 
 
 selectCountryField.addEventListener('click', function() {
@@ -77,11 +77,11 @@ navBtn.addEventListener('click', function(e) {
 
 
 
-let tabsTitles = document.querySelectorAll('.companions-filter__tab-title');
-let tabsTitlesBtn = document.querySelectorAll('.companions-filter__tab-title-btn');
+var tabsTitles = document.querySelectorAll('.companions-filter__tab-title');
+var tabsTitlesBtn = document.querySelectorAll('.companions-filter__tab-title-btn');
 
 if (tabsTitles && tabsTitlesBtn) {
-  for(let i = 0; i <= tabsTitles.length; i++) {
+  for(var i = 0; i <= tabsTitles.length; i++) {
     tabsTitlesBtn[i].addEventListener('click', function() {
       tabsTitles[i].classList.toggle('companions-filter__tab-title--active');
     });

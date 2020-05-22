@@ -224,10 +224,6 @@
   border-bottom-right-radius: 8px;
 }
 
-.step-route__dropdown-countries-item {
-
-}
-
 .step-route__dropdown-countries-link {
   font-size: 16px;
   line-height: 22px;
@@ -490,11 +486,14 @@
     }
   }
 
+  .step-route__country-delete {
+    margin-left: auto;
+  }
+
   .step-route__country-delete-btn {
     position: relative;
     top: auto;
     right: auto;
-    margin-left: auto;
     background-color: transparent;
 
 
@@ -601,5 +600,12 @@
       right: -52px;
     }
   }
+
+  .step-route__country-delete {
+    margin-top: -10px;
+    margin-right: 5px;
+    margin-left: auto;
+  }
+
 
 }

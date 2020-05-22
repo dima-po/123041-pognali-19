@@ -6,6 +6,7 @@ block variables
   - const pageCaption = "Попутчики"
   - let pageHeader = true
   - let indexLink = true
+  - let backToHome = true
 
 block content
   //- Шапка сайта
@@ -38,5 +39,6 @@ block content
 
 block scripts
   script(src="js/main.js")
-  //- script(src="../js/vendor.js")
-
+  script(src="js/picturefill.min.js" async)
+  script.
+    document.createElement( "picture" );

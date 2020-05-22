@@ -19,6 +19,10 @@
     background-position: center;
     background-size: cover;
     z-index: 2;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/rates@2x.png");
+    }
   }
 }
 

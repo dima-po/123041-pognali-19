@@ -134,6 +134,10 @@
       background-repeat: no-repeat;
       background-size: cover;
       z-index: -1;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/flags-back@2x.png");
+      }
     }
   }
 
