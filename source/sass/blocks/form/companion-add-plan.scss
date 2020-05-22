@@ -15,10 +15,13 @@
   }
 }
 
-.companion-add-plan__caption {
+.companion-add-plan__caption-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.companion-add-plan__caption {
   margin: 0;
   font-size: 24px;
   font-weight: 700;
@@ -237,7 +240,7 @@
     padding: 0 60px;
   }
 
-  .companion-add-plan__caption {
+  .companion-add-plan__caption-wrapper {
     padding-left: 70px;
   }
 

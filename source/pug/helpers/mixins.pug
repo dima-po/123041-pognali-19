@@ -1,10 +1,26 @@
+mixin responsive-images(imageLinkMobile, imageLinkTablet, imageLinkDesktop, width, height, alt, imgClass)
+  picture
+    source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
+    source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
+    source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
+
+    source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
+    source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
+    img(class= imgClass src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width= width, height= height, alt= alt)
+
+
 mixin destination-card(country, description, people, modificator, imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/270', imageLinkDesktop='https://via.placeholder.com/270')
   if modificator
     article.destanation__card
       picture.destanation__card-image
-        source(media="(min-width: 768px)", srcset= imageLinkTablet, type="image/jpg")
-        source(media="(min-width: 1440px)", srcset= imageLinkDesktop, type="image/jpg")
-        img(src= imageLinkMobile, width='270', height='110', alt='Изображение карточки направления')
+        source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
+        source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
+        source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
+
+        source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
+        source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
+        img(src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width='285', height='285', alt='Изображение карточки направления')
+
       .destanation__card-country(class=`destanation__card-country--${modificator}`)
         h4.destanation__card-country-name= country
         span.destanation__card-country-description= description
@@ -12,10 +28,15 @@ mixin destination-card(country, description, people, modificator, imageLinkMobil
 
   else
     article.destanation__card
-      figure.destanation__card-image
-        source(media="(min-width: 768px)", srcset= imageLinkTablet, type="image/jpg")
-        source(media="(min-width: 1440px)", srcset= imageLinkDesktop, type="image/jpg")
-        img(src= imageLinkMobile, width='270', height='110', alt='Изображение карточки направления')
+      picture.destanation__card-image
+        source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
+        source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
+        source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
+
+        source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
+        source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
+        img(src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width='285', height='285', alt='Изображение карточки направления')
+
       .destanation__card-country
         h4.destanation__card-country-name= country
         span.destanation__card-country-description= description
@@ -23,11 +44,17 @@ mixin destination-card(country, description, people, modificator, imageLinkMobil
 
 
 
-mixin companions-card-index(imageLink, level, personName, status, countries, tags, plane=false, bus=false, bike=false, run=false)
+mixin companions-card-index(level, personName, status, countries, tags, imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/270', imageLinkDesktop='https://via.placeholder.com/270', plane=false, bus=false, bike=false, run=false)
   article.companions__card
     h5.visually-hidden Карточка попутчика
     picture.companions__card-image
-      img(src= imageLink, width='285', height='285', alt='Изображение карточки направления')
+      source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
+      source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
+      source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
+
+      source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
+      source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
+      img(src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width='285', height='285', alt='Изображение карточки попутчика')
 
     .companions__card-level
       //- .companions__card-level-circle
@@ -105,6 +132,7 @@ mixin companions-filter-input-transport(type, name, value, text, checked=false)
       input.companions-filter__tab-input-transport(type= type, name= name, id= value value= value tabindex="-1")
     label.companions-filter__tab-label-transport(for= value tabindex="0" aria-label= text)= text
 
+
 mixin companion-profile-input-transport(type, name, value, text, checked=false)
   .companion-profile__input-group
     if checked
@@ -121,9 +149,13 @@ mixin companions-card-page(imageLinkMobile='https://via.placeholder.com/270', im
     .page-companions__card-info
       .page-companions__card-image-wrapper
         picture.page-companions__card-image
-          source(media="(min-width: 768px)", srcset= imageLinkTablet, type="image/jpg")
-          source(media="(min-width: 1440px)", srcset= imageLinkDesktop, type="image/jpg")
-          img(src= imageLinkMobile, width='270', height='270', alt='Изображение карточки попутчика')
+          source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
+          source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
+          source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
+
+          source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
+          source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
+          img(src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width='70', height='70', alt='Изображение карточки попутчика')
 
       .page-companions__card-person-info
         a.page-companions__card-person-name(class=(online ? "page-companions__card-person-name--online" : "page-companions__card-person-name--offline") href="#")= personName

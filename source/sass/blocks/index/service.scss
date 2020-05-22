@@ -22,6 +22,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 2;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/about-mobile@2x.png");
+    }
   }
 }
 
@@ -56,10 +60,12 @@
 }
 
 .service__tagline {
+  position: relative;
   font-size: 16px;
   line-height: 22px;
   font-weight: 700;
   color: #fff;
+  z-index: 3;
 
   br {
     display: none;
@@ -93,6 +99,10 @@
       @include size(376px, 548px);
       background-image: url("../img/about-tablet@1x.png");
       z-index: 4;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/about-tablet@2x.png");
+      }
     }
   }
 
@@ -147,15 +157,12 @@
     background-repeat: no-repeat;
     background-position: 750px bottom;
 
-    // &::before {
-    //   top: 70px;
-    //   left: 60px;
-    //   @include size(213px);
-    //   transform: translateX(0);
-    // }
-
     &::after {
       display: none;
+    }
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/about-desktop@2x.png");
     }
 
   }
