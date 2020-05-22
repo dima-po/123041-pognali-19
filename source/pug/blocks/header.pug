@@ -2,10 +2,10 @@ header(class=(pageHeader ? "header header--page" : "header"))
   .wrapper.header__wrapper
     if indexLink
       a.header__logo(href="index.html")
-        +responsive-images("img/logo-mobile-white", "img/logo-tablet-white", "img/logo-desktop-white", 100, 19,"Логотип Погнали", "header__logo-img")
+        +responsive-images("img/logo-mobile-white", "img/logo-tablet-white", "img/logo-desktop-white", 100, 19,"Логотип Погнали", "header__logo-img", false)
     else
       a.header__logo(href="")
-        +responsive-images("img/logo-mobile-white", "img/logo-tablet-white", "img/logo-desktop-white", 100, 19,"Логотип Погнали", "header__logo-img")
+        +responsive-images("img/logo-mobile-white", "img/logo-tablet-white", "img/logo-desktop-white", 100, 19,"Логотип Погнали", "header__logo-img", false)
 
     button.header__nav-btn(type='button') Мобильная навигация
 

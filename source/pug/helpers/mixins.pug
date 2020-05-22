@@ -1,12 +1,12 @@
-mixin responsive-images(imageLinkMobile, imageLinkTablet, imageLinkDesktop, width, height, alt, imgClass)
-  picture
+mixin responsive-images(imageLinkMobile, imageLinkTablet, imageLinkDesktop, width, height, alt, imgClass, pictureClass)
+  picture(class=(pictureClass ? pictureClass : ''))
     source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
     source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
     source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
 
     source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
     source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
-    img(class= imgClass src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width= width, height= height, alt= alt)
+    img(class=(imgClass ? imgClass : '') src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width= width, height= height, alt= alt)
 
 
 mixin destination-card(country, description, people, modificator, imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/270', imageLinkDesktop='https://via.placeholder.com/270')

@@ -10,10 +10,7 @@ section.companion-profile
         span.companion-profile__level-number 80
         span.companion-profile__level-text level
 
-      picture.companion-profile__image-wrapper
-        source(media="(min-width: 768px)", srcset="/img/demin-tablet@1x.jpg", type="image/jpg")
-        source(media="(min-width: 1440px)", srcset="/img/demin-desktop@1x.jpg", type="image/jpg")
-        img.companion-profile__image(src="/img/demin-mobile@1x.jpg" width="70" height="70" alt="Изображение пользователя")
+      +responsive-images("img/demin-mobile", "img/demin-tablet", "img/demin-desktop", 99, 100,"Изображение пользователя", "companion-profile__image", "companion-profile__image-wrapper")
 
       div.companion-profile__image-upload
         input(type="file" name="person-image" id="person-image")
