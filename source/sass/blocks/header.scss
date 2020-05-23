@@ -4,6 +4,20 @@
   padding-top: 25px;
   background-color: #161c35;
 
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include size(100%, 73px);
+    padding-top: 0;
+    background-color: #fff;
+    z-index: 100;
+
+    & .header__nav-btn::after,
+    & .header__nav-btn::before {
+      background-color: #ccc;
+    }
+  }
 
   &--page {
     padding-top: 15px;
@@ -145,6 +159,12 @@
     padding-top: 42px;
     background-color: #192144;
 
+    &--fixed {
+      height: 132px;
+      padding-top: 0;
+      background-color: #fff;
+    }
+
     &--page {
       background-color: $color-dark-blue;
     }
@@ -187,6 +207,12 @@
   .header {
     padding-top: 48px;
     background-color: #161c35;
+
+    &--fixed {
+      height: 90px;
+      padding-top: 0;
+      background-color: #fff;
+    }
   }
 
   .header__wrapper {

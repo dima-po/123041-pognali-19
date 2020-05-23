@@ -1,0 +1,40 @@
+noscript
+    style.
+
+      .header__wrapper {
+        flex-wrap: wrap;
+      }
+
+      .nav {
+        position: relative;
+        top: 20px;
+        display: flex;
+        width: 100%;
+      }
+
+      .nav__wrapper {
+        width: auto;
+        padding: 0;
+      }
+
+      .companions-country-filter__content-wrapper {
+        display: block;
+      }
+
+      .companions-filter__tab-item {
+        display: flex;
+      }
+
+      @media (min-width: 768px) {
+        .nav {
+          order: 1;
+        }
+      }
+
+      @media (min-width: 1440px) {
+        .nav {
+          top: auto;
+          width: auto;
+          order: 0;
+        }
+      }
