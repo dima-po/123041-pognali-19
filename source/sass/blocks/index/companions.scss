@@ -7,11 +7,16 @@
   border-bottom-right-radius: 32px;
   background-color: $color-dark-blue-alt;
   z-index: 4;
+}
+
+.companions__wrapper {
+  position: relative;
+
 
   &::before {
     content: '';
     position: absolute;
-    top: 65px;
+    top: -31px;
     right: 25px;
     @include size(143px);
     background-image: url("../img/smolov-back-desktop@1x.png");
@@ -26,7 +31,7 @@
   &::after {
     content: '';
     position: absolute;
-    top: 335px;
+    top: 241px;
     left: -10px;
     @include size(71px);
     background-image: url("../img/rogovaya-back-mobile@1x.png");
@@ -94,12 +99,24 @@
   flex-direction: column;
   margin-bottom: 10px;
   border-radius: 10px;
+  transition: all 0.2s;
+
+  &:hover {
+
+    & .companions__card-image {
+      transform: scale(1.1);
+    }
+  }
 }
 
-.companions__card-image {
+.companions__card-link {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   overflow: hidden;
+}
+
+.companions__card-image {
+  transition: all 0.2s;
 }
 
 .companions__card-level {
@@ -426,15 +443,19 @@
 
     background-size: 19%;
     background-position: 40px 485px;
+  }
+
+  .companions__wrapper {
+    padding: 0 75px;
 
     &::before {
-      top: 485px;
+      top: 288px;
       right: auto;
       left: 40px;
     }
 
     &::after {
-      top: 140px;
+      top: -58px;
       right: 75px;
       left: auto;
       @include size(285px);
@@ -444,10 +465,6 @@
         background-image: url("../img/rogovaya-back-desktop@2x.png");
       }
     }
-  }
-
-  .companions__wrapper {
-    padding: 0 75px;
   }
 
   .companions__content {
@@ -493,7 +510,7 @@
     }
   }
 
-  .companions__card-image {
+  .companions__card-link {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
   }
@@ -551,18 +568,6 @@
   .companions {
     padding-top: 185px;
     padding-bottom: 125px;
-
-    &::before {
-      top: 192px;
-      left: 780px;
-    }
-
-    &::after {
-      top: auto;
-      right: auto;
-      left: 422px;
-      bottom: 80px;
-    }
   }
 
   .companions__wrapper {
@@ -571,6 +576,18 @@
     flex-wrap: wrap;
     padding-right: 60px;
     padding-left: 128px;
+
+    &::before {
+      top: 7px;
+      left: 547px;
+    }
+
+    &::after {
+      top: auto;
+      right: auto;
+      left: 190px;
+      bottom: -43px;
+    }
   }
 
   .companions__caption {
@@ -614,5 +631,14 @@
   .companions__btn {
     margin-top: -90px;
     margin-bottom: 10px;
+  }
+}
+
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .companions__card-tags {
+    width: 220px;
+    text-align: center;
   }
 }

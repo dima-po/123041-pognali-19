@@ -115,7 +115,7 @@
 }
 
 .companion-profile__tags-textarea {
-  width: 100%;
+  @include size(100%);
   padding: 22px 24px;
   border: 1px solid #cbced9;
   border-radius: 10px;

@@ -122,6 +122,7 @@
       @include size(141px);
       border-radius: 20px;
       background-color: #e2e5f2;
+      z-index: -1;
     }
 
     &::after {

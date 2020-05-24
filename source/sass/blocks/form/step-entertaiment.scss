@@ -199,6 +199,14 @@
       right: -28px;
       height: 250px;
     }
+
+    &--error {
+
+      &::after {
+        padding: 20px 25px;
+        font-size: 20px;
+      }
+    }
   }
 
   .step-entertaiment__list-country-name {

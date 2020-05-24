@@ -1,6 +1,6 @@
 .map {
+  height: 350px;
   margin-top: -27px;
-  max-height: 350px;
   overflow: hidden;
 }
 
@@ -8,12 +8,13 @@
 @media only screen and (min-width: $tablet-width) {
 
   .map {
-    max-height: 540px;
+    height: 572px;
+    margin-top: -60px;
   }
 }
 
 @media only screen and (min-width: $desktop-width) {
   .map {
-    max-height: 475px;
+    height: 505px;
   }
 }

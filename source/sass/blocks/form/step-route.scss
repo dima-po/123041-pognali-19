@@ -607,5 +607,34 @@
     margin-left: auto;
   }
 
+  .step-route__dropdown {
+    max-width: 730px;
+    padding-right: 60px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 240px;
+      bottom: 0;
+      width: 1px;
+      height: 100%;
+      background-color: #d6d9e6;
+    }
+  }
+
+  .step-route__dropdown-letters {
+    max-width: 370px;
+  }
+
+  .step-route__dropdown-letters-item {
+    @include size(60px, 70px);
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+
+  .step-route__dropdown-letters-link {
+    border-radius: 4px;
+  }
 
 }
