@@ -9,7 +9,7 @@ block variables
 block content
 
   //- No Script block
-  include noscript
+  include blocks/noscript
 
   //- Шапка сайта
   include blocks/header
@@ -48,9 +48,9 @@ block content
 
 
 block scripts
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=b6d18386-7e3b-46ab-8692-c187a9f22508&lang=ru_RU")
   script(src="js/main.js")
-  script(src="js/picturefill.min.js" async)
-  script.
-    document.createElement( "picture" );
+  //- script.
+  //-   document.createElement( "picture" );
 
 

@@ -8,6 +8,7 @@
   border-radius: 20px;
   background-color: #fff;
   overflow: hidden;
+  transition: all 0.2s;
 
   &:not(:last-child) {
     margin-bottom: 10px;
@@ -15,6 +16,10 @@
 
   &:hover {
     box-shadow: 0 6px 21px 0 rgba(0,0,0,.08);
+
+    & .page-companions__card-image {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -27,6 +32,10 @@
   @include size(70px);
   border-radius: 50%;
   overflow: hidden;
+}
+
+.page-companions__card-image {
+  transition: all 0.2s;
 }
 
 .page-companions__card-person-info {
@@ -415,6 +424,39 @@
     &::before {
       opacity: 1;
     }
+  }
+
+  &:hover .page-companions__card-transport-tooltip {
+    display: block;
+  }
+}
+
+.page-companions__card-transport-tooltip {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: -75px;
+  z-index: 10;
+  padding: 20px 23px;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #fff;
+  background-color: #101d41;
+  transform: translateX(-50%);
+  border-radius: 4px;
+
+  &::before {
+    content: '';
+    display: block;
+    @include size(0);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #101d41;
+    transform: translateX(-50%);
   }
 }
 

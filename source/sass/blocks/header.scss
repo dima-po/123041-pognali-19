@@ -24,7 +24,7 @@
     padding-bottom: 10px;
   }
 
-  &--bg-white {
+  &--menu-opened {
     background-color: #fff;
   }
 }
@@ -39,6 +39,20 @@
 
 .header__logo {
   @include size(100px, 19px);
+}
+
+.header__logo-blue {
+  display: none;
+}
+
+.header--fixed .header__logo-white,
+.header--menu-opened .header__logo-white {
+  display: none;
+}
+
+.header--fixed .header__logo-blue,
+.header--menu-opened .header__logo-blue {
+  display: block;
 }
 
 .header__nav-btn {

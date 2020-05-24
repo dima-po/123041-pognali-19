@@ -1,3 +1,8 @@
+
+mixin svg-icon(iconName, iconWidth, iconHeight, iconClass=false)
+  svg(class=iconClass width=iconWidth height=iconHeight )
+    use(xlink:href="img/sprites.svg#" + iconName)
+
 mixin responsive-images(imageLinkMobile, imageLinkTablet, imageLinkDesktop, width, height, alt, imgClass, pictureClass)
   picture(class=(pictureClass ? pictureClass : ''))
     source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
@@ -47,18 +52,19 @@ mixin destination-card(country, description, people, modificator, imageLinkMobil
 mixin companions-card-index(level, personName, status, countries, tags, imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/270', imageLinkDesktop='https://via.placeholder.com/270', plane=false, bus=false, bike=false, run=false)
   article.companions__card
     h5.visually-hidden Карточка попутчика
-    picture.companions__card-image
-      source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
-      source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
-      source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
+    a.companions__card-link(href="#")
+      picture
+        source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
+        source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
+        source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
 
-      source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
-      source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
-      img(src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width='285', height='285', alt='Изображение карточки попутчика')
+        source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
+        source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
+        img.companions__card-image(src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width='285', height='285', alt='Изображение карточки попутчика')
 
     .companions__card-level
       //- .companions__card-level-circle
-      svg.companions__card-level-progress(viewBox='0 0 100 100' class=`companions__card-level-progress--${level}`)
+      svg.companions__card-level-progress(viewBox='0 0 100 100' width="60" height="60" class=`companions__card-level-progress--${level}`)
         circle(cx='50', cy='50', r='35.5')
       span.companions__card-level-number= level
       span.companions__card-level-text level
@@ -67,8 +73,8 @@ mixin companions-card-index(level, personName, status, countries, tags, imageLin
 
       ul.companions__card-flags
         each country, index in countries
-            li.companions__card-flag(class=`companions__card-flag--${index}`)= country
-              span.companions__card-flag-tooltip= country
+          li.companions__card-flag(class=`companions__card-flag--${index}`)= country
+            span.companions__card-flag-tooltip= country
 
       a.companions__card-person(href="#")
         if status === 'online'
@@ -117,29 +123,29 @@ mixin companions-card-index(level, personName, status, countries, tags, imageLin
 mixin companions-filter-input(type, name, value, text, checked=false)
   .companions-filter__tab-input-group
     if checked
-      input.companions-filter__tab-input(type= type, name= name, id= value value= value tabindex="-1" checked)
+      input.companions-filter__tab-input(type= type, name= name, id= value value= valueы checked)
     else
-      input.companions-filter__tab-input(type= type, name= name, id= value value= value tabindex="-1")
-    label.companions-filter__tab-label(for= value tabindex="0" aria-label= text)= text
+      input.companions-filter__tab-input(type= type, name= name, id= value value= value)
+    label.companions-filter__tab-label(for= value aria-label= text tabindex="0")= text
 
 
 
 mixin companions-filter-input-transport(type, name, value, text, checked=false)
   .companions-filter__tab-input-group
     if checked
-      input.companions-filter__tab-input-transport(type= type, name= name, id= value value= value tabindex="-1" checked)
+      input.companions-filter__tab-input-transport(type= type, name= name, id= value value= value checked)
     else
-      input.companions-filter__tab-input-transport(type= type, name= name, id= value value= value tabindex="-1")
-    label.companions-filter__tab-label-transport(for= value tabindex="0" aria-label= text)= text
+      input.companions-filter__tab-input-transport(type= type, name= name, id= value value= value)
+    label.companions-filter__tab-label-transport(for= value aria-label= text tabindex="0")= text
 
 
 mixin companion-profile-input-transport(type, name, value, text, checked=false)
   .companion-profile__input-group
     if checked
-      input.companion-profile__input-transport(type= type, name= name, id= value value= value tabindex="-1" checked)
+      input.companion-profile__input-transport(type= type, name= name, id= value value= value checked)
     else
-      input.companion-profile__input-transport(type= type, name= name, id= value value= value tabindex="-1")
-    label.companion-profile__label-transport(for= value tabindex="0" aria-label= text)= text
+      input.companion-profile__input-transport(type= type, name= name, id= value value= value)
+    label.companion-profile__label-transport(for= value aria-label= text tabindex="0")= text
 
 
 mixin companions-card-page(imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/700', imageLinkDesktop='https://via.placeholder.com/1440', personName, likeCount, tags, countries, level, plane=false, bus=false, bike=false, run=false, liked=false, online=false)
@@ -148,14 +154,15 @@ mixin companions-card-page(imageLinkMobile='https://via.placeholder.com/270', im
     h5.visually-hidden Карточка попутчика
     .page-companions__card-info
       .page-companions__card-image-wrapper
-        picture.page-companions__card-image
-          source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
-          source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
-          source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
+        a(href="#")
+          picture
+            source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
+            source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
+            source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
 
-          source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
-          source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
-          img(src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width='70', height='70', alt='Изображение карточки попутчика')
+            source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
+            source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
+            img.page-companions__card-image(src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width='70', height='70', alt='Изображение карточки попутчика')
 
       .page-companions__card-person-info
         a.page-companions__card-person-name(class=(online ? "page-companions__card-person-name--online" : "page-companions__card-person-name--offline") href="#")= personName
@@ -190,7 +197,7 @@ mixin companions-card-page(imageLinkMobile='https://via.placeholder.com/270', im
       .page-companions__card-level
         h6.page-companions__card-category-name Левел:
         .page-companions__card-level-wrapper
-          svg.page-companions__card-level-progress(viewBox='0 0 100 100' class=`page-companions__card-level-progress--${level}`)
+          svg.page-companions__card-level-progress(viewBox='0 0 100 100' width="60" height="60" class=`page-companions__card-level-progress--${level}`)
             circle(cx='50', cy='50', r='35.5')
           span.page-companions__card-level-number= level
           span.page-companions__card-level-text level
@@ -230,5 +237,4 @@ mixin companions-country-filter-small(countries)
   //-     ul.companions-country-filter__letters-list
   //-       each country in countryList
   //-         li= country
-
 
