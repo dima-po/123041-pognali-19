@@ -1,7 +1,10 @@
 .no-js {
-
   &.header__wrapper {
     flex-wrap: wrap;
+  }
+
+  &.header__nav-btn {
+    display: none;
   }
 
   &.nav {
@@ -26,12 +29,14 @@
     padding: 0;
   }
 
-  &.companions-country-filter__content-wrapper {
-    display: block;
-  }
+  &.map {
+    background-image: url("../img/map@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
-  &.companions-filter__tab-item {
-    display: flex;
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/map@2x.jpg");
+    }
   }
-
 }

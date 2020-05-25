@@ -4,14 +4,13 @@
   padding-top: 36px;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
-  background-color: #fff;
+  background-color: #ffffff;
   z-index: 5;
 }
 
 .footer__content {
   display: flex;
   flex-direction: column;
-  // align-items: center;
 }
 
 .footer__logo {
@@ -32,13 +31,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   @include size(45px);
   border-radius: 50%;
   background-color: $color-lightgold;
+
   @include hide-text;
 
   &--facebook {
-
     svg {
       @include size(11px, 21px);
       fill: $color-dark-blue-slate;
@@ -46,7 +46,6 @@
   }
 
   &--vk {
-
     svg {
       @include size(23px, 12px);
       fill: $color-dark-blue-slate;
@@ -54,7 +53,6 @@
   }
 
   &--instagram {
-
     svg {
       @include size(18px);
       fill: $color-dark-blue-slate;
@@ -67,7 +65,6 @@
 
   &:active,
   &:focus {
-
     svg {
       fill: rgba($color-dark-blue-slate, 0.3);
     }
@@ -106,7 +103,6 @@
 
 
 .footer__developer-logo {
-
   svg {
     @include size(27px, 34px);
     fill: #192144;
@@ -115,7 +111,6 @@
 
 
 @media only screen and (min-width: $tablet-width) {
-
   .footer {
     padding-top: 47px;
     padding-bottom: 50px;
@@ -142,21 +137,18 @@
     @include size(60px);
 
     &--facebook {
-
       svg {
         @include size(14px, 28px);
       }
     }
 
     &--vk {
-
       svg {
         @include size(31px, 16px);
       }
     }
 
     &--instagram {
-
       svg {
         @include size(24px);
       }
@@ -173,11 +165,12 @@
     margin-right: 25px;
     font-size: 20px;
   }
-
 }
 
 @media only screen and (min-width: $desktop-width) {
-
+  .footer {
+    padding-top: 50px;
+  }
 
   .footer__logo {
     @include size(198px, 52px);

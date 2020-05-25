@@ -14,10 +14,11 @@
 
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -31px;
     right: 25px;
+
     @include size(143px);
     background-image: url("../img/smolov-back-desktop@1x.png");
     background-repeat: no-repeat;
@@ -29,10 +30,11 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 241px;
     left: -10px;
+
     @include size(71px);
     background-image: url("../img/rogovaya-back-mobile@1x.png");
     background-repeat: no-repeat;
@@ -51,10 +53,11 @@
   z-index: 1;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -31px;
     left: -68px;
+
     @include size(132px);
     border-radius: 20px;
     background-color: #141b3b;
@@ -73,24 +76,22 @@
 .companions__description {
   position: relative;
   margin-bottom: 20px;
-  color: #fff;
+  color: #ffffff;
   z-index: 1;
 }
 
 .companions__tagline {
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
 
   br {
     display: none;
   }
 }
 
-
 .companions__cards {
   display: flex;
   flex-direction: column;
-
 }
 
 .companions__card {
@@ -102,7 +103,6 @@
   transition: all 0.2s;
 
   &:hover {
-
     & .companions__card-image {
       transform: scale(1.1);
     }
@@ -126,7 +126,8 @@
   align-items: center;
   position: absolute;
   top: 15px;
-  left: 18px;
+  left: 16px;
+
   @include size(60px);
   border-radius: 50%;
   background-color: rgba(#000000, 0.5);
@@ -149,14 +150,12 @@
   }
 
   &--80 {
-
     circle {
       stroke-dasharray: 245;
     }
   }
 
   &--99 {
-
     circle {
       stroke-dasharray: 268;
     }
@@ -169,28 +168,27 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .companions__card-level-text {
   font-size: 14px;
   line-height: 14px;
-  color: #fff;
+  color: #ffffff;
 }
-
 
 .companions__card-content {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -7px;
+  margin-top: -6px;
   padding-right: 35px;
   padding-bottom: 14px;
   padding-left: 35px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 
@@ -199,14 +197,16 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: -10px;
+  top: -12px;
   left: 0;
   right: 0;
+
   @include reset-list;
 }
 
 .companions__card-flag {
   position: relative;
+
   @include hide-text;
   @include size(35px, 24px);
   background-repeat: no-repeat;
@@ -250,14 +250,15 @@
   padding: 20px 23px;
   font-size: 20px;
   line-height: 1.2;
-  color: #fff;
+  color: #ffffff;
   background-color: #101d41;
   transform: translateX(-50%);
   border-radius: 4px;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
+
     @include size(0);
     position: absolute;
     top: -20px;
@@ -270,11 +271,10 @@
   }
 }
 
-
 .companions__card-person {
   position: relative;
   display: inline-block;
-  margin-top: 26px;
+  margin-top: 25px;
   font-size: 21px;
   font-weight: 700;
   line-height: 21px;
@@ -295,6 +295,7 @@
   position: absolute;
   top: 50%;
   left: -13px;
+
   @include size(5px);
   transform: translate(-50%, -50%);
   border-radius: 50%;
@@ -307,7 +308,6 @@
     background-color: #81e31e;
   }
 }
-
 
 .companions__card-tags {
   display: flex;
@@ -336,18 +336,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   @include reset-list;
   margin-top: 10px;
 }
 
 .companions__card-transport {
   position: relative;
+
   @include size(33px);
   @include hide-text;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
+
     @include size(100%);
     background-position: center;
     background-repeat: no-repeat;
@@ -356,7 +359,6 @@
   }
 
   &--plane {
-
     &::before {
       background-image: url("../img/plane.svg");
       background-size: 19px 21px;
@@ -364,7 +366,6 @@
   }
 
   &--bus {
-
     &::before {
       background-image: url("../img/bus.svg");
       background-size: 17px 21px;
@@ -372,7 +373,6 @@
   }
 
   &--bike {
-
     &::before {
       background-image: url("../img/bike.svg");
       background-size: 24px 21px;
@@ -380,7 +380,6 @@
   }
 
   &--run {
-
     &::before {
       background-image: url("../img/run.svg");
       background-size: 20px 21px;
@@ -388,7 +387,6 @@
   }
 
   &--available {
-
     &::before {
       opacity: 1;
     }
@@ -408,14 +406,15 @@
   padding: 20px 23px;
   font-size: 20px;
   line-height: 1.2;
-  color: #fff;
+  color: #ffffff;
   background-color: #101d41;
   transform: translateX(-50%);
   border-radius: 4px;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
+
     @include size(0);
     position: absolute;
     top: -20px;
@@ -458,6 +457,7 @@
       top: -58px;
       right: 75px;
       left: auto;
+
       @include size(285px);
       background-image: url("../img/rogovaya-back-desktop@1x.png");
 
@@ -479,6 +479,7 @@
     &::before {
       top: -60px;
       left: -35px;
+
       @include size(213px);
     }
   }
@@ -530,7 +531,7 @@
   }
 
   .companions__card-person {
-    margin-top: 30px;
+    margin-top: 31px;
   }
 
   .companions__card-person-name {
@@ -539,11 +540,12 @@
 
   .companions__card-person-status {
     left: -19px;
+
     @include size(7px);
   }
 
   .companions__card-tags {
-    margin-top: 23px;
+    margin-top: 21px;
 
     a {
       font-size: 20px;
@@ -558,13 +560,9 @@
   .companions__btn {
     margin-top: 72px;
   }
-
 }
 
-
-
 @media only screen and (min-width: $desktop-width) {
-
   .companions {
     padding-top: 185px;
     padding-bottom: 125px;
@@ -591,7 +589,6 @@
   }
 
   .companions__caption {
-
     &::before {
       left: -68px;
     }
@@ -614,7 +611,6 @@
   .companions__card {
     width: 285px;
 
-
     &:not(:last-child) {
       margin-right: 60px;
     }
@@ -633,7 +629,6 @@
     margin-bottom: 10px;
   }
 }
-
 
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

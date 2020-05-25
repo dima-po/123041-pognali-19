@@ -7,12 +7,18 @@
   border-bottom-right-radius: 32px;
   background-color: $color-light-blue;
   z-index: 3;
+}
+
+.tariffs__wrapper {
+  position: relative;
+  padding-left: 50px;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: 65px;
-    right: 25px;
+    top: -13px;
+    right: 26px;
+
     @include size(99px);
     background-image: url("../img/rates@1x.png");
     background-repeat: no-repeat;
@@ -24,10 +30,6 @@
       background-image: url("../img/rates@2x.png");
     }
   }
-}
-
-.tariffs__wrapper {
-  padding-left: 50px;
 }
 
 .tariffs__caption {
@@ -53,10 +55,11 @@
     align-items: center;
     flex-shrink: 0;
     order: 1;
+
     @include size(34px);
     margin-top: 6px;
     border-radius: 50%;
-    color: #fff;
+    color: #ffffff;
   }
 
   &--first::before {
@@ -106,29 +109,27 @@
 
 
 @media only screen and (min-width: $tablet-width) {
-
   .tariffs {
     margin-top: -60px;
     padding-top: 130px;
     padding-bottom: 65px;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
-
-    &::before {
-      top: auto;
-      bottom: 48px;
-      right: 85px;
-    }
   }
 
   .tariffs__wrapper {
     padding-left: 40px;
+
+    &::before {
+      top: auto;
+      bottom: -17px;
+      right: 85px;
+    }
   }
 
   .tariffs__caption {
     margin-bottom: 78px;
     text-align: center;
-
 
     br {
       display: none;
@@ -140,10 +141,11 @@
     z-index: 1;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: -45px;
       right: 0;
+
       @include size(198px, 285px);
       border-radius: 20px;
       background-color: #e2e5f2;
@@ -152,8 +154,6 @@
   }
 
   .tariffs__table-item {
-
-
     &::before {
       @include size(67px);
       margin-top: 0;
@@ -180,6 +180,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     @include size(67px);
     margin-right: 23px;
     border-radius: 50%;
@@ -194,28 +195,27 @@
 
 
 @media only screen and (min-width: $desktop-width) {
-
   .tariffs {
     padding-top: 160px;
     padding-bottom: 165px;
-
-    &::before {
-      top: 345px;
-      right: 365px;
-      bottom: auto;
-      @include size(198px);
-    }
   }
 
   .tariffs__wrapper {
     padding-left: 128px;
+
+    &::before {
+      top: 185px;
+      right: 134px;
+      bottom: auto;
+
+      @include size(198px);
+    }
   }
 
   .tariffs__caption {
     margin-bottom: 141px;
     margin-left: -65px;
   }
-
 
   .tariffs__table {
     width: 943px;

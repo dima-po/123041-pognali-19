@@ -18,11 +18,12 @@
 
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 135px;
     right: 50px;
     z-index: -1;
+
     @include size(192px, 255px);
     background-image: url("../img/traveller-illustration-mobile@1x.png");
     background-repeat: no-repeat;
@@ -56,8 +57,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   @include size(40px);
   border-radius: 50%;
+
   @include hide-text;
 
   svg {
@@ -84,12 +87,10 @@
   &:nth-child(1):active,
   &:nth-child(2):focus,
   &:nth-child(2):active {
-
     svg {
       opacity: 0.3;
     }
   }
-
 }
 
 .intro__contacts-btn {
@@ -111,16 +112,15 @@
   }
 }
 
-
 .intro__review {
   position: relative;
   margin-top: 27px;
   padding-left: 25px;
   font-size: 16px;
-  color: #fff;
+  color: #ffffff;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -45px;
     left: -100%;
@@ -131,8 +131,6 @@
   }
 }
 
-.intro__review-text {}
-
 .intro__review-author {
   font-weight: 700;
 }
@@ -140,6 +138,7 @@
 .intro__steps {
   display: flex;
   flex-direction: column;
+
   @include reset-list;
   margin-top: 47px;
   counter-reset: steps-list;
@@ -159,12 +158,12 @@
   border-radius: 10px;
   color: $color-dark-blue;
 
-  &:after {
+  &::after {
     counter-increment: steps-list;
     content: counter(steps-list);
     font-size: 18px;
     font-weight: 700;
-    color: #fff;
+    color: #ffffff;
   }
 
   &:not(:last-child) {
@@ -186,13 +185,10 @@
   &:nth-child(4n+4) {
     background-color: $color-lightgold;
   }
-
-
 }
 
 
 @media only screen and (min-width: $tablet-width) {
-
   .intro {
     padding: 70px 0;
     background-image: url("../img/globe-back-tablet@1x.jpg");
@@ -205,11 +201,10 @@
   }
 
   .intro__wrapper {
-
-
     &::before {
       top: 245px;
       right: 111px;
+
       @include size(372px, 451px);
       background-image: url("../img/traveller-illustration-tablet@1x.png");
 
@@ -302,7 +297,6 @@
 
 
 @media only screen and (min-width: $desktop-width) {
-
   .intro {
     padding-top: 105px;
     padding-bottom: 123px;
@@ -324,6 +318,7 @@
     &::before {
       top: -95px;
       right: 404px;
+
       @include size(431px, 640px);
       background-image: url("../img/traveller-illustration-desktop@1x.png");
 
@@ -405,12 +400,9 @@
       // padding-right: 30px;
       border-radius: 20px;
 
-
       &::after {
         margin-right: -35px;
       }
     }
   }
-
 }
-

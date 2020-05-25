@@ -49,18 +49,13 @@ mixin destination-card(country, description, people, modificator, imageLinkMobil
 
 
 
-mixin companions-card-index(level, personName, status, countries, tags, imageLinkMobile='https://via.placeholder.com/270', imageLinkTablet='https://via.placeholder.com/270', imageLinkDesktop='https://via.placeholder.com/270', plane=false, bus=false, bike=false, run=false)
+mixin companions-card-index(level, personName, status, countries, tags, imageLink='https://via.placeholder.com/270', plane=false, bus=false, bike=false, run=false)
   article.companions__card
     h5.visually-hidden Карточка попутчика
     a.companions__card-link(href="#")
       picture
-        source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.webp 1x, ' + imageLinkDesktop + '@2x.webp 2x', type="image/webp")
-        source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.webp 1x, ' + imageLinkTablet + '@2x.webp 2x', type="image/webp")
-        source(srcset= imageLinkMobile + '@1x.webp 1x, ' + imageLinkMobile + '@2x.webp 2x' type="image/webp")
-
-        source(media="(min-width: 1200px)", srcset= imageLinkDesktop + '@1x.jpg 1x, ' + imageLinkDesktop + '@2x.jpg 2x', type="image/jpg")
-        source(media="(min-width: 768px)", srcset= imageLinkTablet + '@1x.jpg 1x, ' + imageLinkTablet + '@2x.jpg 2x', type="image/jpg")
-        img.companions__card-image(src= imageLinkMobile + '@1x.jpg', srcset= imageLinkMobile + '@1x.jpg 1x, ' + imageLinkMobile + '@2x.jpg 2x' width='285', height='285', alt='Изображение карточки попутчика')
+        source(srcset= imageLink + '@1x.webp 1x, ' + imageLink + '@2x.webp 2x' type="image/webp")
+        img.companions__card-image(src= imageLink + '@1x.jpg', srcset= imageLink + '@2x.jpg 2x' width='285', height='285', alt='Изображение карточки попутчика')
 
     .companions__card-level
       //- .companions__card-level-circle

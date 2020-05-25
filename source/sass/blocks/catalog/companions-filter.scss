@@ -37,15 +37,15 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     display: block;
+
     @include size(8px, 4px);
     background-image: url("../img/dropdown.svg");
   }
 
   &--active {
-
-    &:after {
+    &::after {
       transform: rotate(180deg);
     }
   }
@@ -75,7 +75,6 @@
   background-color: transparent;
   z-index: 2;
 }
-
 
 .companions-filter__tab-item {
   display: none;
@@ -111,19 +110,21 @@
   color: $color-grey;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
+
     @include size(18px);
     margin-right: 8px;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 5px;
+
     @include size(9px);
     background-repeat: no-repeat;
     background-size: contain;
@@ -150,13 +151,15 @@
 
 .companions-filter__tab-label-transport {
   position: relative;
+
   @include size(33px);
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #ffffff;
+
   @include hide-text;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -192,21 +195,23 @@
   flex-wrap: wrap;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
+
     @include size(16px, 11px);
-    background-color: #fff;
+    background-color: #ffffff;
     transform: translate(-50%, -50%);
     z-index: 1;
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
+
     @include size(16px, 1px);
     background-color: #cbced9;
     transform: translate(-50%, -50%);
@@ -246,12 +251,13 @@
 
 .companions-filter__tab-level-slider {
   position: relative;
+
   @include size(100%, 2px);
   margin-top: 22px;
   background-color: rgba($color-dark-blue-slate, 0.2);
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 30%;
@@ -263,34 +269,36 @@
 }
 
 .companions-filter__tab-level-slider-btn {
-    position: absolute;
-    top: 50%;
-    @include size(10px);
-    border-radius: 50%;
-    background-color: $color-dark-blue-slate;
-    transform: translateY(-50%);
-    @include hide-text;
-    transition: 0.1s;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
 
-    &--left {
-      left: 30%;
-    }
+  @include size(10px);
+  border-radius: 50%;
+  background-color: $color-dark-blue-slate;
+  transform: translateY(-50%);
 
-    &--right {
-      left: auto;
-      right: 0;
-    }
+  @include hide-text;
+  transition: 0.1s;
+  cursor: pointer;
 
-    &:hover {
-      @include size(19px);
-    }
+  &--left {
+    left: 30%;
+  }
 
-    &:active,
-    &:focus {
-      @include size(19px);
-      box-shadow: 0px 3px 7px 0 rgba(29, 46, 91, 0.35);
-    }
+  &--right {
+    left: auto;
+    right: 0;
+  }
+
+  &:hover {
+    @include size(19px);
+  }
+
+  &:active,
+  &:focus {
+    @include size(19px);
+    box-shadow: 0 3px 7px 0 rgba(29, 46, 91, 0.35);
+  }
 }
 
 
@@ -304,10 +312,10 @@
   font-weight: 700;
   text-transform: uppercase;
   color: $color-dark-blue;
-  background-color: #fff;
+  background-color: #ffffff;
 
   &:hover {
-    box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
   }
 
   &:active,
@@ -319,11 +327,9 @@
 
 
 @media only screen and (min-width: $tablet-width) {
-
   .companions-filter {
     padding: 37px 36px 38px 36px;
   }
-
 
   .companions-filter__caption {
     margin-bottom: 44px;
@@ -332,10 +338,6 @@
     br {
       display: none;
     }
-  }
-
-  .companions-filter__form {
-
   }
 
   .companions-filter__tabs {
@@ -359,8 +361,7 @@
 
   .companions-filter__tab-title {
     justify-content: flex-start;
-    width: 125px;
-    max-width: 125px;
+    width: 120px;
     padding: 0;
     border-top: 0;
     font-size: 20px;
@@ -379,14 +380,29 @@
     display: none;
   }
 
+
+  .companions-filter__tab-input-group {
+    width: 175px;
+    margin-top: 0;
+
+    &:first-child {
+      padding-left: 8px;
+    }
+
+    &:last-child {
+      width: 150px;
+    }
+  }
+
   .companions-filter__tab-item {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
-    width: calc(100% - 125px);
+    width: 500px;
     margin-bottom: 0;
 
     &--transport {
+      margin-left: -9px;
 
       .companions-filter__tab-input-group {
         width: auto;
@@ -396,19 +412,6 @@
     &--level {
       align-items: center;
     }
-  }
-
-  .companions-filter__tab-input-group {
-    width: 33%;
-    margin-top: 0;
-
-    // &:nth-last-child(1) {
-    //   padding-left: 18px;
-    // }
-
-    // &:nth-last-child(2) {
-    //   padding-left: 7px;
-    // }
   }
 
   .companions-filter__tab-label {
@@ -422,6 +425,7 @@
 
     &::after {
       left: 6px;
+
       @include size(12px);
     }
   }
@@ -485,14 +489,10 @@
     padding: 13px 0;
     font-size: 20px;
   }
-
-
 }
 
 
-
 @media only screen and (min-width: $desktop-width) {
-
   .companions-filter {
     align-self: flex-start;
     width: auto;
@@ -510,7 +510,6 @@
     padding-top: 27px;
     border: 0;
   }
-
 
   .companions-filter__tab-group {
     flex-direction: column;
@@ -536,6 +535,7 @@
 
     &::after {
       display: block;
+
       @include size(10px, 5px);
       margin-left: auto;
     }
@@ -564,6 +564,10 @@
   .companions-filter__tab-input-group {
     width: 100%;
     margin-bottom: 16px;
+
+    &:first-child {
+      padding-left: 0;
+    }
   }
 
   .companions-filter__tab-level-group {

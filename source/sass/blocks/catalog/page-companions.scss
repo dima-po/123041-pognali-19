@@ -4,18 +4,18 @@
 
 .page-companions__card {
   position: relative;
-  padding: 15px 20px 20px;
+  padding: 14px 20px 22px;
   border-radius: 20px;
-  background-color: #fff;
-  overflow: hidden;
+  background-color: #ffffff;
   transition: all 0.2s;
+  overflow: hidden;
 
   &:not(:last-child) {
     margin-bottom: 10px;
   }
 
   &:hover {
-    box-shadow: 0 6px 21px 0 rgba(0,0,0,.08);
+    box-shadow: 0 6px 21px 0 rgba(0, 0, 0, 0.08);
 
     & .page-companions__card-image {
       transform: scale(1.1);
@@ -29,6 +29,7 @@
 
 .page-companions__card-image-wrapper {
   flex-shrink: 0;
+
   @include size(70px);
   border-radius: 50%;
   overflow: hidden;
@@ -55,19 +56,19 @@
   order: 1;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 23px;
     right: 22px;
+
     @include size(7px);
     border-radius: 50%;
     background-color: #f97676;
   }
 
   &--online {
-
     &::after {
-      background-color:#81e31e;
+      background-color: #81e31e;
     }
   }
 
@@ -138,18 +139,23 @@
 }
 
 .page-companions__card-button-like {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+
   @include size(31px);
   border: 0;
   border-radius: 50%;
   background-color: #edeff6;
+
   @include hide-text;
   cursor: pointer;
+  z-index: 10;
 
   &::before {
-    content: '';
+    content: "";
+
     @include size(13px, 11px);
     background-image: url("../img/heart.svg");
     background-repeat: no-repeat;
@@ -192,13 +198,11 @@
 
     &:active,
     &:focus {
-
       &::before {
         opacity: 0.3;
       }
     }
   }
-
 }
 
 .page-companions__card-button-like-count {
@@ -214,11 +218,6 @@
   margin: 12px 0;
 }
 
-.page-companions__card-countries-list {
-  @include reset-list;
-}
-
-
 .page-companions__card-category-name {
   position: relative;
   display: inline-block;
@@ -232,11 +231,12 @@
   z-index: 1;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     right: -20px;
     left: -20px;
+
     @include size(270px, 1px);
     background-color: #edeff6;
     transform: translateY(-50%);
@@ -244,24 +244,24 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #fff;
+    background-color: #ffffff;
     z-index: -1;
   }
 }
 
 .page-companions__card-countries-list {
+  @include reset-list;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 15px;
 }
-
 
 .page-companions__card-country {
   display: flex;
@@ -279,7 +279,8 @@
 
 
   &::before {
-    content: '';
+    content: "";
+
     @include size(26px, 18px);
     margin-right: 13px;
     background-repeat: no-repeat;
@@ -287,70 +288,60 @@
   }
 
   &--sri-lanka {
-
     &::before {
       background-image: url("../img/flag-sri-lanka.svg");
     }
   }
 
   &--thailand {
-
     &::before {
       background-image: url("../img/flag-thailand.svg");
     }
   }
 
   &--seychelles {
-
     &::before {
       background-image: url("../img/flag-seychelles.svg");
     }
   }
 
   &--belgium {
-
     &::before {
       background-image: url("../img/flag-belgium.svg");
     }
   }
 
   &--czech {
-
     &::before {
       background-image: url("../img/flag-czech.svg");
     }
   }
 
   &--usa {
-
     &::before {
       background-image: url("../img/flag-usa.svg");
     }
   }
 
   &--australia {
-
     &::before {
       background-image: url("../img/flag-australia.svg");
     }
   }
 
   &--dominica {
-
     &::before {
       background-image: url("../img/flag-dominica.svg");
     }
   }
 
   &--united-kingdom {
-
     &::before {
       background-image: url("../img/flag-united-kingdom.svg");
     }
   }
 
   &--germany {
-
     &::before {
       background-image: url("../img/flag-germany.svg");
     }
@@ -359,13 +350,13 @@
 
 .page-companions__card-transport-level {
   display: flex;
-  margin-bottom: 56px;
+  margin-bottom: 55px;
 }
-
 
 .page-companions__card-transports-list {
   display: flex;
   align-items: center;
+
   @include reset-list;
   margin-top: 14px;
   padding-left: 3px;
@@ -373,13 +364,15 @@
 
 .page-companions__card-transport {
   position: relative;
+
   @include size(33px, 32px);
   border-radius: 50%;
   background-color: #edeff6;
+
   @include hide-text;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -388,7 +381,6 @@
   }
 
   &--plane {
-
     &::before {
       @include size(14px, 16px);
       background-image: url("../img/plane.svg");
@@ -396,7 +388,6 @@
   }
 
   &--bus {
-
     &::before {
       @include size(13px, 16px);
       background-image: url("../img/bus.svg");
@@ -404,7 +395,6 @@
   }
 
   &--bike {
-
     &::before {
       @include size(19px, 17px);
       background-image: url("../img/bike.svg");
@@ -412,7 +402,6 @@
   }
 
   &--run {
-
     &::before {
       @include size(15px, 17px);
       background-image: url("../img/run.svg");
@@ -420,7 +409,6 @@
   }
 
   &--available {
-
     &::before {
       opacity: 1;
     }
@@ -440,14 +428,15 @@
   padding: 20px 23px;
   font-size: 20px;
   line-height: 1.2;
-  color: #fff;
+  color: #ffffff;
   background-color: #101d41;
   transform: translateX(-50%);
   border-radius: 4px;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
+
     @include size(0);
     position: absolute;
     top: -20px;
@@ -460,25 +449,27 @@
   }
 }
 
-
-
-
 .page-companions__card-level {
   margin-left: auto;
   margin-right: -3px;
 }
 
 .page-companions__card-level-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+
   @include size(45px);
-  margin-top: 6px;
+  margin-top: 7px;
   margin-left: 3px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #ffffff;
+
+  svg {
+    @include size(100%);
+  }
 }
 
 .page-companions__card-level-progress {
@@ -498,28 +489,24 @@
   }
 
   &--25 {
-
     circle {
       stroke-dasharray: 115, 200;
     }
   }
 
   &--50 {
-
     circle {
       stroke-dasharray: 170, 200;
     }
   }
 
   &--80 {
-
     circle {
       stroke-dasharray: 245;
     }
   }
 
   &--99 {
-
     circle {
       stroke-dasharray: 276;
     }
@@ -538,15 +525,7 @@
 }
 
 
-
-
-
-
-
-
-
 @media only screen and (min-width: $tablet-width) {
-
   .page-companions {
     margin-top: 40px;
   }
@@ -620,7 +599,7 @@
   }
 
   .page-companions__card-buttons {
-    margin-top: auto;
+    margin-top: 48px;
     margin-left: 0;
     order: 3;
   }
@@ -654,10 +633,9 @@
     }
   }
 
-
   .page-companions__card-countries-list {
     flex-direction: row;
-    margin-top: 21px;
+    margin-top: 19px;
   }
 
   .page-companions__card-country {
@@ -692,28 +670,24 @@
     background-color: transparent;
 
     &--plane {
-
       &::before {
         @include size(19px, 21px);
       }
     }
 
     &--bus {
-
       &::before {
         @include size(17px, 21px);
       }
     }
 
     &--bike {
-
       &::before {
         @include size(24px, 21px);
       }
     }
 
     &--run {
-
       &::before {
         @include size(20px, 21px);
       }
@@ -736,14 +710,10 @@
     font-size: 14px;
     color: rgba($color-dark-blue-slate, 0.4);
   }
-
 }
 
 
-
-
 @media only screen and (min-width: $desktop-width) {
-
   .page-companions {
     flex-grow: 1;
     margin-top: 0;
@@ -754,9 +724,20 @@
     // height: 285px;
     min-height: 285px;
     padding: 0;
+    overflow: visible;
 
     &:not(:last-child) {
       margin-bottom: 30px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 18%;
+      right: 33.5%;
+
+      @include size(2px, 187px);
+      background: linear-gradient(transparent, #e5e5e5 30%, #e5e5e5 70%, transparent);
     }
   }
 
@@ -765,7 +746,7 @@
   }
 
   .page-companions__card-image-wrapper {
-    @include size(285px, 100%);
+    @include size(285px);
     border-radius: 20px 0 0 20px;
 
     img {
@@ -819,7 +800,6 @@
   }
 
   .page-companions__card-country {
-
     &:not(:last-child) {
       margin-bottom: 13px;
     }
@@ -832,7 +812,7 @@
   .page-companions__card-transport-level {
     position: absolute;
     right: 47px;
-    bottom: 50px;
+    bottom: 43px;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
@@ -848,5 +828,4 @@
     margin-top: 8px;
     margin-right: 43px;
   }
-
 }
