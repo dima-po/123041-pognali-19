@@ -2,12 +2,12 @@ header(class=(pageHeader ? "header header--page" : "header"))
   .wrapper.header__wrapper.no-js
     if indexLink
       a.header__logo(href="index.html")
-        +responsive-images("img/logo-mobile-white", "img/logo-tablet-white", "img/logo-desktop-white", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-white")
-        +responsive-images("img/logo-mobile-blue", "img/logo-tablet-blue", "img/logo-desktop-blue", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-blue")
+        +responsive-logo-image("img/logo-mobile-white", "img/logo-tablet-white", "img/logo-desktop-white", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-white")
+        +responsive-logo-image("img/logo-mobile-blue", "img/logo-tablet-blue", "img/logo-desktop-blue", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-blue")
     else
       a.header__logo(href="")
-        +responsive-images("img/logo-mobile-white", "img/logo-tablet-white", "img/logo-desktop-white", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-white")
-        +responsive-images("img/logo-mobile-blue", "img/logo-tablet-blue", "img/logo-desktop-blue", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-blue")
+        +responsive-logo-image("img/logo-mobile-white", "img/logo-tablet-white", "img/logo-desktop-white", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-white")
+        +responsive-logo-image("img/logo-mobile-blue", "img/logo-tablet-blue", "img/logo-desktop-blue", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-blue")
 
     button.header__nav-btn.no-js(type='button') Мобильная навигация
 
