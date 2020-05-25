@@ -112,13 +112,12 @@
 
 @media only screen and (min-width: $tablet-width) {
   .companions-pagination {
-    padding-top: 34px;
-    padding-bottom: 128px;
+    padding-top: 4px;
+    padding-bottom: 113px;
   }
 
   .companions-pagination__more-btn {
     position: relative;
-    margin-left: -68px;
     padding-left: 43px;
     font-size: 20px;
 
@@ -142,8 +141,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 67px;
-    padding: 25px 30px 25px 28px;
+    margin-top: 48px;
+    padding: 25px 21px 25px 28px;
     border-radius: 20px;
     background-color: #ffffff;
   }
@@ -175,5 +174,21 @@
 
   .companions-pagination__arrows-link {
     @include size(40px);
+  }
+}
+
+
+@media only screen and (min-width: $desktop-width) {
+  .companions-pagination {
+    padding-top: 34px;
+    padding-bottom: 126px;
+  }
+
+  .companions-pagination__more-btn {
+    margin-left: -68px;
+  }
+
+  .companions-pagination__wrapper {
+    margin-top: 67px;
   }
 }

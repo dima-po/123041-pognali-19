@@ -13,11 +13,11 @@ nojs.forEach(function(elem) {
 
 // =================== Map
 
-var mapContainer = document.getElementById("map");
+let mapContainer = document.getElementById("map");
 
 if (mapContainer !== null) {
   ymaps.ready(init);
-  var myMap;
+  let myMap;
 
   function init () {
     myMap = new ymaps.Map("map",
@@ -47,12 +47,12 @@ if (mapContainer !== null) {
 
 
 //========================= Header & Navigation
-var header = document.querySelector(".header");
-var nav = document.querySelector(".nav");
-var navBtn = document.querySelector(".header__nav-btn");
+let header = document.querySelector(".header");
+let nav = document.querySelector(".nav");
+let navBtn = document.querySelector(".header__nav-btn");
 
 // Scroll Event
-var headerHeight = header.clientHeight;
+let headerHeight = header.clientHeight;
 window.addEventListener("scroll", function() {
   if (window.scrollY > headerHeight) {
     header.classList.add("header--fixed");
@@ -75,9 +75,9 @@ navBtn.addEventListener("click", function(e) {
 
 
 // ================== Popup
-var popup = document.querySelector(".popup");
-var popupOpenBtn = document.querySelector(".tariffs__btn");
-var popupCloseBtn = document.querySelector(".popup__close-btn");
+let popup = document.querySelector(".popup");
+let popupOpenBtn = document.querySelector(".tariffs__btn");
+let popupCloseBtn = document.querySelector(".popup__close-btn");
 
 if (popupOpenBtn !== null && popupCloseBtn !== null) {
 
@@ -95,10 +95,10 @@ if (popupOpenBtn !== null && popupCloseBtn !== null) {
 
 
 //======================= Companion form page dropdown
-var selectCountryField = document.querySelector(".step-route__country-name--select");
-var selectCountryFieldIcon = document.querySelector(".step-route__country-name--select .step-route__icon");
-var selectCountryFieldCloseBtn = document.querySelector(".step-route__country-delete-btn--dropdown");
-var countryFieldDropdown = document.querySelector(".step-route__dropdown");
+let selectCountryField = document.querySelector(".step-route__country-name--select");
+let selectCountryFieldIcon = document.querySelector(".step-route__country-name--select .step-route__icon");
+let selectCountryFieldCloseBtn = document.querySelector(".step-route__country-delete-btn--dropdown");
+let countryFieldDropdown = document.querySelector(".step-route__dropdown");
 
 if (selectCountryField !== null) {
   selectCountryField.addEventListener("click", function() {
@@ -112,12 +112,12 @@ if (selectCountryField !== null) {
 
 
 //======================= Companions catalog page countries filter
-var filterMain = document.querySelector(".companions-country-filter");
-var filterOpenBtn = document.querySelector(".companions-country-filter__button--open");
-var filterCloseBtn = document.querySelector(".companions-country-filter__button--close");
-var filterCloseBtnBottom = document.querySelector(".companions-country-filter__button--bottom");
-var filterContinents = document.querySelector(".companions-country-filter__continents");
-var filterContent = document.querySelector(".companions-country-filter__content-wrapper");
+let filterMain = document.querySelector(".companions-country-filter");
+let filterOpenBtn = document.querySelector(".companions-country-filter__button--open");
+let filterCloseBtn = document.querySelector(".companions-country-filter__button--close");
+let filterCloseBtnBottom = document.querySelector(".companions-country-filter__button--bottom");
+let filterContinents = document.querySelector(".companions-country-filter__continents");
+let filterContent = document.querySelector(".companions-country-filter__content-wrapper");
 
 if (filterOpenBtn !== null && filterCloseBtn !== null && filterCloseBtnBottom !== null) {
   filterOpenBtn.addEventListener("click", function() {
@@ -149,8 +149,8 @@ if (filterOpenBtn !== null && filterCloseBtn !== null && filterCloseBtnBottom !=
 
 // =================== Catalog page filter
 
-var tabsTitles = document.querySelectorAll(".companions-filter__tab-title");
-var tabsTitlesBtn = document.querySelectorAll(".companions-filter__tab-title-btn");
+let tabsTitles = document.querySelectorAll(".companions-filter__tab-title");
+let tabsTitlesBtn = document.querySelectorAll(".companions-filter__tab-title-btn");
 
 if (tabsTitles !== null && tabsTitlesBtn !== null) {
   tabsTitlesBtn.forEach(function(btn, index) {
