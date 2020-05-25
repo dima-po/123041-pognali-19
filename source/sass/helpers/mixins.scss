@@ -11,16 +11,15 @@
 
 @mixin font-face($name, $file-name, $style, $weight) {
   @font-face {
-      font-family: "#{$name}";
-      src:    url("../fonts/#{$file-name}.woff2") format("woff2"),
-              url("../fonts/#{$file-name}.woff") format("woff"),
-              local("#{$file-name}");
-      font-style: $style;
-      font-weight: $weight;
-      font-display: swap;
+    font-family: "#{$name}";
+    src: url("../fonts/#{$file-name}.woff2") format("woff2"),
+      url("../fonts/#{$file-name}.woff") format("woff"),
+      local("#{$file-name}");
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
   }
 }
-
 
 @mixin visually-hidden {
   position: absolute;
@@ -32,7 +31,6 @@
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-
 
 @mixin hide-text {
   font-size: 0;

@@ -13,10 +13,11 @@
   z-index: 1;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -30px;
     left: 17px;
+
     @include size(292px, 352px);
     background-image: url("../img/about-mobile@1x.png");
     background-repeat: no-repeat;
@@ -39,10 +40,11 @@
   z-index: 3;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -31px;
     left: -68px;
+
     @include size(132px);
     border-radius: 20px;
     background-color: #141b3b;
@@ -55,7 +57,7 @@
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 21px;
-  color: #fff;
+  color: #ffffff;
   z-index: 3;
 }
 
@@ -64,7 +66,7 @@
   font-size: 16px;
   line-height: 22px;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   z-index: 3;
 
   br {
@@ -78,7 +80,6 @@
 
 
 @media only screen and (min-width: $tablet-width) {
-
   .service {
     position: relative;
     padding-top: 63px;
@@ -96,6 +97,7 @@
       top: 8px;
       right: 8px;
       left: auto;
+
       @include size(376px, 548px);
       background-image: url("../img/about-tablet@1x.png");
       z-index: 4;
@@ -112,11 +114,12 @@
     &::before {
       top: -40px;
       left: -35px;
+
       @include size(688px, 213px);
     }
   }
 
-  .service__content{
+  .service__content {
     width: 345px;
   }
 
@@ -146,7 +149,6 @@
 }
 
 @media only screen and (min-width: $desktop-width) {
-
   .service {
     padding: 0;
   }
@@ -165,7 +167,6 @@
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/about-desktop@2x.png");
     }
-
   }
 
   .service__caption {
@@ -193,5 +194,4 @@
   .service__btn {
     margin-top: 66px;
   }
-
 }

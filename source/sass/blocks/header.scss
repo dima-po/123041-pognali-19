@@ -8,14 +8,15 @@
     position: fixed;
     top: 0;
     left: 0;
+
     @include size(100%, 73px);
     padding-top: 0;
-    background-color: #fff;
+    background-color: #ffffff;
     z-index: 100;
 
     & .header__nav-btn::after,
     & .header__nav-btn::before {
-      background-color: #ccc;
+      background-color: #cccccc;
     }
   }
 
@@ -25,7 +26,7 @@
   }
 
   &--menu-opened {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 }
 
@@ -33,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;;
+  height: 100%;
 }
 
 
@@ -66,11 +67,11 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 5px;
     transition: all 0.2s;
   }
@@ -80,7 +81,6 @@
   }
 
   &--active {
-
     &::before,
     &::after {
       height: 2px;
@@ -109,8 +109,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   @include size(40px);
   border-radius: 50%;
+
   @include hide-text;
 
   svg {
@@ -137,12 +139,10 @@
   &:nth-child(1):active,
   &:nth-child(2):focus,
   &:nth-child(2):active {
-
     svg {
       opacity: 0.3;
     }
   }
-
 }
 
 .header__contacts-btn {
@@ -165,10 +165,7 @@
 }
 
 
-
-
 @media only screen and (min-width: $tablet-width) {
-
   .header {
     padding-top: 42px;
     background-color: #192144;
@@ -176,7 +173,7 @@
     &--fixed {
       height: 132px;
       padding-top: 0;
-      background-color: #fff;
+      background-color: #ffffff;
     }
 
     &--page {
@@ -184,7 +181,11 @@
     }
 
     &--bg-white {
-      background-color: #fff;
+      background-color: #ffffff;
+    }
+
+    &--menu-opened {
+      background-color: #ffffff;
     }
   }
 
@@ -210,14 +211,10 @@
     border-radius: 25px;
     line-height: 30px;
   }
-
 }
 
 
-
-
 @media only screen and (min-width: $desktop-width) {
-
   .header {
     padding-top: 48px;
     background-color: #161c35;
@@ -225,7 +222,7 @@
     &--fixed {
       height: 90px;
       padding-top: 0;
-      background-color: #fff;
+      background-color: #ffffff;
     }
   }
 
@@ -247,6 +244,7 @@
 
   .header__contacts-item {
     display: flex;
+
     @include size(50px);
   }
 }

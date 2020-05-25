@@ -29,6 +29,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   @include size(45px);
   border-radius: 50%;
   background-color: #121936;
@@ -45,7 +46,6 @@
 
 
 @media only screen and (min-width: $tablet-width) {
-
   .route {
     margin-top: -60px;
     padding-top: 109px;
@@ -82,13 +82,11 @@
     margin-top: 13px;
     padding: 26px 34px;
   }
-
 }
 
 
 @media only screen and (min-width: $desktop-width) {
-
-  .route  {
+  .route {
     padding-top: 114px;
     padding-bottom: 55px;
   }
@@ -107,7 +105,6 @@
   .route__address {
     margin-bottom: 0;
   }
-
 
   .route__address-icon {
     @include size(90px);

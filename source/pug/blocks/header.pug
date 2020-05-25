@@ -1,5 +1,5 @@
 header(class=(pageHeader ? "header header--page" : "header"))
-  .wrapper.no-js.header__wrapper
+  .wrapper.header__wrapper.no-js
     if indexLink
       a.header__logo(href="index.html")
         +responsive-images("img/logo-mobile-white", "img/logo-tablet-white", "img/logo-desktop-white", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-white")
@@ -9,10 +9,10 @@ header(class=(pageHeader ? "header header--page" : "header"))
         +responsive-images("img/logo-mobile-white", "img/logo-tablet-white", "img/logo-desktop-white", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-white")
         +responsive-images("img/logo-mobile-blue", "img/logo-tablet-blue", "img/logo-desktop-blue", 100, 19,"Логотип Погнали", "header__logo-img", "header__logo-blue")
 
-    button.header__nav-btn(type='button') Мобильная навигация
+    button.header__nav-btn.no-js(type='button') Мобильная навигация
 
-    nav.nav
-      .nav__wrapper
+    nav.nav.no-js
+      .nav__wrapper.no-js
         ul.nav__list
           li.nav__item
             a.nav__link(href='#' data-hover='О сервисе') О сервисе

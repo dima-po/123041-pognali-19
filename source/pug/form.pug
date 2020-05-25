@@ -1,6 +1,10 @@
 extends layouts/default
 include helpers/mixins
 
+//- block noscript
+//-   //- No Script block
+//-   include blocks/noscript
+
 block variables
   - const title = "Форма - HTML Academy: Погнали"
   - const pageCaption = "Направления"
@@ -9,9 +13,6 @@ block variables
   - let backToHome = false
 
 block content
-
-  //- No Script block
-  include blocks/noscript
 
   //- Шапка сайта
   include blocks/header

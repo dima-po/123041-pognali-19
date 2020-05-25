@@ -5,6 +5,9 @@ html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='preload', href='fonts/bloggersans.woff2', as='font', crossorigin='anonymous')
+    link(rel='preload', href='fonts/bloggersans-medium.woff2', as='font', crossorigin='anonymous')
+    link(rel='preload', href='fonts/bloggersans-bold.woff2', as='font', crossorigin='anonymous')
     //- meta(http-equiv="X-UA-Compatible" content="IE=edge")
     //- meta(name="theme-color" content="#fff")
     //- meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
@@ -24,6 +27,7 @@ html(lang="ru")
     //- link(rel="apple-touch-icon" sizes="167x167" href="../img/favicons/apple-touch-icon-167x167.png")
     //- link(rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon-180x180.png")
     //- link(rel="apple-touch-icon" sizes="1024x1024" href="../img/favicons/apple-touch-icon-1024x1024.png")
+    block noscript
     title #{title}
     link(rel="stylesheet" href="css/style.min.css")
     script(src="js/picturefill.min.js")

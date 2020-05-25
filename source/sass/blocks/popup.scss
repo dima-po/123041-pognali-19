@@ -5,7 +5,7 @@
   width: 270px;
   display: none;
   border-radius: 20px;
-  background-color: #fff;
+  background-color: #ffffff;
   transform: translate(-50%, -50%);
   z-index: 1000;
   overflow: hidden;
@@ -29,24 +29,21 @@
   color: $color-darkgold;
 }
 
-
 .popup__table-list {
   @include reset-list;
 }
-
 
 .popup__item {
   display: flex;
   flex-direction: column;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(#000, 0.05);
+  border-bottom: 1px solid rgba(#000000, 0.05);
   color: $color-grey;
 
   &:first-child {
-    border-top: 1px solid rgba(#000, 0.05);
+    border-top: 1px solid rgba(#000000, 0.05);
   }
 }
-
 
 .popup__close-btn {
   width: 100%;
@@ -61,7 +58,6 @@
 }
 
 @media only screen and (min-width: $tablet-width) {
-
   .popup {
     width: 100%;
     max-width: 688px;

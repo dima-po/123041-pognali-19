@@ -1,7 +1,7 @@
 .step-entertaiment {
   padding: 24px 25px 11px 24px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .step-entertaiment__list {
@@ -10,7 +10,6 @@
 }
 
 .step-entertaiment__list-item {
-
   &:not(:last-child) {
     margin-bottom: 21px;
   }
@@ -24,20 +23,22 @@
   padding-left: 12px;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: -13px;
+
     @include size(15px, 2px);
     background-color: $color-dark-blue-slate;
     transform: translateY(-50%);
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 0;
+
     @include size(6px);
     border-radius: 50%;
     background-color: $color-dark-blue-slate;
@@ -55,13 +56,13 @@
   white-space: nowrap;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 50%;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0%, #fff 50%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0%, #ffffff 50%);
   }
 }
 
@@ -69,6 +70,7 @@
   position: absolute;
   top: 50%;
   right: 0;
+
   @include size(35px, 24px);
   @include hide-text;
   background-repeat: no-repeat;
@@ -91,7 +93,7 @@
 
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -25px;
     left: -13px;
@@ -103,7 +105,7 @@
   textarea {
     width: 100%;
     min-height: 220px;
-    padding: 11px 14px;
+    padding: 8px 14px;
     border: 1px solid #cbced9;
     border-radius: 4px;
     line-height: 22px;
@@ -128,20 +130,18 @@
   }
 
   &--last {
-
     &::before {
       background-color: transparent;
     }
   }
 
   &--error {
-
     textarea {
       border-color: #f47e7e;
     }
 
     &::after {
-      content: 'Это поле должно быть заполнено';
+      content: "Это поле должно быть заполнено";
       position: absolute;
       right: 0;
       bottom: 7px;
@@ -157,7 +157,6 @@
 }
 
 @media only screen and (min-width: $tablet-width) {
-
   .step-entertaiment {
     margin-top: 52px;
     margin-bottom: 21px;
@@ -176,7 +175,6 @@
       margin-bottom: 50px;
     }
   }
-
 
   .step-entertaiment__list-country {
     padding-left: 0;
@@ -201,11 +199,16 @@
     }
 
     &--error {
-
       &::after {
         padding: 20px 25px;
         font-size: 20px;
       }
+    }
+
+    textarea {
+      min-height: 142px;
+      padding: 17px 40px 17px 14px;
+      font-size: 20px;
     }
   }
 
@@ -222,31 +225,21 @@
     @include size(70px, 47px);
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       right: -35px;
+
       @include size(15px);
       border-radius: 50%;
       background-color: $color-dark-blue-slate;
       transform: translateY(-50%);
     }
   }
-
-  .step-entertaiment__list-country-field {
-
-    textarea {
-      min-height: 142px;
-      padding: 17px 40px 17px 14px;
-      font-size: 20px;
-    }
-  }
-
 }
 
 
 @media only screen and (min-width: $desktop-width) {
-
   .step-entertaiment {
     margin-top: 0;
     padding: 96px 160px 102px 160px;
@@ -264,8 +257,6 @@
   }
 
   .step-entertaiment__list-country-field {
-
-
     &::before {
       width: 3px;
       right: -46px;
@@ -284,5 +275,4 @@
       left: -47px;
     }
   }
-
 }

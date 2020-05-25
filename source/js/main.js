@@ -1,5 +1,16 @@
 console.log("Привет, ты смотришь проект Погнали");
 
+// =================== Remvoe .no-js classes
+
+let nojs = document.querySelectorAll(".no-js");
+
+nojs.forEach(function(elem) {
+  elem.classList.remove("no-js");
+});
+
+
+
+
 // =================== Map
 
 var mapContainer = document.getElementById("map");
@@ -18,15 +29,15 @@ if (mapContainer !== null) {
             controls: [],
         }, {
             // Поиск по организациям.
-            searchControlProvider: 'yandex#search'
+            searchControlProvider: "yandex#search"
         }
     ),
     myPlacemark = new ymaps.Placemark([41.312650, 69.279087], {
-      balloonContent: 'Метка на карте'
+      balloonContent: "Метка на карте"
     },
     {
-      preset: 'islands#governmentCircleIcon',
-      iconColor: '#3b5998'
+      preset: "islands#governmentCircleIcon",
+      iconColor: "#3b5998"
     });
 
     myMap.geoObjects.add(myPlacemark);
@@ -35,7 +46,7 @@ if (mapContainer !== null) {
 // ==========================
 
 
-// ========================= Header & Navigation
+//========================= Header & Navigation
 var header = document.querySelector(".header");
 var nav = document.querySelector(".nav");
 var navBtn = document.querySelector(".header__nav-btn");
@@ -153,7 +164,7 @@ if (tabsTitles !== null && tabsTitlesBtn !== null) {
 // =================== Form validation
 let companionForm = document.querySelector(".companion-add-plan__form");
 let companionFormField = document.querySelector(".step-entertaiment__list-country-field");
-let companionFormTextarea = document.querySelectorAll("[name='country-action-plan']");
+let companionFormTextarea = document.querySelectorAll("[name=country-action-plan]");
 
 companionForm.addEventListener("submit", function(e){
 
@@ -167,4 +178,3 @@ companionForm.addEventListener("submit", function(e){
     }
   })
 })
-
